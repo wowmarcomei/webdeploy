@@ -25,7 +25,6 @@ function chunk(arr, size) {
         //构造二维数组，取数组长度为size,使用slice()获取
         for (var i = 0; i < myLength; i++){
             myArray[i] = arr.slice(i*size,(i+1)*size);
-
         }
 
         //输出倒数myLeft个,组成最后一个数组
