@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="823657d7-2c79-4cd9-89da-17c0f8cb5070" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JavascriptExe/whereDoIBelong.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javascript/Algorithm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javascript/captialCase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javascript/chunkyMonkey.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javascript/confirmEnding.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javascript/falsyBouncer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javascript/findLargestNumber.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javascript/mutations.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javascript/myJavascript.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javascript/repeatString.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javascript/seekAndDestroy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javascript/slasherFlick.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javascript/truncateStr.js" afterPath="" />
+    </list>
+    <ignored path="webdeploy.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="webdeploy" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="whereDoIBelong.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JavascriptExe/whereDoIBelong.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="module.js" />
+        <option value="$PROJECT_DIR$/myHtml.html" />
+        <option value="$PROJECT_DIR$/myTest.html" />
+        <option value="$PROJECT_DIR$/myJavascript.js" />
+        <option value="$PROJECT_DIR$/Algorithm.js" />
+        <option value="$PROJECT_DIR$/Ex3.js" />
+        <option value="$PROJECT_DIR$/findLargestNumber.js" />
+        <option value="$PROJECT_DIR$/confirmEnding.js" />
+        <option value="$PROJECT_DIR$/repeatString.js" />
+        <option value="$PROJECT_DIR$/truncateStr.js" />
+        <option value="$PROJECT_DIR$/chunkyMonkey.js" />
+        <option value="$PROJECT_DIR$/slasherFlick.js" />
+        <option value="$PROJECT_DIR$/mutations.js" />
+        <option value="$PROJECT_DIR$/Readme.md" />
+        <option value="$PROJECT_DIR$/Javascript/chunkyMonkey.js" />
+        <option value="$PROJECT_DIR$/Javascript/falsyBouncer.js" />
+        <option value="$PROJECT_DIR$/Javascript/seekAndDestroy.js" />
+        <option value="$PROJECT_DIR$/Javascript/whereDoIBelong.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1366" />
+    <option name="height" value="741" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdeploy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdeploy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdeploy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdeploy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdeploy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavascriptExe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Javascript" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.whereDoIBelong.js">
+    <configuration default="false" name="slasherFlick.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="$PROJECT_DIR$/Javascript/slasherFlick.js" working-dir="$PROJECT_DIR$">
+      <method />
+    </configuration>
+    <configuration default="false" name="mutations.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="$PROJECT_DIR$/Javascript/mutations.js" working-dir="$PROJECT_DIR$">
+      <method />
+    </configuration>
+    <configuration default="false" name="falsyBouncer.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="falsyBouncer.js" working-dir="$PROJECT_DIR$/Javascript">
+      <method />
+    </configuration>
+    <configuration default="false" name="whereDoIBelong.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="whereDoIBelong.js" working-dir="$PROJECT_DIR$/Javascript">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration default="false" name="myJavascript.js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" path-to-js-file="$PROJECT_DIR$/Javascript/chunkyMonkey.js" working-dir="$PROJECT_DIR$">
+      <profiling v8-profiler-path="" />
+      <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSProfilingRunConfigurationExtension">
+        <profiling v8-profiler-path="" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Node.js.myJavascript.js" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.slasherFlick.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.mutations.js" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.falsyBouncer.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.whereDoIBelong.js" />
+    </list>
+    <recent_temporary>
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.whereDoIBelong.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.falsyBouncer.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.mutations.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.slasherFlick.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="823657d7-2c79-4cd9-89da-17c0f8cb5070" name="Default" comment="" />
+      <created>1471999973655</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1471999973655</updated>
+      <workItem from="1471999975929" duration="457000" />
+      <workItem from="1472345924541" duration="252000" />
+      <workItem from="1472351611119" duration="5932000" />
+      <workItem from="1472390483330" duration="2870000" />
+      <workItem from="1472429056015" duration="117000" />
+      <workItem from="1472688917335" duration="211000" />
+      <workItem from="1472689142899" duration="62000" />
+      <workItem from="1472691189213" duration="204000" />
+      <workItem from="1472774236637" duration="4855000" />
+      <workItem from="1472872970318" duration="3071000" />
+      <workItem from="1472947376126" duration="2017000" />
+      <workItem from="1472950305033" duration="6275000" />
+      <workItem from="1473033188424" duration="5052000" />
+      <workItem from="1473119490087" duration="107000" />
+      <workItem from="1473119622969" duration="3841000" />
+      <workItem from="1473205219383" duration="5956000" />
+      <workItem from="1473292295535" duration="3050000" />
+      <workItem from="1473378317606" duration="5883000" />
+      <workItem from="1473435327090" duration="836000" />
+      <workItem from="1473467254686" duration="944000" />
+      <workItem from="1473468353239" duration="29000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add readme">
+      <created>1473381583310</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1473381583310</updated>
+    </task>
+    <task id="LOCAL-00002" summary="move to dir &amp;&amp; add flasyBouncer">
+      <created>1473383958132</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1473383958132</updated>
+    </task>
+    <task id="LOCAL-00003" summary="...">
+      <created>1473436761144</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1473436761144</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="52021000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1366" height="741" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19256505" sideWeight="0.49082568" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24981412" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13903345" sideWeight="0.5091743" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30508474" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41448382" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add readme" />
+    <MESSAGE value="move to dir &amp;&amp; add flasyBouncer" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Javascript/algorithm.js</url>
+          <line>5</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Javascript/algorithm.js</url>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Javascript/algorithm.js</url>
+          <line>49</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Javascript/repeatString.js</url>
+          <line>17</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Javascript/chunkyMonkey.js</url>
+          <line>53</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Javascript/chunkyMonkey.js</url>
+          <line>10</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Javascript/mutations.js</url>
+          <line>42</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Javascript/mutations.js</url>
+          <line>21</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Javascript/mutations.js</url>
+          <line>28</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Javascript/mutations.js</url>
+          <line>32</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Javascript/mutations.js</url>
+          <line>49</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="38" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="NodeJSConfigurationType">
+        <watch expression="myArray[i]" language="JavaScript" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Javascript/slasherFlick.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/mutations.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/chunkyMonkey.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/repeatString.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/truncateStr.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/chunkyMonkey.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/myJavascript.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/algorithm.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/captialCase.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/confirmEnding.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/findLargestNumber.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/myJavascript.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/algorithm.js" />
+    <entry file="file://$PROJECT_DIR$/Ex3.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/myJavascript.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/algorithm.js" />
+    <entry file="file://$PROJECT_DIR$/Ex3.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/myJavascript.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/algorithm.js" />
+    <entry file="file://$PROJECT_DIR$/Ex3.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/myJavascript.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/algorithm.js" />
+    <entry file="file://$PROJECT_DIR$/Ex3.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/myJavascript.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/algorithm.js" />
+    <entry file="file://$PROJECT_DIR$/myTest.html" />
+    <entry file="file://$PROJECT_DIR$/Javascript/myJavascript.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/algorithm.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/myJavascript.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/algorithm.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/myJavascript.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/myJavascript.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/myJavascript.js" />
+    <entry file="file://$PROJECT_DIR$/myHtml.html" />
+    <entry file="file://$PROJECT_DIR$/myTest.html" />
+    <entry file="file://$PROJECT_DIR$/Javascript/findLargestNumber.js" />
+    <entry file="file://$PROJECT_DIR$/Ex3.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/confirmEnding.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/myJavascript.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/truncateStr.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/repeatString.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/slasherFlick.js" />
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="60">
+            <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Javascript/mutations.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/algorithm.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/captialCase.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/chunkyMonkey.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/seekAndDestroy.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/falsyBouncer.js" />
+    <entry file="file://$PROJECT_DIR$/Javascript/whereDoIBelong.js" />
+    <entry file="file://$PROJECT_DIR$/JavascriptExe/whereDoIBelong.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
