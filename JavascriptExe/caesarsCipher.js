@@ -23,6 +23,8 @@
 
  */
 
+
+
 function rot13(str) {
 
     var myTemp = [];
@@ -31,10 +33,10 @@ function rot13(str) {
 
         if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <=77){
             myTemp[i]= String.fromCharCode(str.charCodeAt(i)+13);
-            console.log(String.fromCharCode(str.charCodeAt(i)+13));
+            // console.log(String.fromCharCode(str.charCodeAt(i)+13));
         }else if(str.charCodeAt(i) >=78 && str.charCodeAt(i) <=90){
             myTemp[i]= String.fromCharCode(str.charCodeAt(i)-13);
-            console.log(String.fromCharCode(str.charCodeAt(i)-13));
+            // console.log(String.fromCharCode(str.charCodeAt(i)-13));
         }else {
             myTemp[i] = str[i];
         }
