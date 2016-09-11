@@ -18,11 +18,13 @@ function where(arr, num) {
 
     arr.push(num);
 
-    arr.sort(function compareValue(a,b) {
+    //说明: sort内部的函数名isLarger也可以省略不写
+    arr.sort(function isLarger(a,b) {
         return a - b;
     });
 
+    console.log("arr:",arr,arr.indexOf(num));
     return arr.indexOf(num);
 }
 
-where([40, 60,1,10,70,23,24], 50);
+where([40, 60,1,10,70,23,24], 2);
