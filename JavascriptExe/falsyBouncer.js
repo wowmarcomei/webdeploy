@@ -13,16 +13,19 @@
 
 * */
 
-
-function isTrueValue(element) {
-    return Boolean(element);
-
-}
+//
+// function isTrueValue(element) {
+//     return Boolean(element);
+//
+// }
 
 function bouncer(arr) {
     // Don't show a false ID to this bouncer.
 
-    arr= arr.filter(isTrueValue);
+    //说明:filter的参数为需要过滤的函数function(名称可以省略,与上面注释的函数isTrueValue功能类似), 此函数的参数是arr的每个元素的遍历
+    arr= arr.filter(function (x) {
+        return Boolean(x);
+    });
 
     console.log(arr);
 

@@ -32,6 +32,7 @@ function rot13(str) {
     for(var i = 0; i<str.length; i++){
 
         if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <=77){
+            //charCodeAt函数对字母进行编码为数值, fromCharCode对数值进行编码为字母
             myTemp[i]= String.fromCharCode(str.charCodeAt(i)+13);
             // console.log(String.fromCharCode(str.charCodeAt(i)+13));
         }else if(str.charCodeAt(i) >=78 && str.charCodeAt(i) <=90){
