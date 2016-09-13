@@ -1,16 +1,16 @@
 [
   {
     "id":0,
-    "imageLink":"images/funny-cat.jpg",
+    "imageLink":"images/image_1.jpg",
     "codeNames":["Juggernaut","Mrs. Wallace","Buttercup"]
   },
   {
     "id":1,
-    "imageLink":"images/grumpy-cat.jpg",
+    "imageLink":"images/image_2.jpg",
     "codeNames":["Oscar","Scrooge","Tyrion"]
   },
   {"id":2,
-    "imageLink":"images/mischievous-cat.jpg",
+    "imageLink":"images/image_3.jpg",
     "codeNames":["The Doctor","Loki","Joker"]
   }
 ]

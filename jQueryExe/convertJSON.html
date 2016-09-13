@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>getJSON</title>
+    <title>convertJSON</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,26 +21,21 @@
         //设置按钮的点击事件函数
         $("#getMessage").on("click",function () {
             //使用一个HTTP GET请求从服务器json/cats.json处加载JSON编码的数据。
-//            $.getJSON("json/cats.json",function (data) {
-//
-//                $(".message").html(JSON.stringify(data));
-//            });
+            $.getJSON("json/cats.json",function (data) {
 
 
-            $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",{
-                tags: "mount rainier",
-                tagmode: "any",
-                format: "json"
-            },
-            function (data) {
-                $.each(data.items,function (i,item) {
-                    $("<img/>").attr("src", item.media.m).appendTo("#images");
-                    if ( i == 3 ) return false;
-                })
+                var html = "";
+                // Only change code below this line.
+
+                data.forEach(function (val) {
+                    html += "<div class='col-xs-4'>";
+                    html += "<img src ='" + val.imageLink + "'>";
+                    html += "</div>";
+                });
+
+                $(".message").html(html);
+
             });
-
-
-
         });
     });
 
