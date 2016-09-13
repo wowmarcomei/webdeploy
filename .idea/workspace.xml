@@ -25,11 +25,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="clickEvent.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jQueryExe/clickEvent.html">
+      <file leaf-file-name="getJSON.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jQueryExe/getJSON.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="221">
               <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="seekAndDestroy.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavascriptExe/seekAndDestroy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cats.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jQueryExe/json/cats.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -42,6 +62,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="tsconfig.json" />
+        <option value="package_json" />
       </list>
     </option>
   </component>
@@ -74,6 +96,9 @@
         <option value="$PROJECT_DIR$/JavascriptExe/whereDoIBelong.js" />
         <option value="$PROJECT_DIR$/JavascriptExe/caesarsCipher.js" />
         <option value="$PROJECT_DIR$/jQueryExe/clickEvent.html" />
+        <option value="$PROJECT_DIR$/jQueryExe/json/package.json" />
+        <option value="$PROJECT_DIR$/jQueryExe/json/cats.json" />
+        <option value="$PROJECT_DIR$/jQueryExe/getJSON.html" />
       </list>
     </option>
   </component>
@@ -146,6 +171,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdeploy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdeploy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jQueryExe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="json" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdeploy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdeploy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavascriptExe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -177,10 +234,7 @@
       <recent name="$PROJECT_DIR$/Javascript" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.clickEvent.html">
-    <configuration default="false" name="caesarsCipher.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="caesarsCipher.js" working-dir="$PROJECT_DIR$/JavascriptExe">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.getJSON.html">
     <configuration default="false" name="seekAndDestroy.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="seekAndDestroy.js" working-dir="$PROJECT_DIR$/JavascriptExe">
       <method />
     </configuration>
@@ -191,6 +245,9 @@
       <method />
     </configuration>
     <configuration default="false" name="clickEvent.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webdeploy/jQueryExe/clickEvent.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="getJSON.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webdeploy/jQueryExe/getJSON.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -255,19 +312,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Node.js.myJavascript.js" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.caesarsCipher.js" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.seekAndDestroy.js" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.whereDoIBelong.js (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.falsyBouncer.js (1)" />
-      <item index="5" class="java.lang.String" itemvalue="JavaScript Debug.clickEvent.html" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.seekAndDestroy.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.whereDoIBelong.js (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.falsyBouncer.js (1)" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.clickEvent.html" />
+      <item index="5" class="java.lang.String" itemvalue="JavaScript Debug.getJSON.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.clickEvent.html" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.whereDoIBelong.js (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.seekAndDestroy.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.falsyBouncer.js (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.caesarsCipher.js" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.getJSON.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.clickEvent.html" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.whereDoIBelong.js (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.seekAndDestroy.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.falsyBouncer.js (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -311,7 +368,7 @@
       <workItem from="1473561240448" duration="174000" />
       <workItem from="1473563210775" duration="3992000" />
       <workItem from="1473638536392" duration="2205000" />
-      <workItem from="1473726632689" duration="2927000" />
+      <workItem from="1473726632689" duration="7118000" />
     </task>
     <task id="LOCAL-00001" summary="Add readme">
       <created>1473381583310</created>
@@ -345,7 +402,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68015000" />
+    <option name="totallyTimeSpent" value="72206000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -357,24 +414,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="23" width="1357" height="741" extended-state="6" />
+    <frame x="2" y="23" width="1357" height="741" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1998503" sideWeight="0.49082568" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.49251497" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819724" sideWeight="0.50748503" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819724" sideWeight="0.49251497" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.48952097" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.51047903" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819724" sideWeight="0.48952097" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31587058" sideWeight="0.49299926" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24981412" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32819724" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819724" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13903345" sideWeight="0.5091743" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41448382" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23266564" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -465,11 +522,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Javascript/truncateStr.js" />
-    <entry file="file://$PROJECT_DIR$/Javascript/chunkyMonkey.js" />
-    <entry file="file://$PROJECT_DIR$/Javascript/myJavascript.js" />
-    <entry file="file://$PROJECT_DIR$/Javascript/algorithm.js" />
-    <entry file="file://$PROJECT_DIR$/Javascript/captialCase.js" />
     <entry file="file://$PROJECT_DIR$/Javascript/confirmEnding.js" />
     <entry file="file://$PROJECT_DIR$/Javascript/findLargestNumber.js" />
     <entry file="file://$PROJECT_DIR$/Javascript/myJavascript.js" />
@@ -511,27 +563,6 @@
     <entry file="file://$PROJECT_DIR$/Javascript/seekAndDestroy.js" />
     <entry file="file://$PROJECT_DIR$/Javascript/falsyBouncer.js" />
     <entry file="file://$PROJECT_DIR$/Javascript/whereDoIBelong.js" />
-    <entry file="file://$PROJECT_DIR$/JavascriptExe/seekAndDestroy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavascriptExe/whereDoIBelong.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavascriptExe/caesarsCipher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavascriptExe/falsyBouncer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -539,9 +570,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jQueryExe/json/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jQueryExe/clickEvent.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="60">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jQueryExe/json/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jQueryExe/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8385">
+          <caret line="2054" column="29" selection-start-line="2054" selection-start-column="29" selection-end-line="2054" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavascriptExe/caesarsCipher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavascriptExe/whereDoIBelong.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavascriptExe/seekAndDestroy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jQueryExe/json/cats.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jQueryExe/getJSON.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
           <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
           <folding />
         </state>
