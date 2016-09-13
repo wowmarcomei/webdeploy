@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+
+
+<script>
+
+   $(document).ready(function () {
+       //设置按钮的点击事件函数
+       $("#getMessage").on("click",function () {
+           //按钮点击之后将message内容显示为This is the new content!
+            $(".message").html("This is the new content!\n");
+            $(".btn").html("What");
+       });
+   });
+    
+</script>
+
+
+<body>
+
+<div class="container-fluid">
+    <div class="row text-center">
+        <h2>Cat Photo Finder</h2>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-xs-12 well message">
+            The message will go here
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-xs-12">
+            <!--设置按钮id,显示值与属性类-->
+            <button id="getMessage" class="btn btn-primary ">
+                Get Message
+            </button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
