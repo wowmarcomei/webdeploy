@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS上下文选择符</title>
+
+    <style>
+        /*说明上下文选择符,使用空格隔开选择标签,只有后面的后代才会被选中应用后面的样式,也叫做:"后代组合式选择符"*/
+        article h1 {color: black;font-size: medium}
+        article p {color: black; font-size: large}
+
+        /*本样式指明只有选择了aside,p标签之后的em标签才会使用下面的样式*/
+        aside p em {color: firebrick}
+
+        /*本样式指明只有p标签的后代em才会应用下面的样式,不用关注p标签的父标签*/
+        p em {color: firebrick}
+
+        /*来试一下跳过越代选择,即根据DOM模型来看,aside是p的父标签,p是em的父标签, 相当于em是aside的'孙子'标签,看隔代能否遗传哈。。。*/
+        /*好吧,结果证明不能遗传,这也是一件好事,避免规则混乱。。。*/
+        /*aside em {color: blue}*/
+
+    </style>
+
+</head>
+<body>
+    <article>
+        <h1>Contextual selectors are <em>very</em> selective.</h1>
+        <p>This example shows how to target a <em>specific</em> tag.</p>
+    </article>
+    <aside>
+        <p>Contextual seletors are <em>very</em> useful!</p>
+    </aside>
+
+</body>
+</html>
