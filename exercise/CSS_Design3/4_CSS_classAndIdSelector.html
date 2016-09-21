@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ID和类选择符</title>
+
+    <style>
+        /*一般的标签设置*/
+        p {font-family: Helvetica, sans-serif; font-size: 1.2em;}
+
+        /*类选择器*/
+        .specialtext {font-style: italic;}
+
+        /*!!!重点 1: 标签带类选择器,使用一个点号.*/
+        p.specialtext {color: red;}
+
+        /*扩展标签带类选择器: 加上上下文选择器, 使用空格: 则使得空格前的标签带类选择器成为空格后的标签的父元素*/
+        /*也即是说它继承了p,specialtext,p.specialtext三者的样式,这四条都会对span标签产生影响*/
+        p.specialtext span {color: blue;}
+
+        .featured {font-size: 5em;}
+
+        /*!!!重点2: 多类选择器*/
+        /*(1)先给元素添加一个类,比如h1元素添加featured类,(2)设置多类选择器, 选择同时存在这两个类的元素*/
+        .specialtext.featured {color: cadetblue}
+
+
+        /*总结:
+        1) CSS中使用空格的, 表示的是选择存在"父/子"关系的元素, 对子元素进行设置样式, 且最终的样式继承父元素样式
+        2) .号本来用来指定类,CSS中使用.号的,表示的是标签带类元素,选择标签下的具有某个类的元素设置样式, 且最终的样式继承了 '标签的样式' + '类的样式'
+        3) .号本来用来指定类,CSS中使用多个.号的,表示选择同时存在多个类的元素,最终的样式继承这多个类,即 '类1的样式' + '类2的样式'
+
+        另类理解:
+        1).号表示 + 的意思, 选择同时存在 'class1'+'class2'+'...'的元素, 选中的这些元素的样式同时满足'class1'+'class2'+'...'的样式
+        2)空格表示父子的意思,选择父元素的子元素,选中的元素的样式满足所有的这些样式
+        */
+
+    </style>
+
+</head>
+<body>
+    <h1 class="specialtext featured">This is the heading with <span>same class</span> as the second paragraph</h1>
+
+    <p>This paragraph has no class</p>
+
+    <p class="specialtext">When a tag has a class attribute, you can target it <span>regardless of</span> its position in the hierarchy</p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择符</title>
+
+    <style>
+        /*选择带有属性值为title的img设置css*/
+        /*下面这句表示忽略title具体值,只要有title属性的img就行*/
+        img[title] {border: 2px solid blue;}
+        /*下面这句表示只选择title值为nylon的img*/
+        img[title="nylon"] {border: 5px solid red;}
+    </style>
+</head>
+<body>
+
+    <h1>Types of Guitars</h1>
+    <p>Guitars come in two main types: electric and acoustic.</p>
+    <h2>Acoustic Guitars</h2>
+    <img src="images/acoustic_nylon.jpg" title="nylon"/>
+    <img src="images/acoustic_steel.jpg" />
+    <p>Acoustic guitars have a large hollow body that projects the sound of the strings.</p>
+    <h3>Nylon String Acoustic Guitars</h3>
+
+</body>
+</html>
