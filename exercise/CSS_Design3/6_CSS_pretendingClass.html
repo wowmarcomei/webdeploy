@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS伪类</title>
+
+    <style>
+        /*伪类分两大种,第一大种为: UI伪类,第二大种为结构化伪类*/
+
+        /*
+        1.UI伪类:会在HTML元素处于某个状态时(如鼠标指针位于链接上),为该元素应用CSS样式
+        -----------------------------
+        1.1 链接伪类:
+            a-Link: 链接就在那里等着用户点击
+            a-visited: 用户此前点击过该链接
+            a-hover:鼠标指针正悬停在链接上
+            a-active: 链接正在被点击,鼠标还没有释放
+        1.2 Focus伪类:
+            e:focus{}: 注e表示h1,p,section,input等html标签,focus类表示鼠标点击时获得焦点
+        1.3 target伪类:
+            e:target{}: 注如果用户点击一个指向页面中其他元素的链接,则哪个元素就是target,可以用:target选中它
+        */
+
+        /*eg1:链接伪类*/
+        p a:link{color: blue}
+        p a:visited{color: blueviolet;}
+        p a:hover{color: darkgreen;}
+        p a:active{color: black;}
+
+        /*eg2: Focus伪类*/
+        input:focus{border:2px solid red;}
+
+        /*eg3: target伪类*/
+        #img1:target{border: 3px solid red;}
+        #img2:target{border: 4px solid green;}
+
+
+        /*
+        2.结构化伪类:结构化伪类可以根据标记的结构应用样式,比如根据某元素的父元素或前面的同胞元素是什么。
+        -----------------------------
+        2.1 :first-child和last-child代表同一组元素中的第一个元素和最后一个元素
+
+        /*
+        eg1:给下面的有序列表1的第一个和最后一个表设置CSS样式
+        */
+        ol.result li:first-child{
+            font-style: italic;
+            font-size: medium;
+            color: red;
+        }
+        ol.result li:nth-child(2){
+            font-size: 26px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <h1>Types of Guitars</h1>
+    <p>Guitars come in two main types: <a href="#img1"> electric </a> and <a href="#img2">acoustic</a>.</p>
+    <h2>Acoustic Guitars</h2>
+    <input type="text" name="myInput" placeholder="Please select the one you prefer." />
+    <img src="images/acoustic_nylon.jpg" id="img1" title="nylon"/>
+    <img src="images/acoustic_steel.jpg" id="img2" />
+    <p>Acoustic guitars have a large hollow body that projects the sound of the strings.</p>
+    <h3>Nylon String Acoustic Guitars</h3>
+
+    <ol class="result">
+        <li> This is the first list</li>
+        <li> This is the second list</li>
+        <li> This is the third list</li>
+        <li> This is the 4th list</li>
+        <li> This is the 5th list</li>
+        <li> This is the 6th list</li>
+    </ol>
+
+</body>
+</html>

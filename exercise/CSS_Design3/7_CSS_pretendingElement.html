@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素</title>
+
+    <style>
+        /*
+        伪元素就是若有若无的元素,重点关注几个常用的伪元素,包括first-letter,first-line,before和after
+        ---------------------------
+        1. e::first-letter
+        2. e::first-line
+        3. e::before
+        4. e::after
+        */
+        p.test::first-letter {
+            font-size: 300%;
+        }
+        p.age::before{
+            content: "age is: ";
+        }
+        p.age::after{
+            content: " years.";
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Types of Guitars</h1>
+
+    <p class="test">Acoustic guitars have a large hollow body that projects the sound of the strings.</p>
+    <p class="age">25</p>
+    <h3>Nylon String Acoustic Guitars</h3>
+
+</body>
+</html>
