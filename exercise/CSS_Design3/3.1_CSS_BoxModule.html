@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型</title>
+
+    <style>
+        body{
+            margin: 10px;
+        }
+        /*
+        1.下面给p指定width，指定了p这个盒子有多大，这个属性非常重要！！！直接影响到后面的外边距margin的设置！！！
+
+        2. margin会在垂直方向叠加，比如下面的p.test与p.age应用到下面的html场景的时候，第二个类为age的段落p与第一个类为test的段落p外边距并非
+        相隔100px+50px = 150px，而是使用最大的外边距100px.
+
+        3.外边距的单位：根据经验，为文本元素设置margin的时候通常混合使用单位，上下外边距使用em单位，这样就可以使得段间距随着字号变化而相应增大或者缩小
+        而左右边距使用像素单位px.
+        */
+
+        p {
+            font: 16px Helvetica sans-serif;
+            width: 220px;
+            border: 2px solid red;
+            background-color: #caebff
+        }
+        p.test {
+            margin: 7em 10px;
+            padding: 20px;
+        }
+        p.age {
+            margin: 10em 10px;
+            padding: 20px;
+        }
+
+        /*
+        总结：
+        盒子模型结论1：
+            没有设置width的元素始终会扩展到其父元素的宽度，比如上面的p元素没有设置width元素的话，则p的宽度与body的宽度一致。给该元素(p)添加水平边框的宽度(border-width)
+            内边距(pading左右值)和外边距（margin左右值）的话，会减少元素的width，减少的width即为水平边框，内边距，外边距之和。
+        盒子模型结论2：
+            设置了width的元素，添加水平border-width、左右方向的margin与padding时，元素的最终width也会增加。比如上面的例子p添加了width为220px.带标签类p.test
+            与p.age分别设置了左右的margin与padding为10px，则p.test/p.age修饰的段落p的width值为：220px+(10+20)*2=260px
+        */
+    </style>
+</head>
+<body>
+
+    <h1>Types of Guitars</h1>
+
+    <p class="test">Acoustic guitars have a large hollow body that projects the sound of the strings.</p>
+    <p class="age">This is the second paragraph, just show some thing for margin... hope it can help you to understand something</p>
+    <h3>Nylon String Acoustic Guitars</h3>
+
+</body>
+</html>
