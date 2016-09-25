@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio</title>
+    <style>
+        .btn{
+            /*display: block;*/
+            /*border: 1px solid red;*/
+        }
+    </style>
+</head>
+<body>
+
+
+        <input type="button" onclick="clickABC()" id="controlButton"  value="Play" />
+        <audio src = "tpjh.mp3" id="myMusic">
+            你的浏览器不支持播放这个音频
+            <!--<source src="tpjh.mp3">-->
+        </audio>
+
+
+    <script type="text/javascript">
+        <!--得到音频的ID-->
+        var a = document.getElementById("myMusic");
+        var buttonCon = document.getElementById("controlButton");
+        function clickABC() {
+            if(a.paused){
+                a.play();
+                buttonCon.value = "pause";
+            }else {
+                a.pause();
+                buttonCon.value = "play";
+            }
+        }
+    </script>
+
+</body>
+</html>
