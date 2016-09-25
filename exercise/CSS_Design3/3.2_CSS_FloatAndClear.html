@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动与清除</title>
+
+    <style>
+        /*eg1：*/
+        /*p{*/
+            /*!*设置非图片元素伪float属性的时候必须设置width值*!*/
+            /*float: left;*/
+            /*width: 200px;*/
+            /*margin: 0;*/
+            /*border: 1px solid red;*/
+        /*}*/
+        /*img{*/
+            /*float: left;*/
+            /*!*防止图片紧挨着文本，设置右边与下边的外边距*!*/
+            /*margin: 4px 4px 4px 4px;*/
+        /*}*/
+
+        /*eg2：*/
+        section{
+            border: 1px solid blue;
+            margin: 0 0 10px 0;
+            float: left;
+            width: 100%;
+        }
+        p{
+            margin: 0;
+        }
+        img{
+            float: left;
+        }
+        footer{
+            border: 1px solid red;
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+        <!--为了实现文本绕排图片的效果，必须先写图片再写文本-->
+        <img src="images/rubber_duck3.jpg" />
+        <p>It's fun to float.</p>
+    </section>
+
+    <footer>
+        Here is the footer elements that runs across the bottom of the page.
+    </footer>
+
+</body>
+</html>

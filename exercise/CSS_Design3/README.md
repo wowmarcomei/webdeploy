@@ -1,9 +1,11 @@
 # CSS 设计指南学习总结
 
-> 本文档为基于CSS设计指南-第三版的学习总结
+> 本文档为基于[CSS设计指南-第三版](https://www.amazon.cn/CSS%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97-%E8%8B%B1-Charles-Wyke-Smith/dp/B00M2DKZ1W/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1474695533&sr=1-1&keywords=CSS%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89)的学习总结
 
 ## 1.DOM模型
 DOM即 document object module，翻译过来就是文档对象模型，DOM是从浏览器的视角来观察页面中的元素及元素的属性，由此得出这个元素的家族树。简而言之，通过DOM可以确定元素之间的相互关系。
+
+> 注： 块状元素与行内元素的区别，block元素一般是文本元素如标题h,p,ol/ul/li等，在浏览器中垂直排列显示；inline元素一般是非文本元素如img，a,span等，是并排限制除非空间不够才换行
 
 ## 2.CSS工作原理
 
@@ -146,3 +148,25 @@ DOM即 document object module，翻译过来就是文档对象模型，DOM是从
             与p.age分别设置了左右的margin与padding为10px，则p.test/p.age修饰的段落p的width值为：220px+(10+20)*2=260px
         */
 ```
+
+### 3.2 浮动与清除
+
+> CSS创建浮动float的目的原本是为了实现文本绕排图片的效果，但是这个属性也可以实现多栏布局。
+
+**说得形象一点，当设置元素的属性为float的时候即是要求浏览器把该元素往上推，直到它碰到父元素的内边界**
+
+注意浮动非图片元素时，必须设置width，否则后果难以预料，图片之所以无所谓是因为它本身有默认的宽度width属性。
+
+### 3.3 定位
+> CSS布局的核心便是position属性，对元素应用这个属性，可以相对于它在常规文档流中的位置重新定位。position属性有四个值：`static`,`relative`,`absolute`,`fixed`
+
+1. 默认元素的position属性值为static，**`top/left的值对于static属性没有任何作`**，只用对下面三种场景有效
+2. 可以通过设置position属性值为relative，配合top/left属性设置相对位置，当设置top/left为负值的时候表示bottom/right.
+3. 可以通过设置position属性值为absolute，配合top/left属性设置绝对位置，绝对定位于上下文，默认这个上下文为顶层元素body。
+4. 可以通过设置position属性值为fixed，将元素固定在某处，可以配合top/left一起使用，其中使用比较多的场景是：网页菜单栏固定不动，即使浏览器上下滑动。
+
+> 注：非static的三种定位，均针对有相对定位的祖先进行定位，当其祖先没有相对定位，则最终找到body进行定位
+
+
+### 3.4 显示属性display和visibility
+所有元素都有显示属性display，可以使用display:inline将块状元素变为内联元素，也可以使用display:block将内联元素变为块状元素。visibility:hidden将会隐藏元素。

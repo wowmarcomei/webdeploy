@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS定位</title>
+    <style>
+        p#specialpara{
+            position: relative;
+            color: red;
+            /*利用top与left，配合position的相对值设置盒子中元素的位置，注意只有top与left，可以设置负值达到bottom与right的效果*/
+            top: -10px;
+            left: 20px;
+        }
+        div#outer{
+            /*position: relative;*/
+            border-top: 3px solid red;
+            width: 250px;
+            margin: 50px 40px;
+        }
+        div#inner{
+            position: relative;
+            top: 10px;
+            left: 20px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <p>First paragraph.</p>
+    <p>Second paragraph.</p>
+    <p id="specialpara"> Third paragraph (with ID).</p>
+    <p>Forth Paragraph.</p>
+    <div id="outer">
+        <div id="inner">
+            This is the text to illustrate position attribution.
+        </div>
+    </div>
+</body>
+</html>
