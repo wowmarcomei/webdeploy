@@ -170,3 +170,6 @@ DOM即 document object module，翻译过来就是文档对象模型，DOM是从
 
 ### 3.4 显示属性display和visibility
 所有元素都有显示属性display，可以使用display:inline将块状元素变为内联元素，也可以使用display:block将内联元素变为块状元素。visibility:hidden将会隐藏元素。
+
+## 4.布局
+> 总结：CSS3的display:table-cell容易实现且功能完善（想流动就流动，想固定就固定，各栏等高，且不需要内部div，但是需要注意的是它只适合IE7以上的浏览器）
