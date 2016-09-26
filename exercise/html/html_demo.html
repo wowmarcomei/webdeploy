@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5编排示例</title>
+    <style>
+        .navigation ul li{
+            float: left;        /*设置li元素浮动，使得其横向排列*/
+            list-style: none;   /*去掉前面的原点*/
+            margin: 0 5px 3px;  /*上下设置为0，5，左右设置为3*/
+            background: #CCCCCC;/*背景色*/
+            width: 100px;       /*宽度设置*/
+            line-height: 30px;  /*高度设置*/
+            /*padding: 10px 20px;*/
+
+        }
+        .navigation a {
+            display: block;      /*让链接a填满整个列表li*/
+            text-align: center;  /*字体设置为中心对齐*/
+        }
+        .navigation a:link{
+            color: black;background:#CCC;text-decoration:none;
+        }
+        .navigation a:visited{
+            color:#666;text-decoration:underline;
+        }
+        .navigation a:hover{
+            color:#FFF; font-weight:bold;text-decoration:underline;background:#F00;
+        }
+        .article{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>标题</h1>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">Javascript</a></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article class="article">
+        <hgroup>
+            <h1>文章标题</h1>
+            <h2>文章子标题</h2>
+            <p>文章正文</p>
+            <section>
+                <!--准备对评论部分进行设置CSS修饰样式，所以使用div承载-->
+                <div>
+                    <article>
+                        <h1>评论标题</h1>
+                        <p>评论内容</p>
+                    </article>
+                </div>
+            </section>
+        </hgroup>
+    </article>
+
+    <footer>
+        <small>版权所有@<a href="http://renshiziji.cn">认识自己坚持学习</a></small>
+    </footer>
+
+</body>
+</html>

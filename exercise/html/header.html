@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header元素</title>
+    <!--
+    说明：本例子演示了编程header元素及其内部一些元素的使用说明
+
+    -->
+    <style>
+        .navigation ul li {
+            float: left;         /*设置li元素浮动，使得其横向排列*/
+            list-style: none;    /*去掉前面的原点*/
+            margin: 0 3px;       /*上下设置0，左右为3px*/
+            width: 100px;
+            background: #CCCCCC;
+            line-height: 30px;
+        }
+        .navigation a{
+            display: block;      /*让链接a填满整个列表li*/
+            text-align: center;  /*字体设置为中心对齐*/
+        }
+        .navigation a:link{
+            color:#666;background:#CCC;text-decoration:none;
+        }
+        .navigation a:visited{
+            color:#666;text-decoration:underline;
+        }
+        .navigation a:hover{
+            color:#FFF; font-weight:bold;text-decoration:underline;background:#F00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>IT最新技术</h1>
+        <a href="http://renshiziji.cn">认识自己 坚持学习</a>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">Javascript</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
