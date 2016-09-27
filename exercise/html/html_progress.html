@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Progress and Meter</title>
+</head>
+<body>
+    <section>
+        <h2>这是一个progressbar示例</h2>
+        <!--注意这里用span标签承载progress的值，后续更新它的显示值-->
+        <p>完成的百分比：<progress style="background-color: bisque" id="myProgress" max="100"><span>0</span></progress></p>
+        <input type="button" onclick="caculate_progress()" value="计算">
+    </section>
+
+    <section>
+        <meter value="10" min="0" max="100" low="10" high="80" optimum="70"></meter>
+    </section>
+    <script>
+        function caculate_progress() {
+            var i = 0;
+            function thread_one() {
+                if(i<=100){
+                    i++;
+                    update_progress(i);
+                }
+            }
+            setInterval(thread_one,100);
+
+        }
+        function update_progress(newValue) {
+            var progress = document.getElementById("myProgress");
+            progress.value = newValue;
+//            注意这里通过更新span的内容来更新progress显示
+            document.getElementsByTagName("span")[0].textContent = newValue;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Input</title>
+</head>
+<body>
+
+    <!--利用表单form来测试input的url属性-->
+    <form>
+        <input name = "url" type="url" value="http://renshiziji.cn">
+        <input id = "myInput" type="submit" value="submit">
+    </form>
+
+    <br/>
+    <!--利用表单来测试input的email属性-->
+    <form>
+        <input name="email" type="email" value="wowmarcomei@gmail.com">
+        <input name="submit" type="submit" value="submit">
+    </form>
+
+    <br/>
+    <input name="date" type="date" value="2016-09-26">
+    <input name="time" type="time" value="09:20">
+    <input name="datetime" type="datetime" value="21:23">
+    <input name="datetime" type="datetime-local" value="21:23">
+    <input name="month" type="month" value="2016-09">
+    <input name="week" type="week" value="">
+    <input name="number" type="number" value="12">
+
+
+
+
+    <br/>
+    <br/>
+    <!--简易web计算器-->
+    <form>
+        <input id="num1" type="number" value="1">
+        +
+        <input id="num2" type="number" value="1">
+        =
+        <input name="result" type="number" id="result" value="1">
+        <input name="caculate" type="button" onclick="sum()" value="求和">
+
+    </form>
+
+    <script>
+        function sum() {
+            var num1 = document.getElementById("num1").valueAsNumber;
+            var num2 = document.getElementById("num2").valueAsNumber;
+            document.getElementById("result").valueAsNumber = num1+num2;
+        }
+    </script>
+
+    <!--range类型-->
+    <input type="range" value="10" min="5" max="200" step="5">
+    <!--search类型-->
+    <input type="search">
+    <!--color类型-->
+    <input type="color">
+
+    <!--range与output示例-->
+    <br/><br/>
+    <form>
+        <input id="range" type="range" value="10" min="0" max="230" step="5" onchange="change_range()">
+        <!--output标签-->
+        <output id="output">10</output>
+    </form>
+    <script>
+        function change_range() {
+            var myRange = document.getElementById("range").value;
+            document.getElementById("output").value = myRange;
+        }
+    </script>
+
+</body>
+</html>

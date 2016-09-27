@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Range示例</title>
+</head>
+<body>
+    <div id="myDiv" style="color: red">
+        这段文字是准备用来测试删除的
+    </div>
+    <input type="button" value="点击删除" onclick="deleteRange()">
+
+    <script>
+        function deleteRange() {
+            var div = document.getElementById("myDiv");
+            var textNode = div.firstChild;
+            var rangeObj = document.createRange();
+            rangeObj.setStart(textNode,1);
+            rangeObj.setEnd(textNode,4);
+            rangeObj.deleteContents();
+        }
+    </script>
+</body>
+</html>
