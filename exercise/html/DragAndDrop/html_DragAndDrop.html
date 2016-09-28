@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖放图片</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+        }
+        #box1{
+            background-color: #CCCCCC;
+            float: left;
+        }
+        #box2{
+            float: left;
+            background-color: bisque;
+        }
+        .img{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        #msg{
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1" class="box">
+
+    </div>
+    <div id="box2" class="box">
+
+    </div>
+    <img src="boy.jpg" class="img" id="img1">
+
+    <!--测试用，用于显示拖拽事件的信息-->
+    <div id="msg">
+
+    </div>
+
+    <script src="DragAndDrop.js"></script>
+</body>
+</html>
