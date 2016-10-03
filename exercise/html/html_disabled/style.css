@@ -1,0 +1,6 @@
+input[type="text"]:disabled{
+    background-color: #CCCCCC;
+}
+input[type="text"]:enabled{
+    background-color: bisque;
+}

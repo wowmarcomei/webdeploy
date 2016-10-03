@@ -1,0 +1,24 @@
+body{
+    margin: 10px auto;
+    background-color: #CCCCCC;
+    width: 70%;
+    height: auto;
+}
+.image{
+    border: 1px solid darkgray;
+    float: left;
+    margin: 5px;
+    padding: 2px;
+    width: auto;
+    height: auto;
+}
+
+img{
+    margin: 5px;
+    width: 150px;
+}
+.imagetext{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
