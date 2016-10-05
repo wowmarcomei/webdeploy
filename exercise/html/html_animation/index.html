@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation动画</title>
+    <style>
+        div{
+            background-color: #666666;
+        }
+        /*定义一个关键帧*/
+        @-webkit-keyframes mycolor {
+            /*开始帧*/
+            0%{ background-color: red}
+            10%{ background-color: green}
+            50%{ background-color: gray}
+            70%{ background-color: goldenrod}
+            /*结束帧*/
+            100%{ background-color: red}
+        }
+        /*使用时引用该关键帧*/
+        div:hover{
+            -webkit-animation: mycolor 5s linear;
+        }
+    </style>
+</head>
+<body>
+
+<!--与transition不同的是，animation主要通过关键帧来设置动画效果-->
+
+    <div>
+        示例文字
+        示例文字
+        示例文字
+        示例文字
+    </div>
+</body>
+</html>

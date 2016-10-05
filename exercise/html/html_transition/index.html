@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画效果</title>
+    <style>
+        div {
+            background-color: red;
+            color: black;
+            width: 200px;
+            /*transition: background-color 2s linear;   !*表示对背景颜色这个属性进行动画显示的过渡效果：2s，方式为linear(匀速变化），下面的hover指定属性值的修改*!*/
+            transition: background-color 2s linear, color 2s linear, width 2s linear; /*表示对多个属性值进行动画显示过渡*/
+        }
+        div:hover{
+            background-color: #666666;
+            color: orange;
+            width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!--transition: property times timing-function -->
+    <div>
+        示例文字
+    </div>
+</body>
+</html>
