@@ -1,0 +1,41 @@
+.learn-title-nav{
+    line-height: 70px;  /*直接设置行高，可以不用设置margin,padding方式*/
+}
+
+.learn-title-nav a{
+    text-decoration: none; /*去掉下划线*/
+    color: #747474;        /*改链接默认的蓝色为灰色*/
+}
+.learn-title-des{
+    background-image: url("./images/learnCourseVideoTop.jpg");  /*设置背景图片*/
+    height: 100px;    /*设置固定行高*/
+}
+.learn-title-des .des{
+    font-size: 20px;  /*设置字体大小*/
+    color: #FFFFFF;   /*设置字体颜色*/
+    padding: 13px 0 0 26px;  /*设置内边距*/
+}
+
+.learn-title-des .content{
+    color: #929191;
+    padding: 6px 26px 0 26px;
+}
+
+.learn-course{
+    width: 1000px;
+    height: 560px;
+}
+
+.learn-video-info{
+    background-color: black;
+    height: 80px;
+}
+
+.learn-video-info .left{
+    padding-left: 20px;
+    padding-top: 30px;
+}
+.learn-video-info .left a{
+    color: #1abc9c;
+    text-decoration: none;
+}
