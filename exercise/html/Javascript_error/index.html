@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript抛出异常</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <input type="button" onclick="demo()" value="点击">
+
+    <script>
+        function demo() {
+            try{
+                var e = document.getElementById("txt").value;
+                if (e == "")
+                    //抛出自定义异常
+                    throw "请输入something."
+            }catch (err){
+                //捕获异常
+                alert(err);
+            }
+        }
+    </script>
+</body>
+</html>
