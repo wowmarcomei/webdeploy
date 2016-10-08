@@ -32,10 +32,61 @@
 }
 
 .learn-video-info .left{
-    padding-left: 20px;
-    padding-top: 30px;
+    margin-top: 10px;
+    padding: 20px 30px;
+    float: left;
 }
 .learn-video-info .left a{
     color: #1abc9c;
     text-decoration: none;
+    font-size: 15px;
+    float: left;
+}
+.learn-video-info .left .download{
+    /*margin-right: 40px;*/
+    float: left;
+}
+.learn-video-info .left .shift{
+    float: left;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.learn-video-info .right{
+    float: right;
+    position: relative;
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.learn-video-info .right .page{
+    margin-left: 80px;
+    margin-right: 80px;
+    float: left;
+    overflow: hidden;
+}
+
+.learn-video-info .right .page a {
+
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    background: #1d1d1d;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    margin: 0 6px;
+    position: relative;
+    line-height: 40px;
+    text-decoration: none;
+
+}
+.learn-video-info .right .page a:hover {
+
+    border: solid 1px #1abc9c;
+    width: 38px;    /* 40px -1px -1px */
+    height: 38px;   /* 40px -1px -1px */
 }
