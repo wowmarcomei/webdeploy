@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+    <script>
+        //1st case
+//        room = new Object();
+//        room.width = 200;
+//        room.height = 300;
+//        alert("room width:"+room.width+"\n room height:"+room.height);
+
+        //2nd case
+//        room = {width:"300",height:"200",name:"marco",newproperty:"what?"};
+//        alert(room.newproperty);
+
+        //3th case,通过函数创建类,初始化带两个软参数width与height，
+        function room(width, height) {
+            //在函数内部设置两个参数_width与_height通过this指引获得，将函数形参传递给他们
+            this._width = width;
+            this._height = height;
+        }
+        //注意，此处的函数room必须加new,表明是对象的构造函数（初始化函数），并非一般函数
+        myRoom = new room(200,300);
+        document.write(myRoom._width);
+
+    </script>
+</body>
+</html>

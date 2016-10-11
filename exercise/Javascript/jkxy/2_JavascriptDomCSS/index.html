@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="testDiv" onmouseout="testMouneOut()" onmouseover="testMouseOver()">
+
+</div>
+
+<script type="text/javascript">
+    function testMouseOver() {
+        document.getElementById("testDiv").style.backgroundColor = "red";
+        document.getElementById("testDiv").style.width = "200px";
+    }
+    function testMouneOut() {
+        document.getElementById("testDiv").style.backgroundColor = "grey";
+        document.getElementById("testDiv").style.width = "300px";
+    }
+</script>
+</body>
+</html>

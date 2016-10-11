@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event And DOM</title>
+</head>
+<body>
+
+<!--
+onClick | 单击事件
+onMouseOver | 鼠标经过事件
+onMouseOut | 鼠标移出事件
+onChange | 文本内容改变事件
+onSelect | 文本框选中文本事件
+onFocus | 光标聚集事件
+onBlur | 移开光标事件
+onLoad | 网页加载事件
+onUnload | 关闭网页事件
+-->
+
+<!--
+#### DOM操作HTML元素
+1. 改变HTML输出流
+> 注：绝对不要在文档加载完成之后使用document.write(),zhe'hui这会覆盖该文档
+2. 寻找元素
+>- 通过id找到该元素
+>- 通过标签名找到HTML元素
+3. 改变HTML内容：
+>使用属性:innerHTML
+4. 改变HTML属性：
+>使用attribute,比如img的src属性, a标签的href标签等等
+-->
+
+    <form style="margin: 50px">
+        <input type="button" value="点击" style="width: 80px; height: 40px" onclick="testOnclick()">
+        <input type="text" onfocus="testOnFocus()">
+    </form>
+    <div>
+        <img src="keep_in_order_2.jpg" alt="testimg" id="testImg" >
+    </div>
+
+    <div style="width: 60px; height: 60px; background-color: aquamarine" onmouseover="testOnMouseOver(this)" onmouseout="testOnMouseOut(this)">
+
+    </div>
+
+    <script>
+        function testOnclick() {
+            alert("这是鼠标点击事件!");
+
+            //修改属性值
+            document.getElementById("testImg").src = "123.jpg";
+        }
+        function testOnMouseOver(ooj) {
+            ooj.innerHTML = "Enter...";
+        }
+        function testOnMouseOut(ooj) {
+            ooj.innerHTML = "Out..."
+        }
+        function testOnChange() {
+            alert("文本框内容改变事件发生啦");
+        }
+        function testOnSelect() {
+            alert("选中文本框中文本啦!");
+        }
+        function testOnFocus() {
+            alert("focus on 文本框啦!");
+        }
+    </script>
+
+</body>
+</html>
