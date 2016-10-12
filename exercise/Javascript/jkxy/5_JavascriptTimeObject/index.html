@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间对象</title>
+</head>
+<body onload="startTime()">
+    <div id="timeDis"></div>
+
+    <script>
+        function startTime() {
+            //注意：使用函数创建对象的时候，必须使用new进行构造函数申明
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = changeFormat(m);
+            s = changeFormat(s);
+            var time = h+":"+m+":"+s;
+            document.getElementById("timeDis").innerHTML = time;
+            //1000ms执行一次函数startTime,进行回调
+            setTimeout(function(){
+                startTime();
+            },1000);
+        }
+
+        function changeFormat(i) {
+            if(i<10){
+                i = "0"+i;
+            }
+            return i;
+        }
+
+    </script>
+</body>
+</html>
