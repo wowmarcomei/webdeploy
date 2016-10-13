@@ -5,9 +5,12 @@
     <title>时间对象</title>
 </head>
 <body onload="startTime()">
+    <button id="btn" onclick="stopTime()">点击</button>
     <div id="timeDis"></div>
-
+    <div id="timeDiv"></div>
     <script>
+
+        //示例代码1
         function startTime() {
             //注意：使用函数创建对象的时候，必须使用new进行构造函数申明
             var today = new Date();
@@ -29,6 +32,23 @@
                 i = "0"+i;
             }
             return i;
+        }
+
+//////////////////////////////////////////////////////////
+        //示例代码2
+        function getTime() {
+            var d = new Date();
+            var t = d.toLocaleTimeString();
+            document.getElementById("timeDiv").innerHTML = t;
+        }
+
+        //使用setInterval函数重复执行getTime函数，间隔时间为1s
+        var myTime = setInterval(function () {
+            getTime();
+        },1000);
+
+        function stopTime() {
+            clearInterval(myTime);
         }
 
     </script>

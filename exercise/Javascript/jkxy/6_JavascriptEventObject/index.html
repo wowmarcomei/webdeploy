@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+
+    <script>
+//        var btn = document.getElementById("btn");
+//        btn.addEventListener("click",function (e) { //注：重要！！！监听函数会将事件句柄作为函数形参传入进来
+//            alert(e.type);
+//            alert(e.target);
+//            alert(e.currentTarget);
+//        },true);
+
+        var btn = document.getElementById("btn");
+
+        btn.onclick = function () {
+            alert("btn clicked");
+            event.stopPropagation();    //阻止事件冒泡
+        };
+
+        window.onclick = function () {
+            alert("window clicked");
+        };
+
+    </script>
+</body>
+</html>
