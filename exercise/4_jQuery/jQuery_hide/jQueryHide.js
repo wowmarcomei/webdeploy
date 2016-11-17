@@ -25,5 +25,18 @@ $("document").ready(function () {
         }
     });
 
+    /**
+     * 下面的这段是为了使用jQuery创建几个div，然后实现点击删除的效果
+     *
+    **/
+    for(var i = 0; i<5; i++){
+        $("<div>").appendTo(document.body);  //注意这里加元素的时候需要加<>符号。
+    }
+
+    $("div").bind("click",function () {
+        $(this).hide(2000,function () {
+            $(this).remove();
+        });
+    });
 
 });
