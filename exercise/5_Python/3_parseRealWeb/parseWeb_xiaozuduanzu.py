@@ -33,6 +33,7 @@ def parse_attractions_byHeaders(url,data=None):
     titles = soup.select('span.result_title.hiddenTxt')
     prices = soup.select('span.result_price')
     images = soup.select('img.lodgeunitpic')
+
     for title, price, image in zip(titles,prices,images):
         data={
             'title': title.get_text(),
