@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import time
 
+'''
 url = 'http://bj.58.com/pbdn/0/'
 
 def get_page(url,data=None):
@@ -21,6 +22,19 @@ def get_page(url,data=None):
         print(data)
 
 get_page(url)
+'''
 
+url = 'http://zhuanzhuan.58.com/detail/802885988933435400z.shtml'
+wb_data = requests.get(url)
+soup = BeautifulSoup(wb_data.text,'lxml')
+time.sleep(4)
+title = soup.select('h1.info_titile')
+price = soup.select('span.price_now')
+area = soup.select('.palce_li span')
 
-
+data = {
+    'title': title[0].text,
+    'price': price[0].text,
+    'area': area[0].text
+}
+print(data)
