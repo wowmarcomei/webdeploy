@@ -43,7 +43,7 @@ def select_mongodb():
     注: $lt/$lte/$gt/$gte/$ne，依次等价于</<=/>/>=/!=。（l表示less g表示greater e表示equal n表示not  ）
     :return:
     '''
-    for item in sheet_tab.find({'words':{'$ne':0}}):
+    for item in sheet_tab.find({'words':{'$gt':1,'$lt':5}}): #1<value<5
         print(item)
 
 select_mongodb()
