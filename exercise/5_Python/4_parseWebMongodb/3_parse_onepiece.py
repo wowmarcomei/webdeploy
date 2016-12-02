@@ -39,7 +39,7 @@ def dl_images(chapter,img_urls):
     subPath = path + str(chapter) + '/'
     isExists = os.path.exists(subPath)
     if not isExists:
-        print('create the path...')
+        print('create the path: {}...'.format(subPath))
         os.mkdir(subPath)
     else:
         print('the path already exsiting ...')
