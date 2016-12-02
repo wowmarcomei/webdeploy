@@ -3,7 +3,8 @@ import requests
 import time
 import pymongo
 import urllib.request
-path = '/Users/meixuhong/aaa'
+import os
+path = '/Users/meixuhong/OnePiece/'
 
 # ================================== 设计数据库 ====================================
 client = pymongo.MongoClient('localhost',27017)
@@ -23,15 +24,31 @@ def parseMultiplePages(chapter,page_num):
             data = {
                 'img': img.get('src')
             }
-            onepiece_pic.insert_one(data)
+            print(data)
+            # onepiece_pic.insert_one(data)
+            img_urls.append(data['img'])
+    print('img_urls is a list as:',img_urls)
+    return img_urls
 
 # 837话的前16页
-parseMultiplePages(837,16)
+# parseMultiplePages(837,16)
 
-# def dl_image(url):
-#     urllib.request.urlretrieve(url,path + url.split('/')[-2] + url.split('/')[-1])
-#     print('Done')
-#
-# #
-# for url in get_image_url(10):
-#     dl_image(url)
+# ================================== 下载漫画并命名 ==================================
+def dl_images(chapter,img_urls):
+    #============================判断并创建目录===============================
+    subPath = path + str(chapter) + '/'
+    isExists = os.path.exists(subPath)
+    if not isExists:
+        print('create the path...')
+        os.mkdir(subPath)
+    else:
+        print('the path already exsiting ...')
+    # ============================判断并创建目录===============================
+
+    for i in range(1,len(img_urls)+1):
+        # 使用urllib.request.urlretrieve(url, fine_path_name)下载文件
+        urllib.request.urlretrieve(img_urls[i-1],subPath+str(i)+'_'+img_urls[i-1].split('/')[-1])
+        print('\n{} downloaded and has been named as {}.\n'.format(img_urls[i-1],subPath+str(i)+'_'+img_urls[i-1].split('/')[-1]))
+
+dl_images(846,parseMultiplePages(846,18))
+
