@@ -50,5 +50,5 @@ def dl_images(chapter,img_urls):
         urllib.request.urlretrieve(img_urls[i-1],subPath+str(i)+'_'+img_urls[i-1].split('/')[-1])
         print('\n{} downloaded and has been named as {}.\n'.format(img_urls[i-1],subPath+str(i)+'_'+img_urls[i-1].split('/')[-1]))
 
-dl_images(846,parseMultiplePages(846,18))
+dl_images(847,parseMultiplePages(847,18))
 
