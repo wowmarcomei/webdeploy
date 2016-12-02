@@ -10,33 +10,6 @@ client = pymongo.MongoClient('localhost',27017)
 onepiece = client['onepiece']
 onepiece_pic = onepiece['onepiece_pic']
 
-
-
-# ================================== 抓取单页数据 ==================================
-def parseSinglePage(to_page_):
-    url = 'http://manhua.fzdm.com/2/837/index_{}.html'.format(to_page_)
-    wb_data = requests(url)
-    soup = BeautifulSoup(wb_data.text,'lxml')
-    # titles = soup.select('#mh > h1')
-    imgs = soup.select('#mhpic').get('src')
-    print(imgs,url.split('/'),sep='\n================\n')
-
-    #
-    # for i in imgs:
-    #     img_urls.append(i.get('src'))
-    #
-    # print((len(img_urls)), 'images shall be downloaded!')
-
-    # urllib.request.urlretrieve(imgs,)
-
-
-# def dl_image(url):
-#     urllib.request.urlretrieve(url,path + url.split('/')[-2] + url.split('/')[-1])
-#     print('Done')
-#
-# #
-# for url in get_image_url(10):
-#     dl_image(url)
 # ================================== 抓取多页数据 ==================================
 def parseMultiplePages(chapter,page_num):
     img_urls = []
@@ -50,8 +23,15 @@ def parseMultiplePages(chapter,page_num):
             data = {
                 'img': img.get('src')
             }
-            print(data)
+            onepiece_pic.insert_one(data)
 
 # 837话的前16页
 parseMultiplePages(837,16)
 
+# def dl_image(url):
+#     urllib.request.urlretrieve(url,path + url.split('/')[-2] + url.split('/')[-1])
+#     print('Done')
+#
+# #
+# for url in get_image_url(10):
+#     dl_image(url)
