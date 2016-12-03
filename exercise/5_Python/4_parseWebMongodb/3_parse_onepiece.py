@@ -15,7 +15,7 @@ onepiece_pic = onepiece['onepiece_pic']
 def parseMultiplePages(chapter,page_num):
     img_urls = []
     for page_num in range(1,page_num+1):
-        time.sleep(4)
+        time.sleep(2)
         wb_data = requests.get('http://manhua.fzdm.com/2/{}/index_{}.html'.format(chapter,page_num))
         soup = BeautifulSoup(wb_data.text,'lxml')
         imgs = soup.select('div#mh > li > a > img')
@@ -55,4 +55,4 @@ def dl_chapters(chapter_from_,chapter_to_):
     for i in range(chapter_from_ , chapter_to_ + 1):
         dl_images(i,parseMultiplePages(i,18))
 
-dl_chapters(800,848)
+dl_chapters(832,848)
