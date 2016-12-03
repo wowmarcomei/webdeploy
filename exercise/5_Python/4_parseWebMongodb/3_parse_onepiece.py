@@ -35,7 +35,7 @@ def parseMultiplePages(chapter,page_num):
 
 # ================================== 下载漫画并命名 ==================================
 def dl_images(chapter,img_urls):
-    #============================判断并创建目录===============================
+    #==判断并创建目录==
     subPath = path + str(chapter) + '/'
     isExists = os.path.exists(subPath)
     if not isExists:
@@ -43,12 +43,16 @@ def dl_images(chapter,img_urls):
         os.mkdir(subPath)
     else:
         print('the path already exsiting ...')
-    # ============================判断并创建目录===============================
+    # ==判断并创建目录==
 
     for i in range(1,len(img_urls)+1):
         # 使用urllib.request.urlretrieve(url, fine_path_name)下载文件
         urllib.request.urlretrieve(img_urls[i-1],subPath+str(i)+'_'+img_urls[i-1].split('/')[-1])
         print('\n{} downloaded and has been named as {}.\n'.format(img_urls[i-1],subPath+str(i)+'_'+img_urls[i-1].split('/')[-1]))
 
-dl_images(847,parseMultiplePages(847,18))
+# ================================== 下载多话漫画 ==================================
+def dl_chapters(chapter_from_,chapter_to_):
+    for i in range(1,chapter_to_ - chapter_from_ + 1):
+        dl_images(i,parseMultiplePages(i,18))
 
+dl_chapters(800,848)
