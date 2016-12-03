@@ -52,7 +52,7 @@ def dl_images(chapter,img_urls):
 
 # ================================== 下载多话漫画 ==================================
 def dl_chapters(chapter_from_,chapter_to_):
-    for i in range(1,chapter_to_ - chapter_from_ + 1):
+    for i in range(chapter_from_ , chapter_to_ + 1):
         dl_images(i,parseMultiplePages(i,18))
 
 dl_chapters(800,848)
