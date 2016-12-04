@@ -6,7 +6,7 @@ import pymongo
 client = pymongo.MongoClient('localhost',27017)
 tongcheng = client['tongcheng']
 tongcheng_url_list = tongcheng['tongcheng_url_list']
-tongcheng_items_info = tongcheng['tongcheng_item_info']
+tongcheng_items_info = tongcheng['tongcheng_items_info']
 
 # 爬虫1: 查询某个频道的第几页的所有商品的链接,存进数据库
 def get_links_from(channel, pages, who_sells=0):
@@ -48,6 +48,7 @@ def get_item_info(url):
 
     if no_longer_exsit:
         pass
+        print("pass...\n")
     else:
         titles = soup.select('div.col_sub.mainTitle > h1')[0].text #soup.select返回的是一个列表
         times = soup.select('ul.mtit_con_left.fl > li.time')[0].text

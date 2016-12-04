@@ -32,11 +32,11 @@ if __name__ == '__main__':
 
 
     #查询前100条数据,单线程方法
-    # query_items(100)
+    query_items(100)
 
     #多线程查询数据,查询前100条数据
-    pool = Pool()
-    pool.map(get_item_info, query_mongodb(100))
+    # pool = Pool()
+    # pool.map(get_item_info, query_mongodb(100))
 
 
 
