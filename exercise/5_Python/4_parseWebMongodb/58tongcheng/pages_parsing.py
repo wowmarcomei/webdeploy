@@ -6,7 +6,7 @@ import pymongo
 client = pymongo.MongoClient('localhost',27017)
 tongcheng = client['tongcheng']
 tongcheng_url_list = tongcheng['tongcheng_url_list']
-tongcheng_item_info = tongcheng['tongcheng_item_info']
+tongcheng_items_info = tongcheng['tongcheng_item_info']
 
 # 爬虫1: 查询某个频道的第几页的所有商品的链接,存进数据库
 def get_links_from(channel, pages, who_sells=0):
@@ -54,9 +54,9 @@ def get_item_info(url):
         prices = soup.select('div.su_con > span.price.c_f50')[0].text
         #下面这句表示如果在soup中找到了span标签且其class属性为c_25d的话就填写areas的值,否则为空,
         #注:stripped_strings函数比较text函数更高级,会去除一些空格符号
-        areas = list(soup.select('.c_25d a'))[-1].stripped_strings if soup.find_all('span','c_25d') else None
+        areas = list(soup.select('.c_25d a')[-1].stripped_strings) if soup.find_all('span','c_25d') else None
         # 插入数据库
-        tongcheng_item_info.insert_one({'title': titles, 'price': prices, 'time': times, 'area': areas, 'url': url})
+        tongcheng_items_info.insert_one({'title': titles, 'price': prices, 'time': times, 'area': areas, 'url': url})
         print({'title': titles, 'price': prices, 'time': times, 'area': areas, 'url': url})
 
 

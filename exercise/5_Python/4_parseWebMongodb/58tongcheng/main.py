@@ -1,6 +1,6 @@
 from multiprocessing import Pool
 from channel_extact import channel_list
-from pages_parsing  import get_links_from,get_item_info, tongcheng_url_list,tongcheng_item_info,client,tongcheng
+from pages_parsing  import get_links_from,get_item_info, tongcheng_url_list,client,tongcheng
 
 
 def get_all_links_from(channel):
@@ -29,10 +29,14 @@ def query_items(numbers):
         get_item_info(query_mongodb(numbers)[i-1])
 
 if __name__ == '__main__':
-    # pool = Pool()
-    # pool.map(get_all_links_from,channel_list.split())
-    #查询前100条数据
-    query_items(100)
+
+
+    #查询前100条数据,单线程方法
+    # query_items(100)
+
+    #多线程查询数据,查询前100条数据
+    pool = Pool()
+    pool.map(get_item_info, query_mongodb(100))
 
 
 
