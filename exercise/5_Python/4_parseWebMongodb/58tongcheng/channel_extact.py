@@ -13,7 +13,7 @@ def extract_channel(url):
         page_url = url_host + link.get('href')
         print(page_url)
 
-extract_channel(start_url)
+# extract_channel(start_url)
 
 # ============================= 将得到的商品类别的列表直接赋值给python的列表变量 =============================
 channel_list = '''

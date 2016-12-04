@@ -41,19 +41,46 @@ def get_item_info(url):
     wb_data = requests.get(url)
     time.sleep(2)
     soup = BeautifulSoup(wb_data.text,'lxml')
-    # soup.find返回tag列表eg:[<title>The Dormouse's story</title>]
-    no_longer_exsit = '404' in soup.find('script',type='text/javascript').get('src').split('/')
+    # soup.find返回tag列表eg:[<title>The Dormouse's story</title>],
+    # 通过观察发现,当页面出现noinfotishi时表示页面不存在商品了,即len()非空的的话表示页面商品不存在
+    no_longer_exsit = len(soup.find_all('div',class_='noinfotishi'))
+    # print(no_longer_exsit)
+
     if no_longer_exsit:
         pass
     else:
         titles = soup.select('div.col_sub.mainTitle > h1')[0].text #soup.select返回的是一个列表
         times = soup.select('ul.mtit_con_left.fl > li.time')[0].text
         prices = soup.select('div.su_con > span.price.c_f50')[0].text
-        #下面这句表示如果在soup中找到了span标签且其class属性为c_25d的话就填写areas的值,否则为空
-        areas = list(soup.select('.c_25d a'))[-1].text if soup.find_all('span','c_25d') else None
+        #下面这句表示如果在soup中找到了span标签且其class属性为c_25d的话就填写areas的值,否则为空,
+        #注:stripped_strings函数比较text函数更高级,会去除一些空格符号
+        areas = list(soup.select('.c_25d a'))[-1].stripped_strings if soup.find_all('span','c_25d') else None
         # 插入数据库
         tongcheng_item_info.insert_one({'title': titles, 'price': prices, 'time': times, 'area': areas, 'url': url})
         print({'title': titles, 'price': prices, 'time': times, 'area': areas, 'url': url})
 
 
-# get_item_info('http://bj.58.com/shouji/27938628086735x.shtml')
+# get_item_info('http://bj.58.com/iphonesj/0/pn100/')
+
+##############################################################
+##############测试find()函数与find_all()函数####################
+# html_doc = """
+# <html><head><title>The Dormouse's story</title></head>
+# <body>
+# <p class="title"><b>The Dormouse's story</b></p>
+#
+# <p class="story">Once upon a time there were three little sisters; and their names were
+# <a href="http://example.com/elsie" class="sister" id="link1">Elsie</a>,
+# <a href="http://example.com/lacie" class="sister" id="link2">Lacie</a> and
+# <a href="http://example.com/tillie" class="sister" id="link3">Tillie</a>;
+# and they lived at the bottom of a well.</p>
+#
+# <p class="story">...</p>
+# <div class="noinfotish">很抱歉，没有找到相关信息</div>
+# """
+# soup_test = BeautifulSoup(html_doc, 'lxml')
+# a=soup_test.find_all("div","noinfotishi")
+# if len(a):
+#     print('404')
+# else:
+#     print('!404')
