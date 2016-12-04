@@ -51,8 +51,9 @@ def get_item_info(url):
         prices = soup.select('div.su_con > span.price.c_f50')[0].text
         #下面这句表示如果在soup中找到了span标签且其class属性为c_25d的话就填写areas的值,否则为空
         areas = list(soup.select('.c_25d a'))[-1].text if soup.find_all('span','c_25d') else None
-
-    print('titles: {}.\n*********\ntimes: {}.\n*********\nprices: {}.\n*********\nareas: {}.\n*********\n'.format(titles,times,prices,areas))
+        # 插入数据库
+        tongcheng_item_info.insert_one({'title': titles, 'price': prices, 'time': times, 'area': areas, 'url': url})
+        print({'title': titles, 'price': prices, 'time': times, 'area': areas, 'url': url})
 
 
 # get_item_info('http://bj.58.com/shouji/27938628086735x.shtml')

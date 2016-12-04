@@ -335,3 +335,5 @@ channel_list = '''
     http://bj.58.com/weixing/
     http://bj.58.com/qitatiaozao/
 '''
+
+# print(channel_list.split())
