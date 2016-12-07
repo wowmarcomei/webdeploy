@@ -10,19 +10,19 @@ ganjidb = client['ganjidb']
 ganji_url_list = ganjidb['ganji_url_list']
 ganji_item_info = ganjidb['ganji_item_info']
 
-headers  = {
-    'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36',
-    'Connection':'keep-alive'
-}
-
-# http://cn-proxy.com/
-proxy_list = [
-    'http://117.177.250.151:8081',
-    'http://111.85.219.250:3129',
-    'http://122.70.183.138:8118',
-    ]
-proxy_ip = random.choice(proxy_list) # 随机获取代理ip
-proxies = {'http': proxy_ip}
+# headers  = {
+#     'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36',
+#     'Connection':'keep-alive'
+# }
+#
+# # http://cn-proxy.com/
+# proxy_list = [
+#     'http://117.177.250.151:8081',
+#     'http://111.85.219.250:3129',
+#     'http://122.70.183.138:8118',
+#     ]
+# proxy_ip = random.choice(proxy_list) # 随机获取代理ip
+# proxies = {'http': proxy_ip}
 
 
 # 爬虫1: 查询某个频道的第几页的所有商品的链接,存进数据库
