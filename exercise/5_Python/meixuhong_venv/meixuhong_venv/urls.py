@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from ganji.views import index
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^index/', index), #使用正则表达式将匹配到index的网址为第二个参数的地址
+
 ]
