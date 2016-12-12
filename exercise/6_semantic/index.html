@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="lib/semantic.css">
+    <script src="lib/jquery-3.1.1.min.js"></script>
+    <script src="lib/semantic.js"></script>
+</head>
+<body>
+    <!-- Sidebar Menu -->
+    <div class="ui vertical inverted sidebar menu" id="sidemenu">
+        <a class="active item">Home</a>
+        <a class="item">Work</a>
+        <a class="item">Company</a>
+        <a class="item">Login</a>
+        <a class="item">Signup</a>
+    </div>
+
+    <!-- Main Menu -->
+    <div class="ui menu fixed">
+        <div class="header item" id="mainmenu">
+            Menu
+            <i class="content icon"></i>
+        </div>
+        <div class="item">
+            About us
+        </div>
+        <div class="item">
+            Location
+        </div>
+    </div>
+
+    <script>
+        $('#mainmenu').click(function () {
+            $('ui.sidebar').sidebar('toggle');
+        });
+    </script>
+
+</body>
+</html>
