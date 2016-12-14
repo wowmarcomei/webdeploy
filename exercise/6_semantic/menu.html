@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Semantic example</title>
+    <link rel="stylesheet" type="text/css" href="lib/semantic.css">
+    <script src="lib/jquery-3.1.1.min.js"></script>
+    <script src="lib/semantic.js"></script>
+</head>
+<body>
+    <!--演示一个常规Menu菜单-->
+    <div class="ui secondary menu">
+        <a class="active item">Home</a>
+        <a class="item">Messages</a>
+        <a class="item">Friends</a>
+        <div class="menu right">
+            <div class="item">
+                <div class="ui icon input">
+                    <input type="text" placeholder="Search...">
+                    <i class="icon search"></i>
+                </div>
+            </div>
+        </div>
+        <a class="item">Logout</a>
+    </div>
+    <!--演示一个带下拉箭头的常规菜单-->
+    <div class="ui pointing menu">
+        <a class="active item">Home</a>
+        <a class="item">Messages</a>
+        <a class="item">Friends</a>
+        <div class="right menu">
+            <div class="item">
+                <div class="ui transparent icon input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui segment">
+        <p>
+            Say something please, okay, let's talk whatever you'd like to talk, please.
+            alright.
+            first of all, i would like to strength that, I prefer to balabalabal.
+            secondry, hope you are fine.....
+            what's the most important is hahhhhhhhasdsadh...
+        </p>
+    </div>
+
+    <!--演示一个tab页面菜单:tabular-->
+    <div class="ui grid">
+        <div class="four wide column">
+            <div class="ui vertical fluid tabular menu">
+                <a class="active item">Bio</a>
+                <a class="item">Pics</a>
+                <a class="item">Companies</a>
+                <a class="item">Links</a>
+            </div>
+        </div>
+        <div class="twelve wide stretched column">
+            <div class="ui segment">
+                <p>
+                    This is an stretched grid column. This segment will always match the tab height.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--演示一个垂直Menu: vertical menu-->
+    <div class="ui vertical menu">
+        <a class="active teal item">
+            Inbox
+            <div class="ui teal left pointing label">1</div>
+        </a>
+        <a class="item">Spam
+            <div class="ui label">51</div>
+        </a>
+        <a class="item">Updates
+            <div class="ui label">1</div>
+        </a>
+        <div class="item">
+            <div class="ui input transparent icon">
+                <input type="text" placeholder="Search mail...">
+                <i class="icon search"></i>
+            </div>
+        </div>
+    </div>
+
+    <!--演示一个分页菜单-->
+    <div class="ui pagination menu">
+        <a class="item">
+            <i class="angle left double icon"></i>
+        </a>
+        <a class="active item">1</a>
+        <a class="disabled item">...</a>
+        <a class="item">10</a>
+        <a class="item">11</a>
+        <a class="item">12</a>
+        <a class="item">
+            <i class="angle right double icon"></i>
+        </a>
+    </div>
+</body>
+</html>
