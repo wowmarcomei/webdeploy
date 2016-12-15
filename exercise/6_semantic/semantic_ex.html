@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="lib/semantic.css">
+    <script src="lib/jquery-3.1.1.min.js"></script>
+    <script src="lib/semantic.js"></script>
+</head>
+<body>
+    <!--将所有元素装进container来测试-->
+    <div class="ui container">
+
+    <!--描述 与 分隔条-->
+    <h4 class="ui horizontal header divider">
+        <i class="tag icon"></i>
+        Description
+    </h4>
+    <p>
+        Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs worldwide.
+    </p>
+
+    <h4 class="ui horizontal divider header">
+        <i class="bar chart icon"></i>
+        Specifications
+    </h4>
+    <table class="ui definition table">
+        <tbody>
+            <tr>
+               <td class="two wide column">Size</td>
+               <td>1" x 2"</td>
+            </tr>
+            <tr>
+                <td class="two wide column">Weight</td>
+                <td>6 ounces</td>
+            </tr>
+            <tr>
+                <td class="two wide column">Color</td>
+                <td>Yellowish</td>
+            </tr>
+            <tr>
+                <td class="two wide column">Odor</td>
+                <td>Not Much Usually</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!--标题-->
+    <h2 class="ui icon header">
+        <i class="settings icon"></i>
+        <div class="content">Account settings
+            <div class="sub header">Manage you account settings and set e-mail preferences</div>
+        </div>
+    </h2>
+    <h2 class="ui icon header">
+        <i class="circular users icon"></i>
+        Friends
+    </h2>
+
+    <!--输入框-->
+    <div class="ui input focus">
+        <input type="text" placeholder="Search...">
+    </div>
+    <div class="ui left icon loading input">
+        <input type="text" placeholder="Search...">
+        <i class="loading icon"></i>
+    </div>
+    <div class="ui right icon search input">
+        <input type="text" placeholder="Search...">
+        <i class="search icon"></i>
+    </div>
+    <div class="ui labeled input">
+        <label class="ui label">http:// </label>
+        <input type="text" placeholder="mywebsite.com">
+    </div>
+    <div class="ui divider"></div>
+
+    <div class="ui right labeled input">
+        <input type="text" placeholder="Find domain">
+        <div class="ui dropdown label">
+            <div class="text">.com</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <div class="item">.com</div>
+                <div class="item">.cn</div>
+                <div class="item">.net</div>
+                <div class="item">.org</div>
+                <div class="item">.info</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="ui divider"></div>
+    <div class="ui right labeled left icon input">
+        <i class="tags icon"></i>
+        <input type="text" placeholder="Enter tags">
+        <a class="ui tag label">Add Tag</a>
+    </div>
+
+    <!--标签-->
+    <div class="ui divider"></div>
+    <div class="ui two column grid">
+        <div class="column">
+            <div class="ui raised segment">
+                <a class="ui red ribbon label">Overview</a>
+                <span>Account detials</span>
+                <p>
+                    Today is a very nice day, and it's the 100th days that i sticked to myself,
+                    What I feel most wonderful thing is that i can get up early without any alarm bell.
+                    and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                    and I've been learning the python/html/css/js for more than 3 months, even though can do a very little
+                    thing, but I'm now on the way.
+                </p>
+                <a class="ui blue ribbon label">Community</a>
+                <span>User reviews</span>
+                <P>
+                    Today is a very nice day, and it's the 100th days that i sticked to myself,
+                    What I feel most wonderful thing is that i can get up early without any alarm bell.
+                    and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                    and I've been learning the python/html/css/js for more than 3 months, even though can do a very little
+                    thing, but I'm now on the way.
+                </P>
+            </div>
+        </div>
+
+        <div class="column"> <!--注下面的这个例子非常适合做日记本-->
+            <div class="ui raised segment">
+                <a class="ui orange ribbon label">Overview</a>
+                <span>Account detials</span>
+                <p>
+                    Today is a very nice day, and it's the 100th days that i sticked to myself,
+                    What I feel most wonderful thing is that i can get up early without any alarm bell.
+                    and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                    and I've been learning the python/html/css/js for more than 3 months, even though can do a very little
+                    thing, but I'm now on the way.
+                </p>
+                <a class="ui teal ribbon label">Community</a>
+                <span>User reviews</span>
+                <P>
+                    Today is a very nice day, and it's the 100th days that i sticked to myself,
+                    What I feel most wonderful thing is that i can get up early without any alarm bell.
+                    and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                    and I've been learning the python/html/css/js for more than 3 months, even though can do a very little
+                    thing, but I'm now on the way.
+                </P>
+            </div>
+        </div>
+    </div>
+
+
+    <!--列表-->
+    <div class="ui divider"></div>
+    <div class="ui list">
+        <li>Gaining Access</li>
+        <li>Inviting Friends</li>
+        <li>Benifits
+            <ul>
+                <li>Use Anywhere</li>
+                <li>Rebates</li>
+                <li>Discounts</li>
+            </ul>
+        </li>
+        <li>Warranty</li>
+    </div>
+
+    <!--加载器-->
+    <div class="ui segment">
+        <div class="ui active dimmer">
+            <div class="ui text loader">Loading</div>
+        </div>
+        <P>
+            Today is a very nice day, and it's the 100th days that i sticked to myself,
+            What I feel most wonderful thing is that i can get up early without any alarm bell.
+            and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+            and I've been learning the python/html/css/js for more than 3 months, even though can do a very little
+            thing, but I'm now on the way.
+        </P>
+    </div>
+
+
+
+  </div>
+</body>
+</html>
