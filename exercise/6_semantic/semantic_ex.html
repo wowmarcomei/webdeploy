@@ -332,6 +332,218 @@
     </div>
 
 
-  </div>
+        <!--布置:step-->
+        <div class="ui steps">
+            <div class="step">
+                <i class="truck icon"></i>
+                <div class="content">
+                    <div class="title">
+                        Shipping
+                    </div>
+                    <div class="description">
+                        Choose your shipping options
+                    </div>
+                </div>
+            </div>
+            <div class="active step">
+                <i class="payment icon"></i>
+                <div class="content">
+                    <div class="title">
+                        Billing
+                    </div>
+                    <div class="description">
+                        Enter Billing information
+                    </div>
+                </div>
+            </div>
+            <div class="disabled step">
+                <i class="info icon"></i>
+                <div class="content">
+                    <div class="title">
+                        Confirm order
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ui vertical steps">
+            <div class="completed step">
+                <i class="right icon"></i>
+                <div class="content">
+                    <div class="title">Shipping</div>
+                    <div class="description">Choose your shipping options</div>
+                </div>
+            </div>
+            <div class="completed step">
+                <i class="right icon"></i>
+                <div class="content">
+                    <div class="title">Billing</div>
+                    <div class="description">Enter billing information</div>
+                </div>
+            </div>
+            <div class="active step">
+                <i class="info icon"></i>
+                <div class="content">
+                    <div class="title">Confirm order</div>
+                    <div class="description">Verify order details</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui vertical steps">
+            <a class="completed step">
+                <i class="right icon"></i>
+                <div class="content">
+                    <div class="title">Shipping</div>
+                    <div class="description">Choose your shipping options</div>
+                </div>
+            </a>
+            <a class="completed step">
+                <i class="right icon"></i>
+                <div class="content">
+                    <div class="title">Billing</div>
+                    <div class="description">Enter billing information</div>
+                </div>
+            </a>
+            <a class="active step">
+                <i class="info icon"></i>
+                <div class="content">
+                    <div class="title">Confirm order</div>
+                    <div class="description">Verify order details</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="ui divider"></div>
+        <div class="ui divider"></div>
+        <div class="ui divider"></div>
+
+        <!--表单-->
+        <form class="ui form">
+            <div class="field">
+                <label>First name</label>
+                <input type="text" name="first-name" placeholder="First Name">
+            </div>
+            <div class="field">
+                <label>Last name</label>
+                <input type="text" name="last-name" placeholder="Last Name">
+            </div>
+            <div class="field">
+                <div class="ui checkbox">
+                    <input type="checkbox" tabindex="0" class="hidden">
+                    <label>I agree to the Terms and Conditions</label>
+                </div>
+            </div>
+            <button class="ui button" type="submit">Submit</button>
+        </form>
+
+        <div class="ui divider"></div>
+        <div class="ui divider"></div>
+        <div class="ui divider"></div>
+
+        <div class="ui form">
+            <div class="inline field">
+                <div class="ui checkbox">
+                    <input type="checkbox" tabindex="0" class="hidden">
+                    <label>复选框</label>
+                </div>
+            </div>
+            <div class="inline field">
+                <div class="ui slider checkbox">
+                    <input type="checkbox" tabindex="0" class="hidden">
+                    <label>Slider</label>
+                </div>
+            </div>
+            <div class="inline field">
+                <div class="ui toggle checkbox">
+                    <input type="checkbox" tabindex="0" class="hidden">
+                    <label>Slider</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui divider"></div>
+        <div class="ui form">
+            <div class="field">
+                <label>Gender</label>
+                <div class="ui selection dropdown">
+                    <input type="hidden" name="gender">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Gender</div>
+                    <div class="menu">
+                        <div class="item" data-value="1">Male</div>
+                        <div class="item" data-value="0">Female</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui form">
+            <div class="field">
+                <label>Country</label>
+                <select class="ui search dropdown">
+                    <option value="">Select Country</option>
+                    <option value="CH">China</option>
+                    <option value="USA">America</option>
+                </select>
+            </div>
+        </div>
+
+
+        <!--网格: grid-->
+        <div class="ui grid">
+            <div class="four wide column">1</div>
+            <div class="four wide column">2</div>
+            <div class="four wide column">3</div>
+            <div class="four wide column">4</div>
+        </div>
+        <div class="ui three column grid">
+            <div class="column">
+                <div class="ui segment">
+                    <img alt="img1">
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui segment">
+                    <img alt="img2">
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui segment">
+                    <img alt="img3">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ui divider"></div>
+        <div class="ui divider"></div>
+        <div class="ui divider"></div>
+        
+        <!--卡片: card-->
+        <div class="ui card">
+            <div class="image">
+                <img src="images/kristy.png">
+            </div>
+            <div class="content">
+                <a class="header">Kristy</a>
+                <div class="meta">
+                    <span class="date">Joined in 2013</span>
+                </div>
+                <div class="description">
+                    Kristy is an art director living in New York.
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="user icon"></i>
+                    22 Friends
+                </a>
+            </div>
+        </div>
+
+    </div>
 </body>
+
+
 </html>
