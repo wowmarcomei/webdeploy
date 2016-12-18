@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="lib/semantic.min.css">
+    <script src="lib/jquery-3.1.1.min.js"></script>
+    <script src="lib/semantic.min.js"></script>
+</head>
+<body>
+    <div class="ui container">
+        <!--1. single card test-->
+        <div class="ui card">
+            <div class="image">
+                <img src="images/kristy.png">
+            </div>
+            <div class="content">
+                <a class="header">Kristy</a>
+                <div class="meta">
+                    <span class="date">Joined in 2013</span>
+                </div>
+                <div class="description">
+                    Kristy is an art director living in New York.
+                </div>
+            </div>
+            <div class="extra content">
+                <a><i class="user icon"></i> 22 Friends</a>
+            </div>
+        </div>
+
+        <!--2. multiple cards test-->
+        <div class="ui cards link">
+            <div class="card">
+                <div class="image">
+                    <img src="images/matthew.png">
+                </div>
+                <div class="content">
+                    <div class="header">Matt Giampietro</div>
+                    <div class="meta"><a>Friends</a></div>
+                    <div class="description">Matthew is an interior designer living in New York</div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">Joined in 2013</span>
+                    <span><i class="user icon"></i> 75 Friends</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="images/molly.png">
+                </div>
+                <div class="content">
+                    <div class="header">Molly</div>
+                    <div class="meta">Coworker</div>
+                    <div class="description">Molly is a professional assistant living in New York</div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">Joined in 2013</span>
+                    <span><i class="user icon"></i> 85 Friends</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="images/elyse.png">
+                </div>
+                <div class="content">
+                    <div class="header">Elyse</div>
+                    <div class="meta">Coworker</div>
+                    <div class="description">Elyse is a copywriter working in New York</div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">Joined in 2014</span>
+                    <span><i class="user icon"></i> 85 Friends</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!--3. Content block-->
+        <div class="ui card">
+            <div class="content">
+                <div class="header">Project Timeline</div>
+            </div>
+            <div class="content">
+                <h4 class="ui sub header">Activity</h4>
+                <p>Elliot Fu added Jenny Hess to the project</p>
+            </div>
+            <div class="extra content">
+                <button class="ui button">Join Project</button>
+            </div>
+        </div>
+
+        <!--4.切换图片的card-->
+        <div class="ui card">
+            <div class="ui slide masked reveal image">
+                <img src="images/jenny.jpg" class="visible content">
+                <img src="images/elliot.jpg" class="hidden content">
+            </div>
+            <div class="content">
+                <a class="header">Team Fu &amp; Hess</a>
+                <span class="date">Create in Sep 2014</span>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="users icon"></i>
+                    2 Members
+                </a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
