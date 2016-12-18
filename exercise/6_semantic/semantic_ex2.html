@@ -231,7 +231,6 @@
                 </div>
                 <div class="extra">Rating:
                     <div class="ui star rating" data-rating="4">
-                        <i class="stars four icon"></i>
                     </div>
                 </div>
             </div>
@@ -293,7 +292,107 @@
             </div>
         </div>
 
+        <!--9.statistic-->
+        <div class="ui statistic">
+            <div class="value">5,550</div>
+            <div class="label">Downloads</div>
+        </div>
+
+        <div class="ui statistics">
+            <div class="red statistic">
+                <div class="value">5,678,983</div>
+                <div class="label">Downloads</div>
+            </div>
+            <div class="blue statistic">
+                <div class="value">5,983</div>
+                <div class="label">Downloads</div>
+            </div>
+        </div>
+
+        <div class="ui divider"></div>
+        <div class="ui divider"></div>
+
+        <!--10.复选框-->
+        <div class="ui toggle button">Toggle</div>
+        <div class="ui positive check button">Check</div>
+        <div class="ui negative uncheck button">Uncheck</div>
+        <div class="ui six column center aligned stackable divided grid segment">
+            <div class="column">
+                <div class="ui test slider checkbox">
+                    <input type="checkbox">
+                    <label>1</label>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui test toggle checkbox">
+                    <input type="checkbox" checked="checked">
+                    <label>2</label>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui test checkbox">
+                    <input type="checkbox">
+                    <label>3</label>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui test slider checkbox">
+                    <input type="checkbox" checked="checked">
+                    <label>4</label>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui test toggle checkbox">
+                    <input type="checkbox">
+                    <label>5</label>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui test checkbox">
+                    <input type="checkbox">
+                    <label>6</label>
+                </div>
+            </div>
+        </div>
+
+        <!--11.遮罩层: dimmer-->
+        <div class="ui segment">
+            <!-- Dimmer Generated Automatically No Need to Include !-->
+            <h3 class="ui header">Over layable Section</h3>
+            <div class="ui small images">
+                <img src="images/elliot.jpg">
+                <img src="images/matthew.png">
+                <img src="images/elyse.png">
+            </div>
+            <p>Dimmer Generated Automatically No Need to Include !Dimmer Generated Automatically No Need to Include !Dimmer Generated Automatically No Need to Include !</p>
+        </div>
+        <div class="ui ignored icon buttons">
+            <div class="ui show button">
+                <i class="plus icon"></i>
+            </div>
+            <div class="ui hide button">
+                <i class="minus icon"></i>
+            </div>
+        </div>
+
+
     </div>
 
 </body>
+
+<script>
+
+    $(document).ready(function () {
+        $('.test.checkbox').checkbox('attach events', '.toggle.button');
+        $('.test.checkbox').checkbox('attach events', '.check.button', 'check');
+        $('.test.checkbox').checkbox('attach events', '.uncheck.button', 'uncheck');
+
+        $(".ui.show.button").bind("click", function () {
+            $('.ui.segment').dimmer('show');
+        });
+        $(".ui.hide.button").bind("click", function () {
+            $('.ui.segment').dimmer('hide');
+        });
+    });
+</script>
 </html>
