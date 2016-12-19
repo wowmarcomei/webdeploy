@@ -375,12 +375,40 @@
             </div>
         </div>
 
+        <div class="ui divider"></div>
+        <div class="ui divider"></div>
+        <!--12.进度条: progress bar-->
+        <!--12.1: -->
+        <div class="ui indicating progress" data-value="1" data-total="200" id="example5">
+            <div class="bar">
+                <div class="progress"></div>
+            </div>
+            <div class="label">Waiting for you to press button</div>
+        </div>
+        <!--12.2: -->
+        <div class="ui teal progress" data-percent="95" id="example1">
+            <div class="bar"></div>
+            <div class="label"> 95% Funded</div>
+        </div>
+
+        <!--12.3: task completion percent-->
+        <div class="ui teal progress" id="example3">
+            <div class="bar">
+                <div class="progress"></div>
+            </div>
+            <div class="label">Adding photos</div>
+        </div>
+
+
+        <div class="ui divider"></div>
+        <div class="ui divider"></div>
 
     </div>
 
 </body>
 
 <script>
+
 
     $(document).ready(function () {
         $('.test.checkbox').checkbox('attach events', '.toggle.button');
@@ -393,6 +421,11 @@
         $(".ui.hide.button").bind("click", function () {
             $('.ui.segment').dimmer('hide');
         });
+
+        $('#example1').progress();
+        $('#example3').progress('increment');
+
+
     });
 </script>
 </html>
