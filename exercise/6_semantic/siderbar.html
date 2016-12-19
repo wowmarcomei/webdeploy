@@ -7,37 +7,130 @@
     <script src="lib/jquery-3.1.1.min.js"></script>
     <script src="lib/semantic.js"></script>
 </head>
-<body id ="example">
+<body class="pushable">
 
-    <div class="ui top attached demo menu">
-        <a class="item"><i class="sidebar icon"></i> Menu </a>
+    <!--<div class="ui thin visible left sidebar inverted vertical menu icon">-->
+    <div class="ui thin visible left sidebar inverted vertical menu icon ">
+
+        <a class="item"><i class="home icon"></i> Home </a>
+        <a class="item"><i class="bar chart icon"></i> Charts </a>
+        <a class="item"><i class="calendar icon"></i> Calendar </a>
+
     </div>
-    <div class="ui bottom attached pushable">
-        <div class="ui inverted labeled icon left vertical inline sidebar menu visible">
-            <a class="item"><i class="home icon"></i> Home </a>
-            <a class="item"><i class="block layout icon"></i> Topics </a>
-            <a class="item"><i class="smile icon"></i> Friends </a>
-            <a class="item"><i class="calendar icon"></i> History </a>
+
+    <div class="pusher">
+
+
+        <div class="ui menu">
+            <div class="header item" id="menu">
+                Menu
+                <i class="content icon"></i>
+            </div>
+            <div class="item">
+                About us
+            </div>
+            <div class="item">
+                Location
+            </div>
+            <div class="item">
+                Others
+            </div>
+
         </div>
-        <!--<div class="pusher dimmed" style="margin-left: 5px">-->
-            <!--<div class="ui basic segment">-->
-                <!--<h3 class="ui header">Application Content</h3>-->
-                <!--<p></p>-->
-                <!--<p></p>-->
-                <!--<p></p>-->
-                <!--<p></p>-->
-            <!--</div>-->
-        <!--</div>-->
+
+        <div class="ui container">
+            <div class="ui divided items">
+                <div class="item">
+                    <div class="content">
+                        <div class="header">
+                            The title
+                        </div>
+                        <div class="description">
+                            <p>
+                                Say something!
+                            </p>
+                        </div>
+                        <div class="extra">
+                            <div class="ui label">
+                                tag1
+                            </div>
+                            <div class="ui label">
+                                tag2
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="header">
+                            The title
+                        </div>
+                        <div class="description">
+                            <p>
+                                Say something!
+                            </p>
+                        </div>
+                        <div class="extra">
+                            <div class="ui label">
+                                tag1
+                            </div>
+                            <div class="ui label">
+                                tag2
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="header">
+                            The title
+                        </div>
+                        <div class="description">
+                            <p>
+                                Say something!
+                            </p>
+                        </div>
+                        <div class="extra">
+                            <div class="ui label">
+                                tag1
+                            </div>
+                            <div class="ui label">
+                                tag2
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="ui pagination menu">
+                <a class="item" href="#"> < </a>
+                <div class="disable item">
+                    page 1 of 3
+                </div>
+                <a class="item" href="#"> > </a>
+            </div>
+        </div>
+
     </div>
+
+    <script>
+        $('#menu').click(function () {
+            $('.ui.sidebar').sidebar('toggle');
+        });
+    </script>
 
 </body>
 
 <script>
-//    $('.context.example .ui.sidebar')
-//            .sidebar({
-//                context: $('.context.example .bottom.segment')
-//            })
-//            .sidebar('attach events', '.context.example .menu .item')
-//    ;
+
 </script>
 </html>
