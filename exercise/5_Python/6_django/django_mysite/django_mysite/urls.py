@@ -21,12 +21,13 @@ Including another URLconf
 
 from django.conf.urls import url
 from django.contrib import admin
-from mysite.views import hello_world
+from mysite.views import hello_world, home
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^hello/$',hello_world), #匹配到hello的时候,就调用hello_world这个view函数
+    url(r'^home/',home) #匹配到home主页
 ]
 
 # 以上列表通过函数url(regex, view)来添加,url函数本身有两个参数,第一个为正则表达式,第二个为view函数
