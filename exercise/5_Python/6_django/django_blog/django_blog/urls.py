@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from article.views import home,detail
+from article.views import home,detail,test
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,5 +24,6 @@ urlpatterns = [
     # ?P为命名抓取组: (?P<name>regex)-匹配regex里的正则,然后被name引用(即传值给name)
     # 详细描述: https://docs.djangoproject.com/en/1.10/topics/http/urls/
     # 第三个参数name是为了给template使用
-    url(r'^(?P<my_args>\d+)/$',detail,name='detail')
+    url(r'^(?P<my_args>\d+)/$',detail,name='detail'),
+    url(r'^test/',test)
 ]
