@@ -16,3 +16,6 @@ def detail(request, my_args):
 
 def test(request):
     return render(request,'test.html',{'current_time': datetime.now()})
+
+def homepage(request):
+    return render(request,'homepage.html')
