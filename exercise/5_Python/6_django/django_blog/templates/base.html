@@ -1,67 +1,186 @@
 {% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
-    <title>Blog</title>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Homepage</title>
+
     <script src="{% static "lib/jquery-3.1.1.min.js" %}"></script>
     <script src="{% static "lib/semantic.min.js" %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static "lib/semantic.min.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "lib/bootstrap.min.css" %}">
+
+  <style type="text/css">
+
+    .hidden.menu {
+      display: none;
+    }
+    .masthead {
+        background-image: url("{% static "images/bg14.jpg" %}") !important;
+        background-size: cover !important;
+    }
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 3em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.5em;
+      font-weight: normal;
+      {# 添加h2上下间隔距离 #}
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+
+    .ui.vertical.stripe {
+      padding: 4em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.2em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    {#添加此样式反而去掉了menu边框下划线#}
+    .ui.secondary.pointing.menu{
+        border: #0E566C;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 2em;
+      padding-bottom: 2em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item{
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+    }
+
+  </style>
+
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+              $('.fixed.menu').show();
+          },
+          onBottomPassedReverse: function() {
+              $('.fixed.menu').hide();
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+  </script>
 </head>
 <body>
-<div class="ui container">
 
-    <div class="ui inverted segment">
-        <div class="ui inverted secondary pointing menu">
-            <a class="item">Home</a>
-            <a class="active item">Messages</a>
-            <a class="item">Friends</a>
-        </div>
-    </div>
+<!-- Following top Menu bar -->
+{# 添加borderless类去掉了固定顶栏中各个菜单之间的竖线#}
+<div class="ui top fixed borderless inverted hidden menu">
+  <div class="ui container">
+    <a class="active item">Home</a>
+    <a class="item">LifeNotes</a>
+    <a class="item">Statistic</a>
+    <a class="item">About</a>
+      <div class="right menu">
+          <a class="ui item">
+              <i class="sign in icon"></i>Login
+          </a>
+          <a class="ui item">
+              <i class="add user icon"></i>Sign up
+          </a>
+      </div>
+  </div>
+</div>
 
-    <!--描述 与 分隔条-->
-    <h4 class="ui horizontal header divider">
-        <i class="tag icon"></i>
-        Description
-    </h4>
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted thin sidebar menu">
+  <a class="active item">Home<i class="home icon"></i></a>
+  <a class="item">LifeNotes<i class="file text icon"></i></a>
+  <a class="item">Statistic<i class="line chart icon"></i></a>
+  <a class="item">About<i class="info circle icon"></i></a>
+  <a class="item">Log in<i class="sign in icon"></i></a>
+  <a class="item">Sign up<i class="add user icon"></i></a>
+</div>
 
-    <div class="sidebar pure-u-1 pure-u-md-1-4">
-        <div class="header">
-            <h1 class="brand-title">Andrew Liu Blog</h1>
-            <h2 class="brand-tagline">雪忆 - Snow Memory</h2>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a class="pure-button" href="https://github.com/Andrew-liu">Github</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="pure-button" href="http://weibo.com/dinosaurliu">Weibo</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+{% block content %}
+{% endblock %}
 
-    <div class="content pure-u-1 pure-u-md-3-4">
-        <div>
-            {% block content %}
-            {% endblock %}
-            <div class="footer">
-                <div class="pure-menu pure-menu-horizontal pure-menu-open">
-                    <ul>
-                        <li><a href="http://andrewliu.tk/about/">About Me</a></li>
-                        <li><a href="http://twitter.com/yuilibrary/">Twitter</a></li>
-                        <li><a href="http://github.com/yahoo/pure/">GitHub</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </div>
 
 </body>
+
 </html>

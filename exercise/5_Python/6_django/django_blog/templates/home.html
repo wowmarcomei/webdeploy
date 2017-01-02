@@ -1,23 +1,195 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
-<div class="posts">
-    {% for post in post_list %}
-        <section class="post">
-            <header class="post-header">
-                <h2 class="post-title">{{ post.title }}</h2>
+        <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui  inverted vertical masthead center aligned segment">
+        <div class="ui container">
+          <div class="ui secondary pointing inverted menu">
+              <a class="toc item">
+                  <i class="sidebar icon"></i>
+              </a>
+              <a class="active item">Home</a>
+              <a class="item">LifeNotes</a>
+              <a class="item">Statistic</a>
+              <a class="item">About</a>
+              <div class="right menu">
+                  <a class="ui item">
+                      <i class="sign in icon"></i>Login
+                  </a>
+                  <a class="ui item">
+                      <i class="add user icon"></i>Sign up
+                  </a>
+              </div>
+          </div>
+        </div>
 
-                    <p class="post-meta">
-                        Time:  <a class="post-author" href="#">{{ post.date_time }}</a> <a class="post-category post-category-js" href="#">{{ post.category }}</a>
-                    </p>
-            </header>
+        <div class="ui text container">
+          <h1 class="ui inverted header">
+            Cherish and save time to do something valuable!
+          </h1>
+          <h2>Just move on once make resolutions</h2>
+          <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
+        </div>
 
-                <div class="post-description">
-                    <p>
-                        {{ post.content }}
-                    </p>
+      </div>
+
+        <div class="ui stripe community vertical segment">
+            <div class="ui two column very relaxed stackable grid container">
+                    <div class="column">
+                        <div class="ui raised segment">
+                            <a class="ui red ribbon label">Overview</a>
+                            <span>Account detials</span>
+                            <p>
+                                Today is a very nice day, and it's the 100th days that i sticked to myself,
+                                What I feel most wonderful thing is that i can get up early without any alarm bell.
+                                and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                                and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                                very little
+                                thing, but I'm now on the way.
+                            </p>
+                        </div>
+                         <div class="ui raised segment">
+                            <a class="ui blue ribbon label">Community</a>
+                            <span>User reviews</span>
+                            <p>
+                                Today is a very nice day, and it's the 100th days that i sticked to myself,
+                                What I feel most wonderful thing is that i can get up early without any alarm bell.
+                                and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                                and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                                very little
+                                thing, but I'm now on the way.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui raised segment">
+                            <a class="ui red ribbon label">Overview</a>
+                            <span>Account detials</span>
+                            <p>
+                                Today is a very nice day, and it's the 100th days that i sticked to myself,
+                                What I feel most wonderful thing is that i can get up early without any alarm bell.
+                                and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                                and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                                very little
+                                thing, but I'm now on the way.
+                            </p>
+                        </div>
+                         <div class="ui raised segment">
+                            <a class="ui blue ribbon label">Community</a>
+                            <span>User reviews</span>
+                            <p>
+                                Today is a very nice day, and it's the 100th days that i sticked to myself,
+                                What I feel most wonderful thing is that i can get up early without any alarm bell.
+                                and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                                and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                                very little
+                                thing, but I'm now on the way.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui raised segment">
+                            <a class="ui red ribbon label">Overview</a>
+                            <span>Account detials</span>
+                            <p>
+                                Today is a very nice day, and it's the 100th days that i sticked to myself,
+                                What I feel most wonderful thing is that i can get up early without any alarm bell.
+                                and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                                and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                                very little
+                                thing, but I'm now on the way.
+                            </p>
+                        </div>
+                         <div class="ui raised segment">
+                            <a class="ui blue ribbon label">Community</a>
+                            <span>User reviews</span>
+                            <p>
+                                Today is a very nice day, and it's the 100th days that i sticked to myself,
+                                What I feel most wonderful thing is that i can get up early without any alarm bell.
+                                and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                                and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                                very little
+                                thing, but I'm now on the way.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui raised segment">
+                            <a class="ui red ribbon label">Overview</a>
+                            <span>Account detials</span>
+                            <p>
+                                Today is a very nice day, and it's the 100th days that i sticked to myself,
+                                What I feel most wonderful thing is that i can get up early without any alarm bell.
+                                and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                                and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                                very little
+                                thing, but I'm now on the way.
+                            </p>
+                        </div>
+                         <div class="ui raised segment">
+                            <a class="ui blue ribbon label">Community</a>
+                            <span>User reviews</span>
+                            <p>
+                                Today is a very nice day, and it's the 100th days that i sticked to myself,
+                                What I feel most wonderful thing is that i can get up early without any alarm bell.
+                                and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                                and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                                very little
+                                thing, but I'm now on the way.
+                            </p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+        <div class="ui stackable inverted divided equal height stackable grid">
+            <div class="three wide column">
+                <h4 class="ui inverted header">About us</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Sitemap</a>
+                    <a href="#" class="item">Contact us</a>
                 </div>
-        </section>
-    {% endfor %}
-</div><!-- /.blog-post -->
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">Follow us</h4>
+                <a class="ui circular icon button" href="http://github.com/wowmarcomei" target="_blank">
+                    <i class="github alternate blue icon"></i>
+                </a>
+                <a class="ui circular weibo red icon button" href="http://weibo.com/mxh20999" target="_blank">
+                    <i class="weibo icon"></i>
+                </a>
+                <a class="ui circular wechat green icon button" href="#" target="_blank">
+                    <i class="wechat icon"></i>
+                </a>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">Navigate</h4>
+                <div class="ui inverted link list">
+                    <a target="_blank" href="/category/Home/" class="item">Home</a>
+                    <a target="_blank" href="/category/LifeNotes/" class="item">LifeNotes</a>
+                    <a target="_blank" href="/category/Statistic/" class="item">Statistic</a>
+                    <a target="_blank" href="/category/About/" class="item">About</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header">Powered by</h4>
+                <div class="ui inverted link list">
+                    <div class="ui container tiny images">
+                        <a target="_blank" href="http://www.python.org" class="item"><img src="{% static "images/python.png" %}" alt="python"></a>
+                        <a target="_blank" href="https://www.djangoproject.com/" class="item"><img src="{% static "images/django_logo.jpg" %}" alt="django"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+  </div>
+
 {% endblock %}
