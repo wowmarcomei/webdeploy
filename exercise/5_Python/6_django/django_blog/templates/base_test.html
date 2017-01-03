@@ -6,44 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
     <title>Blog</title>
-    <script src="{% static "lib/jquery-3.1.1.min.js" %}"></script>
-    <script src="{% static "lib/semantic.min.js" %}"></script>
-    <link rel="stylesheet" type="text/css" href="{% static "lib/semantic.min.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "lib/bootstrap.min.css" %}">
+{#    <script src="{% static "lib/jquery-3.1.1.min.js" %}"></script>#}
+{#    <script src="{% static "lib/semantic.min.js" %}"></script>#}
+{#    <link rel="stylesheet" type="text/css" href="{% static "lib/semantic.min.css" %}">#}
+{#    <link rel="stylesheet" type="text/css" href="{% static "lib/bootstrap.min.css" %}">#}
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+    <link rel="stylesheet" href="http://picturebag.qiniudn.com/blog.css">
+
 </head>
 <body>
-<div class="ui container">
-
-    <div class="ui inverted segment">
-        <div class="ui inverted secondary pointing menu">
-            <a class="item">Home</a>
-            <a class="active item">Messages</a>
-            <a class="item">Friends</a>
-        </div>
-    </div>
-
-    <!--描述 与 分隔条-->
-    <h4 class="ui horizontal header divider">
-        <i class="tag icon"></i>
-        Description
-    </h4>
-
+<div id="layout" class="pure-g">
     <div class="sidebar pure-u-1 pure-u-md-1-4">
         <div class="header">
-            <h1 class="brand-title">Andrew Liu Blog</h1>
+            <h1 class="brand-title"><a href="{% url "home_test" %}">Andrew Liu Blog</a></h1>
             <h2 class="brand-tagline">雪忆 - Snow Memory</h2>
             <nav class="nav">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a class="pure-button" href="https://github.com/Andrew-liu">Github</a>
+                        <a class="button-success pure-button" href="/">主页</a>
                     </li>
                     <li class="nav-item">
-                        <a class="pure-button" href="http://weibo.com/dinosaurliu">Weibo</a>
+                        <a class="button-success pure-button" href="/">归档</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pure-button" href="https://github.com/Andrew-liu/my_blog_tutorial">Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="button-error pure-button" href="http://weibo.com/dinosaurliu">Weibo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="button-success pure-button" href="/">专题</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="button-success pure-button" href="/">About Me</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </div>
+
 
     <div class="content pure-u-1 pure-u-md-3-4">
         <div>
@@ -60,8 +62,8 @@
             </div>
         </div>
     </div>
-
 </div>
+
 
 </body>
 </html>

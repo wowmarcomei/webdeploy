@@ -23,8 +23,9 @@ urlpatterns = [
     # ?P为命名抓取组: (?P<name>regex)-匹配regex里的正则,然后被name引用(即传值给name)
     # 详细描述: https://docs.djangoproject.com/en/1.10/topics/http/urls/
     # 第三个参数name是为了给template使用
-    url(r'^(?P<my_args>\d+)/$',detail,name='detail'),
+    # url(r'^(?P<my_args>\d+)/$',detail,name='detail'),
     url(r'^test/',test),
     url(r'^home_test/',home_test),
-    url(r'^home/',home)
+    url(r'^home/',home),
+    url(r'^(?P<id>\d+)/$',detail,name='detail')
 ]
