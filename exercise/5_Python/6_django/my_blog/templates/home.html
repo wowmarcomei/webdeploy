@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="posts">
+        {#  注意变量post_list来源于view模块的render函数  #}
+        {% for post in post_list %}
+            <section class="post">
+                <header class="post-header">
+                    {# 注:模板中url中用法详细解释: https://docs.djangoproject.com/en/1.10/ref/templates/builtins/  #}
+                    {# The first argument is a url() name. It can be a quoted literal or any other context variable. Additional arguments are optional and  #}
+                    {# should be space-separated values that will be used as arguments in the URL. The example above shows passing positional arguments. #}
+                    {# Alternatively you may use keyword syntax:  #}
+                    {# 即:第一个参数details是url()函数名字,它可以是一个被引用的文字或者内容变量,django会到url中去匹配这个名字,其它参数与post.id是可选的,与第一个变量应该以空格相隔,它会当做url的参数传递 #}
+                    {# 说人话: post.id会被当成一个变量,传递给url模块中名字为detail_tempalte对应的那个函数 #}
+                    <h2 class="post-title"><a href="{% url 'detail_template' post.id %}">{{ post.title }}</a></h2>
+                    <p class="post-meta">
+                        Time: <a class="post-author" href="#">{{ post.date_time }}</a><a
+                            class="post-category post-categort-js" href="#">{{ post.category }}</a>
+                    </p>
+                </header>
+                <div class="post-description">
+                    <p>{{ post.content }}</p>
+                </div>
+                <a class="pure-button" href="{% url 'detail_template' post.id %}">Read More>>></a>
+            </section>
+        {% endfor %}
+    </div>
+{% endblock %}
