@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Blog',
+    'markdown2',
+    'pygments',
 ]
 
 MIDDLEWARE = [

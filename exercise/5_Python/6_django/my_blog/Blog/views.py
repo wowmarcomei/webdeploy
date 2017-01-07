@@ -18,7 +18,7 @@ class IndexView(ListView):
 
     def get_queryset(self):
         """
-        过滤数据，获取所有已发布文章，并且将内容转成markdown形式
+        复写get_queryset()函数,过滤数据，获取所有已发布文章，并且将内容转成markdown形式
         """
         article_list = Article.objects.filter(status='p')
         # 获取数据库中的所有已发布的文章，即filter(过滤)状态为'p'(已发布)的文章。
@@ -29,13 +29,24 @@ class IndexView(ListView):
         return article_list
     def get_context_data(self, **kwargs):
         """
-        # 增加额外的数据，这里返回一个文章分类，以字典的形式
+        # 增加额外的数据，这里返回一个文章分类，以字典的形式:
+        复写get_context_date()函数,这个方法是用来给传递到模板文件的上下文对象（context）添加额外的内容的
         """
         kwargs['category_list']=Category.objects.all().order_by('name')
+        # 调用 archive 方法，把获取的时间列表插入到 context 上下文中以便在模板中渲染
+        kwargs['date_archive'] = Article.objects.archive()
+        # tag_list 加入 context 里：
+        kwargs['tag_list'] = Tag.objects.all().order_by('name')
         return super(IndexView,self).get_context_data(**kwargs)
 
 class ArticleDetailView(DetailView):
-    # Django有基于类的视图DetailView,用于显示一个对象的详情页，我们继承它
+    """
+    Django有基于类的视图DetailView,用于显示一个对象的详情页，我们继承它
+    -DetailView主要用在获取某个 model 的单个对象中
+    -通过 template_name 属性来指定需要渲染的模板，通过 context_object_name 属性来指定获取的 model 对象的名字，否则只能通过默认的 object 获取
+    -复写 get_object 方法以增加获取单个 model 对象的其他逻辑
+    -复写 get_context_data 方法来为上下文对象添加额外的变量以便在模板中访问
+    """
 
     model = Article
     # 指定视图获取哪个model
@@ -92,6 +103,9 @@ class TagView(ListView):
     context_object_name = "article_list"
 
     def get_queryset(self):
+        """
+        根据指定的标签获取该标签下的全部文章
+        """
         article_list = Article.objects.filter(tags=self.kwargs['tag_id'], status='p')
         for article in article_list:
             article.body = markdown2.markdown(article.body, extras=['fenced-code-blocks'], )
@@ -107,8 +121,10 @@ class ArchiveView(ListView):
     context_object_name = "article_list"
 
     def get_queryset(self):
+        # 接收从url传递的year和month参数，转为int类型
         year = int(self.kwargs['year'])
         month = int(self.kwargs['month'])
+        # 按照year和month过滤文章
         article_list = Article.objects.filter(created_time__year=year, created_time__month=month)
         for article in article_list:
             article.body = markdown2.markdown(article.body, extras=['fenced-code-blocks'], )

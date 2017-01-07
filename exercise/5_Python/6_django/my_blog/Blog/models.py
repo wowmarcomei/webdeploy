@@ -1,6 +1,19 @@
 from django.db import models
+from django.core.urlresolvers import reverse
+from collections import defaultdict
+
+import datetime
 
 # Create your models here.
+
+class ArticleManage(models.Manager):
+    def archive(self):
+        date_list = Article.objects.datetimes('created_time', 'month', order='DESC')
+        date_dict = defaultdict(list)
+        for d in date_list:
+            date_dict[d.year].append(d.month)
+        return sorted(date_dict.items(), reverse=True)  # 模板不支持defaultdict
+
 
 class Article(models.Model):
     """
@@ -12,6 +25,8 @@ class Article(models.Model):
         ('d','Draft'),
         ('p','Published'),
     )
+
+    objects = ArticleManage()
 
     title = models.CharField('标题',max_length=100)
     # 文章标题，CharField 表示对应数据库中表的列是用来存字符串的，'标题'是一个位置参数verbose_name
@@ -51,6 +66,7 @@ class Article(models.Model):
     # 个表的主键。外键定义了一个一对多的关系，这里即一篇文章对应一个分类，而一个分类下可能有多篇
     #  文章。详情参考django官方文档关于ForeinKey的说明，on_delete=models.SET_NULL表示删除某个
     #  分类（category）后该分类下所有的Article的外键设为null（空）
+    tags = models.ManyToManyField('Tag',verbose_name='标签集合',blank=True)
 
     def __str__(self):
         # 主要用于交互解释器显示表示该类的字符串
