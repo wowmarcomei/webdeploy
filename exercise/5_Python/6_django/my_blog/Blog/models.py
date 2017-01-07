@@ -76,6 +76,12 @@ class Article(models.Model):
         # Meta 包含一系列选项，这里的 ordering 表示排序，- 号表示逆序。即当从数据库中取出文章        # 时，其是按文章最后一次修改时间逆序排列的。
         ordering = ['-last_modified_time']
 
+    # 新增 get_absolute_url 方法
+    def get_absolute_url(self):
+        # 这里 reverse 解析 blog:detail 视图函数对应的 url
+        return reverse('detail',kwargs={'article_id':self.pk})
+
+
 class Category(models.Model):
     """
     另外一个表,存储文章的分类信息
@@ -95,3 +101,12 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
+class BlogComment(models.Model):
+    user_name = models.CharField('评论者名字', max_length=100)
+    user_email = models.EmailField('评论者邮箱', max_length=255)
+    body = models.TextField('评论内容')
+    created_time = models.DateTimeField('评论发表时间', auto_now_add=True)
+    article = models.ForeignKey('Article', verbose_name='评论所属文章', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.body[:20]
