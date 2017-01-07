@@ -31,3 +31,10 @@ def test(request):
     # 即request参数解析为一个http response,结果传给第二个参数test.html,第三个参数作为其中一个内容也传给第二个参数
     return render(request,'test.html',{'current_time':datetime.now()})
 
+def archives(request):
+    try:
+        post_list = Article.objects.all()
+    except Article.DoesNotExist:
+        raise Http404
+    return render(request,'archives.html',{'post_list':post_list,'error':False})
+

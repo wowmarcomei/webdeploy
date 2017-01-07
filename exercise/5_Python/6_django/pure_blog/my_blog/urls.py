@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from article.views import home,detail,test
+from article.views import home,detail,test,archives
 import article
 
 urlpatterns = [
@@ -26,6 +26,7 @@ urlpatterns = [
     # 1.尖括号中的参数会传给detail函数作为其形参, 2.name传递给模板中html文件,用于构造django模板语言
     url(r'^(?P<my_args>\d+)/$',detail,name='detail_template'),
     url(r'^test/$',test,name='test'),
+    url(r'^archives/$',archives,name='archives')
 
     # url(r'^$', 'article.views.home', name = 'home'),
     # url(r'^(?P<id>\d+)/$', 'article.views.detail', name='detail'),
