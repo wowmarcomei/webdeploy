@@ -1,8 +1,21 @@
 {#注意: 模板中变量来源于对于view中的render函数的字典变量#}
-<h1>{{ question_mxh.question_text }}</h1>
+<h1 xmlns="http://www.w3.org/1999/html">{{ question.question_text }}</h1>
 
-<ul>
-    {% for choice in question_mxh.choice_set.all %}
-        <li>{{ choice.choice_text }}</li>
+{% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+{#<ul>#}
+{#    {% for choice in question_mxh.choice_set.all %}#}
+{#        <li>{{ choice.choice_text }}</li>#}
+{#    {% endfor %}#}
+{#</ul>#}
+<form action="{% url 'polls:vote' question.id %}" method="post">
+    {% csrf_token %}
+    {% for choice in question.choice_set.all %}
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+        <br />
     {% endfor %}
-</ul>
+    <input type="submit" value="vote">
+</form>

@@ -2,6 +2,9 @@ from django.conf.urls import url
 
 from . import views
 
+# add namespace for the app,加命名空间予以区分
+app_name = 'polls'
+
 urlpatterns = [
 	#ex: /polls/
 	url(r'^$',views.index, name='index'),
