@@ -59,6 +59,11 @@ class IndexView(generic.ListView):
     # 重写类的的两个属性值
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
+    # for ListView, the automatically generated context variable is question_list.
+    # To override this we provide the context_object_name attribute,
+    # specifying that we want to use latest_question_list instead.As an alternative approach,
+    # you could change your templates to match the new default context variables –
+    # but it’s a lot easier to just tell Django to use the variable you want.
 
     def get_queryset(self):
         """
@@ -69,6 +74,11 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     # 重写类的的两个属性值
     model = Question
+    # since we are using the Django model(Question),
+    # Django is able to determine an appropriate name for the context variable.
+    # means  variable is provided automatically in template,
+    # no need to add define a variable 'question' for the template
+
     template_name = 'polls/detail.html'
 
 class ResultView(generic.DetailView):
