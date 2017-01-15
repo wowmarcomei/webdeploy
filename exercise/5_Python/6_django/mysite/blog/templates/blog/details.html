@@ -1,0 +1,11 @@
+<div>
+    <div>
+        <h1 class="title">{{ article_view.title }}</h1>
+    </div>
+    <div>
+        <i></i><span>{{ article_view.last_modified_time|date:"Y年n月d日" }}</span>
+    </div>
+    <div class="post-bd">
+        {{ article_view.body }}
+    </div>
+</div>

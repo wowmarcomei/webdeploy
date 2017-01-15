@@ -21,7 +21,6 @@ import article
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^home/$',home,name='home'),
-    url(r'',home,name='home'),
     # 这是第一个坑,总结一下
     # 1.尖括号中的参数会传给detail函数作为其形参, 2.name传递给模板中html文件,用于构造django模板语言
     url(r'^(?P<my_args>\d+)/$',detail,name='detail_template'),

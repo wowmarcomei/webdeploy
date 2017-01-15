@@ -1,0 +1,16 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+
+{% if article_list %}
+    <ul>
+        {% for article in article_list %}
+            <li>
+                <a href="{% url 'blog:detail_template' article.pk %}">{{ article.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No blogs posted...</p>
+{% endif %}
+
