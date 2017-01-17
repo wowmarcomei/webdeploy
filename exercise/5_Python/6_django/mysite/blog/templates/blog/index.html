@@ -1,8 +1,12 @@
-{% load staticfiles %}
+{% extends 'base.html' %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+{% block content %}
 
-{% if article_list %}
+{#{% load staticfiles %}#}
+
+{#<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">#}
+
+    {% if article_list %}
     <ul>
         {% for article in article_list %}
             <li>
@@ -14,3 +18,4 @@
     <p>No blogs posted...</p>
 {% endif %}
 
+{% endblock %}
