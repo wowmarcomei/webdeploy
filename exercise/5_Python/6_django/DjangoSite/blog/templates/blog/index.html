@@ -1,69 +1,395 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/semanticui/dist/semantic.min.css' %}">
-    <script src="{% static 'blog/jquery/jquery-3.1.1.min.js' %}"></script>
-    <script src="{% static 'blog/semanticui/dist/semantic.min.js' %}"></script>
-    <script src="{% static 'blog/bootstrap/js/bootstrap.min.js' %}"></script>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+  <!-- Site Properties -->
+  <title>Homepage</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static "blog/semanticui/dist/semantic.min.css" %}">
+
+    <script src="{% static "blog/jquery/jquery-3.1.1.min.js" %}"></script>
+    <script src="{% static "blog/semanticui/dist/semantic.min.js" %}"></script>
+
+  <style type="text/css">
+
+    .hidden.menu {
+      display: none;
+    }
+    .masthead {
+        background-image: url("{% static "blog/images/bg14.jpg" %}") !important;
+        background-size: cover !important;
+    }
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 3em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.5em;
+      font-weight: normal;
+      {# 添加h2上下间隔距离 #}
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+
+    .ui.vertical.stripe {
+      padding: 4em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.2em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    {#添加此样式反而去掉了menu边框下划线#}
+    .ui.secondary.pointing.menu{
+        border: #0E566C;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 2em;
+      padding-bottom: 2em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item{
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+    }
+
+  </style>
+
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+              $('.fixed.menu').show();
+          },
+          onBottomPassedReverse: function() {
+              $('.fixed.menu').hide();
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+  </script>
 </head>
-
 <body>
 
-    <div class="container">
-
-      <div class="masthead">
-        <h3 class="text-muted">Project name</h3>
-        <ul class="nav nav-justified">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Downloads</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+<!-- Following top Menu bar -->
+{# 添加borderless类去掉了固定顶栏中各个菜单之间的竖线#}
+<div class="ui top fixed borderless inverted hidden menu">
+  <div class="ui container">
+    <a class="active item">Home</a>
+    <a class="item">LifeNotes</a>
+    <a class="item">Statistic</a>
+    <a class="item">About</a>
+      <div class="right menu">
+          <a class="ui item">
+              <i class="sign in icon"></i>Login
+          </a>
+          <a class="ui item">
+              <i class="add user icon"></i>Sign up
+          </a>
       </div>
+  </div>
+</div>
 
-      <!-- Jumbotron -->
-      <div class="jumbotron">
-        <h1>Marketing stuff!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
-      </div>
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted thin sidebar menu">
+  <a class="active item">Home<i class="home icon"></i></a>
+  <a class="item">LifeNotes<i class="file text icon"></i></a>
+  <a class="item">Statistic<i class="line chart icon"></i></a>
+  <a class="item">About<i class="info circle icon"></i></a>
+  <a class="item">Log in<i class="sign in icon"></i></a>
+  <a class="item">Sign up<i class="add user icon"></i></a>
+</div>
 
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-lg-4">
-          <h2>Safari bug warning!</h2>
-          <p class="text-danger">As of v8.0, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+<!-- Page Contents -->
+<div class="pusher">
+    <div class="ui  inverted vertical masthead center aligned segment">
+        <div class="ui container">
+            <div class="ui secondary pointing inverted menu">
+                <a class="toc item">
+                    <i class="sidebar icon"></i>
+                </a>
+                <a class="active item">Home</a>
+                <a class="item">LifeNotes</a>
+                <a class="item">Statistic</a>
+                <a class="item">About</a>
+                <div class="right menu">
+                    <a class="ui item">
+                        <i class="sign in icon"></i>Login
+                    </a>
+                    <a class="ui item">
+                        <i class="add user icon"></i>Sign up
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+
+        <div class="ui text container">
+            <h1 class="ui inverted header">
+                Cherish and save time to do something valuable!
+            </h1>
+            <h2>Just move on once make resolutions</h2>
+            <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
         </div>
-      </div>
 
-      <!-- Site footer -->
-      <div class="footer">
-        <p>&copy; Company 2014</p>
-      </div>
+    </div>
 
-    </div> <!-- /container -->
+    <div class="ui stripe community vertical segment">
+        <div class="ui two column very relaxed stackable grid container">
+            <div class="column">
+                <div class="ui raised segment">
+                    <a class="ui red ribbon label">Overview</a>
+                    <span>Account detials</span>
+{##}
+{#                    {% for post in post_list %}#}
+{#                        <section class="post">#}
+{#                            <header class="post-header">#}
+{#                                <h2 class="post-title"><a#}
+{#                                        href="{% url "detail" id=post.id %}">{{ post.title }}</a></h2>#}
+{##}
+{#                                <p class="post-meta">#}
+{#                                    Time: <a class="post-author"#}
+{#                                             href="#">{{ post.date_time |date:"Y /m /d" }}</a> <a#}
+{#                                        class="post-category post-category-js" href="#">{{ post.category }}</a>#}
+{#                                </p>#}
+{#                            </header>#}
+{##}
+{#                            <div class="post-description">#}
+{#                                <p>#}
+{#                                    {{ post.content }}#}
+{#                                </p>#}
+{#                            </div>#}
+{#                            <a class="pure-button" href="{% url "detail" id=post.id %}">Read More >>> </a>#}
+{#                        </section>#}
+{#                    {% endfor %}#}
 
-  </body>
+                    <p>
+                        Today is a very nice day, and it's the 100th days that i sticked to myself,
+                        What I feel most wonderful thing is that i can get up early without any alarm bell.
+                        and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                        and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                        very little
+                        thing, but I'm now on the way.
+                    </p>
+                </div>
+                <div class="ui raised segment">
+                    <a class="ui blue ribbon label">Community</a>
+                    <span>User reviews</span>
+                    <p>
+                        Today is a very nice day, and it's the 100th days that i sticked to myself,
+                        What I feel most wonderful thing is that i can get up early without any alarm bell.
+                        and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                        and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                        very little
+                        thing, but I'm now on the way.
+                    </p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui raised segment">
+                    <a class="ui red ribbon label">Overview</a>
+                    <span>Account detials</span>
+                    <p>
+                        Today is a very nice day, and it's the 100th days that i sticked to myself,
+                        What I feel most wonderful thing is that i can get up early without any alarm bell.
+                        and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                        and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                        very little
+                        thing, but I'm now on the way.
+                    </p>
+                </div>
+                <div class="ui raised segment">
+                    <a class="ui blue ribbon label">Community</a>
+                    <span>User reviews</span>
+                    <p>
+                        Today is a very nice day, and it's the 100th days that i sticked to myself,
+                        What I feel most wonderful thing is that i can get up early without any alarm bell.
+                        and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                        and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                        very little
+                        thing, but I'm now on the way.
+                    </p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui raised segment">
+                    <a class="ui red ribbon label">Overview</a>
+                    <span>Account detials</span>
+                    <p>
+                        Today is a very nice day, and it's the 100th days that i sticked to myself,
+                        What I feel most wonderful thing is that i can get up early without any alarm bell.
+                        and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                        and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                        very little
+                        thing, but I'm now on the way.
+                    </p>
+                </div>
+                <div class="ui raised segment">
+                    <a class="ui blue ribbon label">Community</a>
+                    <span>User reviews</span>
+                    <p>
+                        Today is a very nice day, and it's the 100th days that i sticked to myself,
+                        What I feel most wonderful thing is that i can get up early without any alarm bell.
+                        and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                        and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                        very little
+                        thing, but I'm now on the way.
+                    </p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui raised segment">
+                    <a class="ui red ribbon label">Overview</a>
+                    <span>Account detials</span>
+                    <p>
+                        Today is a very nice day, and it's the 100th days that i sticked to myself,
+                        What I feel most wonderful thing is that i can get up early without any alarm bell.
+                        and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                        and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                        very little
+                        thing, but I'm now on the way.
+                    </p>
+                </div>
+                <div class="ui raised segment">
+                    <a class="ui blue ribbon label">Community</a>
+                    <span>User reviews</span>
+                    <p>
+                        Today is a very nice day, and it's the 100th days that i sticked to myself,
+                        What I feel most wonderful thing is that i can get up early without any alarm bell.
+                        and I can get it clearly of the new chapter of "Harry Potter" when I listened in 1st time.
+                        and I've been learning the python/html/css/js for more than 3 months, even though can do a
+                        very little
+                        thing, but I'm now on the way.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Foot -->
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+        <div class="ui stackable inverted divided equal height stackable grid">
+            <div class="three wide column">
+                <h4 class="ui inverted header">About us</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Sitemap</a>
+                    <a href="#" class="item">Contact us</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">Follow us</h4>
+                <a class="ui circular icon button" href="http://github.com/wowmarcomei" target="_blank">
+                    <i class="github alternate blue icon"></i>
+                </a>
+                <a class="ui circular weibo red icon button" href="http://weibo.com/mxh20999" target="_blank">
+                    <i class="weibo icon"></i>
+                </a>
+                <a class="ui circular wechat green icon button" href="#" target="_blank">
+                    <i class="wechat icon"></i>
+                </a>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">Navigate</h4>
+                <div class="ui inverted link list">
+                    <a target="_blank" href="/category/Home/" class="item">Home</a>
+                    <a target="_blank" href="/category/LifeNotes/" class="item">LifeNotes</a>
+                    <a target="_blank" href="/category/Statistic/" class="item">Statistic</a>
+                    <a target="_blank" href="/category/About/" class="item">About</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header">Powered by</h4>
+                <div class="ui inverted link list">
+                    <div class="ui container tiny images">
+                        <a target="_blank" href="http://www.python.org" class="item"><img src="{% static "blog/images/python.png" %}" alt="python"></a>
+                        <a target="_blank" href="https://www.djangoproject.com/" class="item"><img src="{% static "blog/images/django_logo.jpg" %}" alt="django"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
 
 </html>
-
