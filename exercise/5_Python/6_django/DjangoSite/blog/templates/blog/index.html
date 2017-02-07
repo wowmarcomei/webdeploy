@@ -89,9 +89,17 @@
     .secondary.pointing.menu .toc.item {
       display: none;
     }
+    .article{
+        background: #ffffff;
+        padding: 0 1.5rem;
+    }
     #main{
         margin: 3em;
         padding: 3em;
+    }
+    .mxh_background{
+        background-image: url('http://codingpy.com/static/thumbnails/pexels-photo-57838.jpg');
+        background-size: cover;
     }
     @media only screen and (max-width: 700px) {
 
@@ -230,17 +238,33 @@
                                 <div class="article">
                                     <div class="header"><a href="/blog"><h2>谷歌推出 Python 性能加速方案</h2></a></div>
                                     {# 使用ui fluid image可以使得image填充整个父容器 #}
-                                    <div class="ui fluid image">
-                                        <div class="article-thumb dimmable lazy-hidden">
-                                            <img src="{% static 'blog/images/bg14.jpg' %}">
-                                            <div class="ui dimmer">
+{#                                    <div class="ui fluid image">#}
+{#                                        <div class="article-thumb dimmable lazy-hidden">#}
+{#                                            <img src="{% static 'blog/images/bg14.jpg' %}">#}
+{#                                            <div class="ui dimmer">#}
+{##}
+{#                                                <div class="content">#}
+{#                                                    <a href="http://codingpy.com/article/grumpy-boosts-python-with-go/">#}
+{#                                                        <div class="ui inverted button">查看详情</div>#}
+{#                                                    </a>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+                                    <div class="image">
+                                        <div class="article-thumb dimmable lazy-hidden mxh_background">
 
+                                            <div class="ui dimmer transition hidden"
+                                                 style="background-color: rgba(0, 0, 0, 0.701961);">
                                                 <div class="content">
-                                                    <a href="http://codingpy.com/article/grumpy-boosts-python-with-go/">
-                                                        <div class="ui inverted button">查看详情</div>
-                                                    </a>
+                                                    <div class="center">
+                                                        <a href="http://codingpy.com/article/grumpy-boosts-python-with-go/">
+                                                            <div class="ui inverted button">查看详情</div>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -250,7 +274,7 @@
                     </div>
                 </div>
                 <div class="atticles four wide column">
-                    
+
                 </div>
             </div>
         </div>
