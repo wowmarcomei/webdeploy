@@ -49,7 +49,14 @@ body{
 }
 
 .footer{
-    text-align: center;
-    color: dimgray;
-    margin: 20px auto 10px auto;
+    /*text-align: center;*/
+    /*color: dimgray;*/
+    /*margin: 20px auto 10px auto;*/
+
+color: #aaaaaa;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  font-style: italic;
+  text-transform: uppercase;
 }
