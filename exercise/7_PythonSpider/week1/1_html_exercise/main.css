@@ -1,0 +1,55 @@
+body{
+    padding: 0 0 0 0;
+    background-color: #ffffff;
+    background-image: url("images/bg3-dark.jpg");
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.header{
+    padding: 10px 10px 10px 10px;
+}
+.header a{
+    color: #ffffff;
+}
+.header img{
+    display: block;
+    margin: 0 auto 0 auto;
+}
+.header .nav{
+    padding-left: 0;
+    margin: 5px 0 20px 0;
+    text-align: center;
+}
+.header .nav li{
+    display: inline;
+    padding-right: 10px;
+}
+.main-content{
+    width: 600px;
+    margin: 30px auto 0px auto;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 25px;
+    background: #f1f1f1;
+    -webkit-box-shadow: 0 0 22px 0 rgba(50, 50, 50, 1);
+    -moz-box-shadow:    0 0 22px 0 rgba(50, 50, 50, 1);
+    box-shadow:         0 0 22px 0 rgba(50, 50, 50, 1);
+}
+
+.main-content h2{
+    text-align: center;
+    color: dimgray;
+}
+
+.main-content p{
+    line-height: 26px;
+}
+
+.footer{
+    text-align: center;
+    color: dimgray;
+    margin: 20px auto 10px auto;
+}
