@@ -8,9 +8,9 @@ def get_web_info(url,data=None):
     wb_data = requests.get(url)
     soup = BeautifulSoup(wb_data.text,'lxml')
 
-    titles = soup.select('article > section > h4 > a')
-    images = soup.select('article > header > a > img')
-    links =  soup.select('article > header > a')
+    titles = soup.select('section.content > h4 > a')
+    images = soup.select('a.cover-inner > img')
+    links =  soup.select('section.content > h4 > a')
 
     for title,image,link in zip(titles,images,links):
         data = {
