@@ -7,6 +7,7 @@ url = ['https://knewone.com/?page={}'.format(str(i)) for i in range(1,11,1)]
 def get_web_info(url,data=None):
     wb_data = requests.get(url)
     soup = BeautifulSoup(wb_data.text,'lxml')
+    time.sleep(2)
 
     titles = soup.select('section.content > h4 > a')
     images = soup.select('a.cover-inner > img')
