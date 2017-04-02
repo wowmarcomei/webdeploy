@@ -35,6 +35,7 @@ def get_details(url):
     soup = BeautifulSoup(wb_data.text,'lxml')
     time.sleep(4)
 
+    # 说明: soup.select返回的是一个列表,对于详情页一般只有一个结果,这个时候可以使用[0]来获取列表内容,使用.text获取内容,get函数获取相应属性内容
     title = soup.select('div.con_l > div.pho_info > h4 > em')[0].text
     address = soup.select('div.con_l > div.pho_info > p > span')[0].text
     price = soup.select('#pricePart > div.day_l > span')[0].text
