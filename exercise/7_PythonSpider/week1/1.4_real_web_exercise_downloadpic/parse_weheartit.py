@@ -9,11 +9,12 @@ headers = {
 }
 
 # 从网站http://freeproxylists.net/zh/?page=1处查找可以使用的代理服务器IP
-proxies = {"http": "http://121.8.98.202:8081"}
+proxies = {"https": "https://104.196.29.136:80"}
 
 urls = ['http://weheartit.com/inspirations/taylorswift?page={}'.format(str(i)) for i in range(1,21,1)]
 
 pics = []
+path = '/Users/meixuhong/aaa/'
 
 def get_singleurl_pic(url):
     wb_data = requests.get(url,headers=headers,proxies=proxies)
@@ -29,8 +30,10 @@ def get_pics(pages):
         get_singleurl_pic(urls[i-1])
         print('Done {}\n'.format(i))
 
-def downlaod_pic(url):
+def downlaod_pic(path,pics):
+    for i in range(1,len(pics)):
+        urllib.request.urlretrieve(pics[i], path+str(i)+'_'+pics[i].split('/')[-1])
+        print('Download {}'.format(i))
 
-
-get_pics(20)
-print(pics)
+get_pics(10)
+downlaod_pic(path,pics)
