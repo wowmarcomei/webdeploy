@@ -6,42 +6,72 @@ headers = {
     'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
 }
 
-headers_m = {
-    'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1'
-}
+proxies = {"https":"https://35.185.46.164:80"}
 
-proxies = {"https":"https://191.96.43.23:8080"}
+base_deal_urls = ['http://sz.lianjia.com/chengjiao/pg{}/'.format(str(i)) for i in range(1,101,1)]
 
-base_urls = ['http://sz.lianjia.com/chengjiao/pg{}/'.format(str(i)) for i in range(1,101,1)]
+xiaoqu_name = []
+deal_xiaoqu_url = []
 
-base_info = {}
+def get_xiaoqu_name(url_list,pages):
+    '''
+    通过成交的pages页的小区名字,构造一个url列表,里面的url对应各个小区的查询交易历史
+    :param url_list: 每页的url
+    :param pages: 前pages页
+    :return:
+    '''
+    if pages <= len(url_list):
+        for i in range(0,pages+1,1):
+            wb_data = requests.get(url_list[i], headers=headers, proxies=proxies)
+            soup = BeautifulSoup(wb_data.text, 'lxml')
+            print(soup)
 
-def get_house_name_link(url):
-    wb_data = requests.get(url,headers=headers,proxies=proxies)
-    soup = BeautifulSoup(wb_data.text,'lxml')
+            titles = soup.select('ul.listContent > li > div.info > div.title > a')
 
-    titles = soup.select('ul.listContent > li > div.info > div.title > a')
-    links = soup.select('div.info > div.title > a')
+            for title in titles:
+                xiaoqu_name.append(title.get_text().split()[0])
+                deal_xiaoqu_url.append('http://sz.lianjia.com/chengjiao/rs{}/'.format(title.get_text().split()[0]))
+            print('\npage {} parse done.\n'.format(i+1))
+    else:
+        print('\n查询页数超过范围\n')
+        i = 0
+        for url in url_list:
+            wb_data = requests.get(url, headers=headers, proxies=proxies)
+            soup = BeautifulSoup(wb_data.text, 'lxml')
 
-    for title,link, in zip(titles,links):
-        # 插入字典数据
-        base_info['{}'.format(title.get_text().split()[0])] = '{}'.format(link.get('href').split('/')[-1])
-    print(base_info)
+            titles = soup.select('ul.listContent > li > div.info > div.title > a')
 
-def get_house_name_links(pages):
-    for i in range(0,pages,1):
-        get_house_name_link(base_urls[i])
-        print('\n\nDone {}\n\n'.format(i))
+            for title in titles:
+                xiaoqu_name.append(title.get_text().split()[0])
+                deal_xiaoqu_url.append('http://sz.lianjia.com/chengjiao/rs{}/'.format(title.get_text().split()[0]))
+            print('\npage {} parse done.\n'.format(i + 1))
 
-# get_house_name_links(10)
+def get_xiaoqu_deal_history(url_list):
+    '''
+    获取小区成交历史
+    :param url_list:
+    :return:
+    '''
+    for url in url_list:
+        wb_data = requests.get(url, headers=headers, proxies=proxies)
+        soup = BeautifulSoup(wb_data.text, 'lxml')
 
-def get_house_info(url):
-    wb_data = requests.get(url,headers=headers_m,proxies=proxies)
-    soup = BeautifulSoup(wb_data.text,'lxml')
+        titles = soup.select('div.title > a')
+        deal_dates = soup.select('div.dealDate')
+        total_prices = soup.select('div.totalPrice > span.number')
+        unit_prices = soup.select('div.unitPrice > span.number')
+        positions = soup.select('div.positionInfo')
 
-    a = soup.select('div > a.btn.btn_gray.post_ulog')[0].get('href')
-    # a = soup.find_all('a',class_='getMoreHouse')
-    print(a)
-
-get_house_info('https://m.lianjia.com/sz/chengjiao/105100678720.html')
-# get_house_info('http://sz.lianjia.com/chengjiao/105100688335.html')
+        for title, deal_date, total_price, unit_price, position in zip(titles,deal_dates,total_prices,unit_prices,positions):
+            data = {
+                '小区':title.get_text(),
+                '成交日期':deal_date.get_text(),
+                '总价':total_price.get_text(),
+                '单价':unit_price.get_text(),
+                '楼层': position.get_text(),
+                '链接': title.get('href')
+            }
+            print(data)
+get_xiaoqu_name(base_deal_urls,1)
+print(deal_xiaoqu_url)
+get_xiaoqu_deal_history(deal_xiaoqu_url)
