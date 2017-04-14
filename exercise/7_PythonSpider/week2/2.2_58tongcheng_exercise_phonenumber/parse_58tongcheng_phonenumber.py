@@ -44,6 +44,11 @@ def get_phonenumber_info(url,page):
                     'phone_number': phone_number.get_text()
                 }
                 print(data)
+                sheet_phonenumber.insert_one(data)
     else:
-        return None
-get_phonenumber_info(base_url,1)
+        pass
+
+# for i in range(1,200):
+#     get_phonenumber_info(base_url,i)
+for item in sheet_phonenumber.find().limit(3500):
+    print(item['phone_number'])
