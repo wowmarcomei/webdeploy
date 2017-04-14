@@ -14,6 +14,7 @@ for item in sheet.find({'words':{'$lt':5}}):
     print(item)
     # sheet.remove(item)
 
+
 '''
 path = '/Users/meixuhong/workstation/exercise/5_Python/4_parseWebMongodb/walden.txt'
 with open(path,'r') as file:
