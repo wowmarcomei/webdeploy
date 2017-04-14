@@ -6,12 +6,13 @@ from pymongo import MongoClient
 host = 'localhost'
 port = 27017
 
-# 创建一个数据库connection
+# 创建一个数据库client
 client = MongoClient(host,port)
 # 创建一个数据库,名为58tongcheng
 db = client['58tongcheng']
-# 给数据库添加一个表,名为sheet
+# 给数据库添加collection
 sheet_url = db['58_urls']
+sheet_item = db['58_items']
 
 headers = {
     'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
@@ -28,6 +29,7 @@ def get_item_urls(cate_url,page,who_sell=0,):
     print(url_list_view)
     wb_data = requests.get(url_list_view,headers=headers,proxies=proxies)
     soup = BeautifulSoup(wb_data.text,'lxml')
+    time.sleep(1)
 
     # 去掉那些没有的页面,比如100页之后就是空的,所以不再爬取
     if soup.find_all('div',class_='noinfotishi'):
@@ -37,7 +39,7 @@ def get_item_urls(cate_url,page,who_sell=0,):
         for link in links:
             # 判断是否为精准解析,通过对比分析发现,如果a的上上层父类,包含了zzjingzhun这个类的话,就是精准分析,我们过滤掉这部分的内容
             # 后来又发现还有一些分期付款的item,也将其过滤掉
-            if len(link.find_parents("tr", class_="zzjingzhun")) or len(link.find_parents("tr", class_="fenqi_tr")):
+            if len(link.find_parents("tr", class_="zzjingzhun")) or len(link.find_parents("tr", class_="fenqi_tr")) or len(link.find_parents("div", class_="zhiding")):
                 pass;
             else:
                 data = {
@@ -46,6 +48,32 @@ def get_item_urls(cate_url,page,who_sell=0,):
                 }
                 print(data)
                 sheet_url.insert_one(data)
-
-for page in range(1,6,1):
+'''
+for page in range(1,121,1):
     get_item_urls('http://bj.58.com/shouji/',page)
+'''
+def get_item_details(url):
+    wb_data = requests.get(url,headers=headers,proxies=proxies)
+    soup = BeautifulSoup(wb_data.text,'lxml')
+    time.sleep(1)
+
+    title = soup.select('h1.info_titile')[0].get_text()
+    price = soup.select('span.price_now > i')[0].get_text()
+    area = soup.select('div.palce_li > span > i')[0].get_text()
+    want_person = list(soup.select('span.want_person')[0].get_text())[0] if soup.find_all('span',class_='want_person') else None
+
+    data = {
+        'title':title,
+        'price':price,
+        'area':area,
+        'want_person':want_person
+    }
+    print(data)
+    sheet_item.insert_one(data)
+
+for item in sheet_url.find().limit(2000):
+    get_item_details(item['url'])
+
+
+
+
