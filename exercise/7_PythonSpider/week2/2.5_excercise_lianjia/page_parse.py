@@ -34,7 +34,6 @@ def get_area_deal_url(area,page,proxy = None):
     url = '{}pg{}'.format(area,str(page))
 
     if proxy == None:
-        pass
         wb_data = requests.get(url, headers=headers,proxies={'http':'http://138.68.132.206:3128'})
         soup = BeautifulSoup(wb_data.text, 'lxml')
         if soup.find_all('p',id="authType"):
@@ -74,8 +73,4 @@ def get_area_deal_url(area,page,proxy = None):
 # 测试,实例化类Procies
 get_area_deal_url('http://sz.lianjia.com/chengjiao/luohuqu/',1)
 
-# 1.总的url
-# db_urls_1 = [item['url'] for item in sheet_area.find({"area":"南山区"})]
-#
-# print(db_urls_1)
 
