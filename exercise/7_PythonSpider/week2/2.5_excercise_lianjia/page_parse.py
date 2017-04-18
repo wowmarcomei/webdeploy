@@ -6,7 +6,6 @@ import random
 # 导入类库的时候就会进行类的初始化,执行__init__函数
 # from extract_proxies import Proxies
 
-
 host = 'localhost'
 port = 27017
 

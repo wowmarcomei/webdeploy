@@ -3,7 +3,7 @@ from page_parse import get_area_deal_url,get_deal_info,sheet_area,sheet_item
 from extract_area import area_name,area_deal_url,pages,area_name_test,area_list_test,pages_test
 from extract_proxies import Proxies
 
-# 获取没有被爬取的url列表
+#  获取没有被爬取的url列表
 
 # 1.总的url
 db_urls = [item['url'] for item in sheet_area.find()]
@@ -29,10 +29,10 @@ if __name__ == '__main__':
     # map函数比较神奇,会将第二个参数依次传给第一个参数(函数),并执行该函数,map返回一个list
 
     # 第一次执行爬虫1,爬取url,执行爬虫1的时候注释爬虫2
-    # pool.map(get_all_links_from,area_list_test)
+    pool.map(get_all_links_from,area_list_test)
 
     # 第二次执行爬虫2,爬取item信息,执行爬虫2的时候注释爬虫1
-    pool.map(get_deal_info,rest_of_urls)
+    # pool.map(get_deal_info,rest_of_urls)
 
     pool.close()
     pool.join()
