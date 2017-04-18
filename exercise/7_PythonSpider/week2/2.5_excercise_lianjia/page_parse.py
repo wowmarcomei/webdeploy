@@ -42,7 +42,7 @@ def get_area_deal_url(area,page,proxy = None):
         else:
             pass
 
-    time.sleep(2)
+    # time.sleep(2)
 
     xiaoqu = soup.select('div.info > div.title > a')
     area = soup.select('div > a.selected')[0].text if soup.find_all('a',class_='selected') else None
@@ -84,7 +84,7 @@ def get_deal_info(url,proxy = None):
             pass
 
 
-    time.sleep(5)
+    # time.sleep(5)
 
     title = soup.select('div.house-title > div.wrapper')[0].get_text()
     deal_date = soup.select('div.house-title > div.wrapper > span')[0].get_text()
@@ -127,5 +127,5 @@ def get_deal_info(url,proxy = None):
     sheet_item.insert_one(data)
 
 
-get_deal_info('http://sz.lianjia.com/chengjiao/105100412395.html')
+# get_deal_info('http://sz.lianjia.com/chengjiao/105100705533.html')
 

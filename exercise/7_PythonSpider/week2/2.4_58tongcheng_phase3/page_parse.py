@@ -19,7 +19,7 @@ headers = {
     'Cookie':'id58=c5/nn1jG1nt7740tOqjDAg==; bj58_id58s="SFkzaFJHS0R5UjNSNDc0Mg=="; als=0; myfeet_tooltip=end; bdshare_firstime=1491265900161; _ga=GA1.2.1479444230.1491872757; sz=20174117375; 58home=sz; commonTopbar_myfeet_tooltip=end; city=bj; es_ab=0; Hm_lvt_4f8818470616ef40f492f2b00cb36839=1492134401,1492178153; Hm_lpvt_4f8818470616ef40f492f2b00cb36839=1492178197; sessionid=58390cfc-8fff-449b-960d-3a15ab34b87c; Hm_lvt_3013163ef40dcfa5b06ea83e8a1a797f=1492134249,1492188021; Hm_lpvt_3013163ef40dcfa5b06ea83e8a1a797f=1492188028; bangbigtip2=1; Hm_lvt_ef9ab733a6772ffc77e498ec3aee46bd=1492188222; Hm_lpvt_ef9ab733a6772ffc77e498ec3aee46bd=1492188270; 58tj_uuid=341a5926-7769-47a6-a2eb-d054038f094c; new_uv=12; final_history=29695486354362%2C29682805275452%2C29717712878283%2C29718702442553%2C29718705361455; bj58_new_session=0; bj58_init_refer=""; bj58_new_uv=13'
 }
 
-proxies = {'https':'https://52.39.165.127:3128'}
+proxies = {'https':'https://166.78.3.170:9999'}
 
 def get_item_urls(cate_url,page,who_sell=0,):
     url_list_view = '{}{}/pn{}'.format(cate_url,str(who_sell),str(page))

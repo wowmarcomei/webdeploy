@@ -6,4 +6,4 @@ while True:
     # print('url: {}'.format(sheet_area.find().count()))
     print('url: {}'.format(sheet_item.find().count()))
 
-    time.sleep(2)
+    time.sleep(5)

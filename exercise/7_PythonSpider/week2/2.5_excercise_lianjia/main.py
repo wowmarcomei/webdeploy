@@ -17,7 +17,8 @@ def get_all_links_from(area,proxy = None):
     # 设置函数只有一个软参,便于传入map函数进行多进程运行
     for i in range(0,len(pages_test)):
         for page in range(1,pages_test[i]+1):
-            get_area_deal_url(area,page,proxy=proxy)
+            # get_area_deal_url(area,page,proxy=proxy)
+            get_area_deal_url(area,page)
 
 if __name__ == '__main__':
     # 实例化Proxies类
