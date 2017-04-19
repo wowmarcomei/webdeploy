@@ -4,47 +4,7 @@ import time
 import re
 import random
 
-base_url = 'http://www.us-proxy.org/'
-
-#
-#
-# UA = random.choice(agent_list)
-# headers = {
-#     'User-Agent': UA,
-#     'Cookie':'__cfduid=d9b84d562c17e7c312f1f92d5a5d9438b1491177799; _ga=GA1.2.1542643058.1491177804; __atuvc=18%7C14%2C4%7C15%2C6%7C16; __atuvs=58f34389a06466b7002'
-# }
-#
-# # iplist = []
-#
-# def get_ip_list(url=base_url):
-#     wb_data = requests.get(url,headers=headers)
-#     soup = BeautifulSoup(wb_data.text,'lxml')
-#
-#     ips = soup.select('tbody > tr > td:nth-of-type(1)')
-#     ports = soup.select('tbody > tr > td:nth-of-type(2)')
-#     protocols = soup.select('tbody > tr > td:nth-of-type(7)')
-#     validities = soup.select('tbody > tr > td:nth-of-type(8)')
-#
-#     for ip,port,protocol,validity in zip(ips,ports,protocols,validities):
-#             data = {
-#                 'ip': ip.get_text(),
-#                 'port': port.get_text(),
-#                 'protocol': 'Https' if protocol.get_text() == 'yes' else 'Http',
-#                 'validity': validity.get_text()
-#             }
-#             iplist.append({'{}'.format(data['protocol']):'{}://{}:{}'.format(data['protocol'],data['ip'],data['port'])})
-#             print(data)
-#
-#     print(iplist)
-#     print('共有{}个ip'.format(len(iplist)))
-#
-#     # 返回前20个IP list
-#     return iplist[:20]
-#
-# get_ip_list()
-#
-# proxies = random.choice(iplist)
-# print(proxies)
+base_url = 'http://www.socks-proxy.net/'
 
 class Proxies:
     def __init__(self):
@@ -70,7 +30,6 @@ class Proxies:
         ]
 
         self.ip_list = []
-        self.ip_temp = []
 
         UA = random.choice(self.user_agent_list)
         self.headers = {
@@ -89,19 +48,20 @@ class Proxies:
             data = {
                 'ip': ip.get_text(),
                 'port': port.get_text(),
-                'protocol': 'Https' if protocol.get_text() == 'yes' else 'Http',
+                'protocol': 'Https' if protocol.get_text() == 'Yes' else 'Http',
                 'validity': validity.get_text()
             }
-            self.ip_temp.append(
+            self.ip_list.append(
                 {'{}'.format(data['protocol']): '{}://{}:{}'.format(data['protocol'], data['ip'], data['port'])})
             print(data)
 
-        print('共有{}个ip'.format(len(self.ip_temp)))
+        print('共有{}个ip'.format(len(self.ip_list)))
 
         # 获取前20个IP list
-        self.ip_list = self.ip_temp[:20]
+        # self.proxies = random.choice(self.ip_list)
 
-test = Proxies()
-print(test.ip_list)
+# test = Proxies()
+# print(test.headers)
+# print(test.proxies)
 
 

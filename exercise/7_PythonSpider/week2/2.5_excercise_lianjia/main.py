@@ -2,6 +2,7 @@ from multiprocessing import Pool
 from page_parse import get_area_deal_url,get_deal_info,sheet_area,sheet_item
 from extract_area import area_name,area_deal_url,pages,area_name_test,area_list_test,pages_test
 from extract_proxies import Proxies
+import random
 
 #  获取没有被爬取的url列表
 
@@ -13,16 +14,18 @@ x = set(db_urls)
 y = set(index_urls)
 rest_of_urls = x - y
 
-def get_all_links_from(area,proxy = None):
+def get_all_links_from(area,proxies = Proxies()):
     # 设置函数只有一个软参,便于传入map函数进行多进程运行
     for i in range(0,len(pages_test)):
         for page in range(1,pages_test[i]+1):
+            get_area_deal_url(area,page,proxies = proxies)
             # get_area_deal_url(area,page,proxy=proxy)
-            get_area_deal_url(area,page)
+            # print(random.choice(proxies.user_agent_list))
+            # print(random.choice(proxies.ip_list))
 
 if __name__ == '__main__':
     # 实例化Proxies类
-    proxy = Proxies()
+    # proxy = Proxies()
 
     # 创建进程池,后续将需要多进程运行的函数放进进程池即可
     pool = Pool()

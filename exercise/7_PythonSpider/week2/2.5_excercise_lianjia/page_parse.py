@@ -4,7 +4,7 @@ import time
 from pymongo import MongoClient
 import random
 # 导入类库的时候就会进行类的初始化,执行__init__函数
-# from extract_proxies import Proxies
+from extract_proxies import Proxies
 
 host = 'localhost'
 port = 27017
@@ -21,27 +21,21 @@ headers = {
     'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
 }
 
-def get_area_deal_url(area,page,proxy = None):
+def get_area_deal_url(area,page,proxies = None):
     url = '{}pg{}'.format(area,str(page))
+    print(url)
 
-    if proxy == None:
-        wb_data = requests.get(url, headers=headers,proxies={'http':'http://162.243.77.188:3128'})
-        soup = BeautifulSoup(wb_data.text, 'lxml')
-        if soup.find_all('p',id="authType"):
-            print("哎呀,我去,被抓了!============================\n\n\n\n\n\n\n\n")
-            print(soup)
-        else:
-            pass
+    # print(random.choice(proxies.ip_list))
+
+    wb_data = requests.get(url,headers={'User-Agent':random.choice(proxies.user_agent_list)},proxies = random.choice(proxies.ip_list))
+    soup = BeautifulSoup(wb_data.text, 'lxml')
+    if soup.find_all('p',id="authType"):
+        print("哎呀,悲剧了哦,被抓了,又要换代理了啊!*************************\n\n\n\n\n\n\n\n")
+        # print(soup)
     else:
-        wb_data = requests.get(url,headers={'User-Agent':random.choice(proxy.user_agent_list)},proxies = random.choice(proxy.ip_list))
-        soup = BeautifulSoup(wb_data.text, 'lxml')
-        if soup.find_all('p',id="authType"):
-            print("哎呀,悲剧了哦,被抓了!*************************\n\n\n\n\n\n\n\n")
-            print(soup)
-        else:
-            pass
+        pass
 
-    # time.sleep(2)
+    time.sleep(2)
 
     xiaoqu = soup.select('div.info > div.title > a')
     area = soup.select('div > a.selected')[0].text if soup.find_all('a',class_='selected') else None
@@ -61,29 +55,21 @@ def get_area_deal_url(area,page,proxy = None):
             sheet_area.insert_one(data)
             print(data)
 
+
 # 测试,实例化类Procies
-# get_area_deal_url('http://sz.lianjia.com/chengjiao/luohuqu/',1)
+# get_area_deal_url('http://sz.lianjia.com/chengjiao/luohuqu/',2)
 
-def get_deal_info(url,proxy = None):
-    if proxy == None:
-        wb_data = requests.get(url)
-        soup = BeautifulSoup(wb_data.text, 'lxml')
-        if soup.find_all('p',id="authType"):
-            print("哎呀,我去,被抓了!============================\n\n\n\n\n\n\n\n")
-            print(soup)
-        else:
-            pass
+def get_deal_info(url,proxies = Proxies()):
+
+    wb_data = requests.get(url,headers={'User-Agent':random.choice(proxies.user_agent_list)},proxies = random.choice(proxies.ip_list))
+    soup = BeautifulSoup(wb_data.text, 'lxml')
+    if soup.find_all('p',id="authType"):
+        print("哎呀,悲剧了哦,使用proxy也被抓了!*************************\n\n\n\n\n\n\n\n")
     else:
-        wb_data = requests.get(url,headers={'User-Agent':random.choice(proxy.user_agent_list)},proxies = random.choice(proxy.ip_list))
-        soup = BeautifulSoup(wb_data.text, 'lxml')
-        if soup.find_all('p',id="authType"):
-            print("哎呀,悲剧了哦,被抓了!*************************\n\n\n\n\n\n\n\n")
-            print(soup)
-        else:
-            pass
+        pass
 
 
-    # time.sleep(5)
+    time.sleep(2)
 
     title = soup.select('div.house-title > div.wrapper')[0].get_text()
     deal_date = soup.select('div.house-title > div.wrapper > span')[0].get_text()
@@ -126,5 +112,6 @@ def get_deal_info(url,proxy = None):
     sheet_item.insert_one(data)
 
 
-# get_deal_info('http://sz.lianjia.com/chengjiao/105100705533.html')
+
+
 
