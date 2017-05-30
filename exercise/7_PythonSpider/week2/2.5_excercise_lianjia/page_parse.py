@@ -27,8 +27,9 @@ def get_area_deal_url(area,page,proxies = None):
 
     # print(random.choice(proxies.ip_list))
 
-    wb_data = requests.get(url,headers={'User-Agent':random.choice(proxies.user_agent_list)},proxies = random.choice(proxies.ip_list))
-    soup = BeautifulSoup(wb_data.text, 'lxml')
+    wb_data = requests.get(url,proxies = proxies)
+    wb_data.encoding = 'utf-8'
+    soup = BeautifulSoup(wb_data.text, 'lxml',)
     if soup.find_all('p',id="authType"):
         print("哎呀,悲剧了哦,被抓了,又要换代理了啊!*************************\n\n\n\n\n\n\n\n")
         # print(soup)
@@ -57,7 +58,7 @@ def get_area_deal_url(area,page,proxies = None):
 
 
 # 测试,实例化类Procies
-# get_area_deal_url('http://sz.lianjia.com/chengjiao/luohuqu/',2)
+get_area_deal_url('http://sz.lianjia.com/chengjiao/luohuqu/',2)
 
 def get_deal_info(url,proxies = Proxies()):
 
