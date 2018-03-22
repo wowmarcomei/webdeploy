@@ -1,6 +1,7 @@
 ![效果](https://ws1.sinaimg.cn/large/006tNbRwgy1fpm0dlwwffj30uh0tagvt.jpg)
 
 1. 引用semantic直接使用link引用
+
 ‘‘‘
 <link rel="stylesheet" href="css/semantic.css">
 ’’’
