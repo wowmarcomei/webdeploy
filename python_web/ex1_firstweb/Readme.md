@@ -2,9 +2,10 @@
 
 1. 引用semantic直接使用link引用
 
-‘‘‘
+```html
 <link rel="stylesheet" href="css/semantic.css">
-’’’
+```
+
 
 2. ui segment是基本段
 
