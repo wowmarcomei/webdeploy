@@ -27,3 +27,20 @@
 - 使用container形容词修饰segment，使得segment更为收紧与居中
 
 6. 引入图片的话可以新加一个ui image下面嵌套img标签
+
+```html
+<div class="ui image">
+      <img src="images/banner.jpg" alt="">
+</div>
+```
+
+7. 灵活使用segment中label标签
+
+如下述方式定义一个靠右的带状的标签。
+
+```html
+<a class="ui red right ribbon label">Life</a>
+```
+
+
+
