@@ -28,3 +28,56 @@
     font-size: 30px;
     color: rgb(185, 187, 189);
 }
+
+.ui.inverted.segment.card-view {
+    height: 220px;
+    
+}
+
+/* 通过子孙选择器来精确定位卡片上的header */
+.ui.segment.vertical.basic.recommended > .ui.center.aligned.header {
+    font-size: 40px;
+    color: rgb(56,56,56);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* 通过子孙选择器来精确定位卡片中的header */
+.ui.inverted.segment.card-view > .ui.header.card-title {
+    margin-bottom: 100px;
+}
+
+.ui.inverted.red.basic.segment.people-say {
+    height: 450px;
+    background: url(images/people-say.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* 订制卡片里的人物div为圆形，通过设置宽和高相等即可，但是现实效果发现显示出了挤压效果 */
+/* 这个时候可以通过将这个div下的一些元素设置定位为absolute来实现浮出，这样就不占位，可以达到想要的效果 */
+.ui.circular.inverted.segment {
+    background: url(images/profile.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 120px;
+}
+
+/* 如上描述，设置里面内容为浮动,并且进行居中设置 */
+.ui.circular.inverted.segment > .ui.inverted.header {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 200px;
+
+}
+
+/* 如上描述，设置里面内容为浮动,设置位置向右下角移动 */
+.icon.red.inverted.circular.star {
+    position: absolute;
+    transform: translate(-100%,-100%);
+    left: 100%;
+    top: 100%;
+}
