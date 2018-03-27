@@ -52,6 +52,11 @@
     background: url(images/people-say.png);
     background-size: cover;
     background-repeat: no-repeat;
+
+    /* 作为header的父级，为了使子孙能够正常使用absolute定位，父级需要设置absolute或者relative */
+    position: relative;
+
+    margin-bottom: 70px;
 }
 
 /* 订制卡片里的人物div为圆形，通过设置宽和高相等即可，但是现实效果发现显示出了挤压效果 */
@@ -62,6 +67,38 @@
     background-repeat: no-repeat;
     width: 120px;
     height: 120px;
+
+    /* 设置圆形图居中 */
+    /* 1.设置position为absolute则以父级为参考系，且上浮一层 */
+    /* 2.指定坐标点，transform */
+    /* 3. 设置偏移量 */
+    /* 4.设置父级为absolute或者relative */
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+
+}
+
+/* 为了设置上面的原图居中，需要设置父级元素(或父级的父级)的样式中位置为relative或者absolute */
+/* 此处我们采用父级的父级元素的样式 */
+.ui.inverted.red.basic.segment.people-say > .ui.grid {
+    position: relative;  /*使用relative定位不用修改父级元素的样式*/
+
+    /* 且设置圆形距离上方位置有一段距离,可以直接通过relative+top偏移百分比的方式来偏移 */
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+/* 设置header位置居中 */
+.ui.inverted.red.basic.segment.people-say > .ui.center.aligned.header {
+    /* 1.设置位置为absolute */
+    /* 2.修改父级元素的样式为absolute或者relative */
+    /* 3.设置距离top和bottom的距离 */
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 20%;
+    left: 50%;
 }
 
 /* 如上描述，设置里面内容为浮动,并且进行居中设置 */
@@ -80,4 +117,12 @@
     transform: translate(-100%,-100%);
     left: 100%;
     top: 100%;
+}
+
+.ui.inverted.red.basic.segment.people-say >.ui.red.circular.button {
+  /* 居中 */
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 100%;
+    left: 50%;
 }
