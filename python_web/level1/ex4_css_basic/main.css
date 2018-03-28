@@ -1,0 +1,29 @@
+.block1 {
+    border: solid 4px blue;
+    background: tomato;
+    margin-bottom: 20px;
+    padding: 20px 14px 20px 14px;
+    /* box-sizing: border-box;  */
+    width: 64px;
+    height: 64px;
+}
+
+.block2 {
+    border: solid 4px red;
+    background: green;
+    margin-bottom: 20px;
+    padding: 20px 14px 20px 14px;
+    box-sizing: border-box; 
+    width: 64px;
+    height: 64px;
+}
+
+.block3 {
+    border: solid 4px black;
+    background: blueviolet;
+    margin-bottom: 20px;
+    padding: 20px 14px 20px 14px;
+    box-sizing: border-box; 
+    width: 64px;
+    height: 64px;
+}

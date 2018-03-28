@@ -1,0 +1,69 @@
+.block1 {
+    box-sizing: border-box; 
+    width: 64px;
+    height: 64px;
+    background: url(images/grass.png);
+    background-size: contain;
+}
+
+.block2 {
+    box-sizing: border-box; 
+    width: 128px;
+    height: 64px;
+    background: url(images/grass.png);
+    background-size: contain;
+}
+
+.block3 {
+    box-sizing: border-box; 
+    width: 196px;
+    height: 64px;
+    background: url(images/grass.png);
+    background-size: contain;
+}
+
+.flower{
+    box-sizing: border-box; 
+    width: 64px;
+    height: 64px;
+    background: url(images/rose.png);
+    background-size: contain;
+    position: relative; 
+    left: 64px; /* 自己原本在的位置相对新位置，向左偏移了64px */
+    top:64px;/* 自己原本在的位置相对新位置，向上偏移了64px */
+    /* 由于是相对偏移，所以自己本来的div所在的位置还保留 */
+    
+}
+
+.yellow-flower{
+    box-sizing: border-box; 
+    width: 64px;
+    height: 64px;
+    background: url(images/flower.png);
+    background-size: contain;
+    position: absolute; 
+    left: 128px;
+}
+
+.point{
+    background: orange;
+    width: 8px;
+    height: 8px;
+}
+
+.bg{
+    border: solid 8px rgb(212, 143, 15);
+    background: blue;
+    width: 320px;
+    height: 256px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+body{
+    margin: 0;
+    background: url('images/brick.jpg');
+    background-size: 150px 150px;
+}
