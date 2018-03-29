@@ -1,0 +1,17 @@
+.ui.fixed.inverted.red.borderless.fitted.menu {
+    position: relative; 
+    height: 60px;
+}
+
+.ui.fixed.inverted.red.borderless.fitted.menu > .ui.image {
+    position: relative;
+    top: 25%;
+}
+
+.ui.fixed.inverted.red.borderless.fitted.menu > .right.item > .item {
+    margin-left: 10px;
+}
+
+.ui.fixed.inverted.red.borderless.fitted.menu > .right.item > .item >span {
+    margin-left: 5px;
+}
