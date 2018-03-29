@@ -15,3 +15,9 @@
 .ui.fixed.inverted.red.borderless.fitted.menu > .right.item > .item >span {
     margin-left: 5px;
 }
+
+.ui.basic.vertical.segment.master-head {
+    height: 500px;
+    background: url("./images/detail.jpg");
+    background-size: cover;
+}

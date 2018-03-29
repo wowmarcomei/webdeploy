@@ -12,6 +12,7 @@
 
 <body>
 
+    <!--菜单栏 -->
     <div class="ui fixed inverted red borderless fitted menu">
         <div class="ui image">
             <img src="./images/tenlogo.png" alt="">
@@ -26,11 +27,97 @@
             </div>
 
             <div class=" item">
-                    <button class="ui button inverted circular">Logout</button>
+                <button class="ui button inverted circular">Logout</button>
             </div>
-            
+
         </div>
 
+    </div>
+
+    <!-- banner栏 -->
+    <div class="ui basic vertical segment master-head">
+        <!-- 考虑到直接放入图片的话，图片不能会按照原始尺寸摆放，所以将其放入背景，设定div的高度即可 -->
+    </div>
+
+    <!-- 内容栏 -->
+    <div class="ui basic vertical container">
+
+        <h2 class="ui center aligned header">
+            Go to the profile of Washington Post
+        </h2>
+
+        <div class="ui basic segment">
+            <i class="ui unhide icon eye"></i>
+            <span>10K</span>
+            <i class="ui checkmark icon"></i>
+            <span>5763 people got it</span>
+        </div>
+
+        <div class="ui basic segment">
+            <p>
+                Go to the profile of Washington Post Washington PostFollow News and analysis from around the world. Founded in 1877. 15 hrs
+                ago6 min read Such meme. Very wow. (Illustration by Harry Malt for The Washington Post) All your memes are
+                belong to us The top 25 memes of the web’s first 25 years By Gene Park, Adriana Usero and Chris Rukan For
+                more of The Web at 25, visit The Washington Post. Memes didn’t begin with the Web, but you’d be forgiven
+                for thinking so. The evolutionary biologist Richard Dawkins coined the term in his 1976 book, “The Selfish
+                Gene,” to describe something that already existed. A meme, from the Greek “mimeme” (to imitate) was “a unit
+                of cultural transmission, or a unit of imitation.” This encompassed phenomena from Martin Luther’s “95 Theses”
+                to the famous graffiti drawing “Kilroy Was Here,” which dates to the beginning of World War II. But the Web
+                has proved to be the most fertile ground, and the site Know Your Meme has confirmed more than 2,600 of them.
+                Below, 25 definitive memes from the Web’s first 25 years. [1] Dancing Baby 1996: Considered the granddaddy
+                of Internet memes, the baby shuffling to Blue Swede’s “Hooked on a Feeling” filled inboxes and prime-time
+                airwaves, appearing in several episodes of “Ally McBeal.” The file was originally included with early 3D
+                software. LucasFilm developers modified it before it was widely shared, and it was finally compressed into
+                one of the first GIFs.
+            </p>
+        </div>
+
+        <div class="ui divider"></div>
+
+        <!-- <div class="ui basic text  menu">
+
+            <div class="ui item">
+                <div class="ui button">
+                    <i class="ui icon checkmark"></i>
+                    <span>get it!</span>
+                </div>
+            </div>
+
+            <div class="ui item">
+                <button class="ui red button">
+                    <i class="ui icon man"></i>
+                    <span>Hmmm...</span>
+                </button>
+            </div>
+
+            <div class="ui right item">
+                <button class="ui black button circular">
+                    <i class="ui icon pin "></i>
+                    <span>Saved</span>
+                </button>
+            </div>
+     
+        </div> -->
+
+        <form class="ui form" action="" method="post">
+
+                <button class="ui  tiny button" type="submit" name="vote" value="like">
+    
+                    <i class="icon checkmark"></i>
+                    Get it!
+                </button>
+    
+                <button class="ui red tiny button" type="submit" name="vote" value="normal">
+                    <i class="icon bomb"></i>
+                    Hmmm...
+                </button>
+    
+                <button class="ui secondary circular tiny right floated button">
+                    <i class="pin icon"></i>
+                    Saved
+                    </button>
+    
+        </form>
 
     </div>
 
