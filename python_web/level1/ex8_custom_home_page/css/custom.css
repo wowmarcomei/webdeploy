@@ -1,0 +1,14 @@
+.ui.basic.vertical.segment.center.aligned.first-banner {
+    background: url("../images/star_banner.jpg");
+    background-size: cover;
+    background-position: 100%,80%;
+    height: 300px;
+
+}
+
+.ui.basic.vertical.segment.center.aligned.first-banner > .ui.header.inverted {
+    font-family: "Raleway" sans-serif;
+    font-size: 50px;
+
+    
+}
