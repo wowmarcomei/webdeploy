@@ -1,23 +1,65 @@
-.ui.fixed.inverted.red.borderless.fitted.menu {
-    position: relative; 
+.ui.fixed.inverted.red.fitted.borderless.menu {
+    /* position: absolute;  */
     height: 60px;
 }
 
-.ui.fixed.inverted.red.borderless.fitted.menu > .ui.image {
+/* 定位方式之1： relative+百分比 */
+/* 另外一种复杂的定位方式为：absolute+位移，但是需要将父级元素样式设置为absolute或relative */
+.ui.fixed.inverted.red.fitted.borderless.menu > .ui.image {
     position: relative;
     top: 25%;
 }
 
-.ui.fixed.inverted.red.borderless.fitted.menu > .right.item > .item {
+.ui.fixed.inverted.red.fitted.borderless.menu > .right.item > .item {
     margin-left: 10px;
 }
 
-.ui.fixed.inverted.red.borderless.fitted.menu > .right.item > .item >span {
+.ui.fixed.inverted.red.fitted.borderless.menu > .right.item > .item >span {
     margin-left: 5px;
-}
+} 
 
 .ui.basic.vertical.segment.master-head {
     height: 500px;
     background: url("./images/detail.jpg");
     background-size: cover;
+}
+
+.ui.basic.vertical.container {
+    width: 700px;
+}
+
+.ui.basic.vertical.container > .ui.center.aligned.header {
+    font-family: 'Oswald' sans-serif;
+    font-size: 40px!important;
+
+    margin-top: 50px;
+}
+
+
+.ui.basic.segment > .span1 {
+    color: #bbbbbb;
+}
+
+.ui.basic.segment > .span2 {
+    color: #e2e2e2;
+}
+
+.ui.basic.segment > .span3 {
+    color: #bbbbbb;
+}
+
+.ui.basic.segment.maincontent {
+    margin-top: 2px;
+    padding-top: 0px;
+
+}
+
+.ui.basic.segment.maincontent > p {
+    font-family: 'raleway' sans-serif;
+    font-size: 20px;
+    
+}
+
+form {
+    margin-bottom: 200px;
 }
