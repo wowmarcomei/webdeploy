@@ -1,14 +1,32 @@
-.ui.basic.vertical.segment.center.aligned.first-banner {
-    background: url("../images/star_banner.jpg");
-    background-size: cover;
-    background-position: 100%,80%;
+.ui.vertical.segment.masthead {
     height: 300px;
+    background: url('../images/star_banner.jpg');
+    background-size: cover;
+    background-position: 100% 80%;
+}
+
+.ui.center.aligned.header.bloglogon {
+    font-family: 'Railway' sans-serif;
+    font-size: 50px;
+}
+ 
+.ui.center.aligned.header.bloglogon > .ui.sub.header {
+    margin-top: 15px;
+}
+.ui.vertical.segment.container.maincontent {
+    width: 800px;
+    margin-bottom: 15px;
+}
+
+.ui.vertical.segment.container.maincontent > .ui.header {
+    font-family: 'Oswald' sans-serif;
+    font-size: 40px;
 
 }
 
-.ui.basic.vertical.segment.center.aligned.first-banner > .ui.header.inverted {
-    font-family: "Raleway" sans-serif;
-    font-size: 50px;
+.blogcontent{
+    font-family: 'Raleway' sans-serif;
+    font-size: 18px;
 
-    
+    margin-top: 15px;
 }
