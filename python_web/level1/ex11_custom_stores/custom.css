@@ -1,0 +1,70 @@
+body{
+    background-color: #f5f5f5;
+}
+
+.ui.fixed.inverted.red.fitted.borderless.menu {
+    /* position: absolute;  */
+    height: 60px;
+}
+
+/* 定位方式之1： relative+百分比 */
+/* 定位方式之2：absolute+位移，但是需要将父级元素样式设置为absolute或relative */
+.ui.fixed.inverted.red.fitted.borderless.menu > .ui.image {
+    position: relative;
+    top: 25%;
+}
+
+.ui.fixed.inverted.red.fitted.borderless.menu > .right.item > .item {
+    margin-left: 10px;
+}
+
+.ui.fixed.inverted.red.fitted.borderless.menu > .right.item > .item >span {
+    margin-left: 5px;
+} 
+
+.ui.segment.basic.vertical.borderless.container {
+    
+    width: 300px !important;
+    margin-top: 46px;
+
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%,30%);
+    
+}
+
+.ui.three.column.grid.container {
+    
+}
+
+.ui.basic.inverted.segment.card-view {
+    /* width: 256px; */
+    height: 202px;
+    width:100%;
+    /* height: 100%; */
+
+    position: absolute;
+    top: 350%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/* .ui.basic.segment.card-view > .ui.image > img{
+    width: 256px;
+    height: 202px;
+} */
+.ui.segment.vertical.basic.recommended {
+    margin-top: 150px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.ui.three.column.grid.container > .column {
+   
+    /* margin-right: 15px; */
+}
+
+.descrip {
+    color: grey;
+}
+

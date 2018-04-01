@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/semantic.css" media="screen" title="no title">
+    <link rel="stylesheet" href="./custom.css" media="screen" title="no title">
+    <!-- 引用Google Oswald字体与Raleway -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+    <title>Stores</title>
+
+
+</head>
+
+<body>
+    <!--菜单栏 -->
+    <div class="ui fixed inverted red fitted borderless menu">
+
+        <div class="ui image">
+            <img src="./images/tenlogo.png" alt="">
+        </div>
+
+        <div class="right item">
+            <div class="item">
+                <div class="ui image circular">
+                    <img src="./images/hou30.jpg" alt="">
+                </div>
+                <span>admin</span>
+            </div>
+
+            <div class=" item">
+                <button class="ui button inverted circular">Logout</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--内容栏 -->
+    <div class="ui segment basic vertical borderless container">
+        <div class="ui grey three item menu borderless">
+            <a class="active item">All</a>
+            <a class="active item">New</a>
+            <a class="item">Editor's</a>
+        </div>
+    </div>
+
+
+
+    <!-- 2.内容栏 -->
+    <!-- 为了订制css效果，加了一个recommended类 -->
+    <div class="ui segment vertical basic recommended">
+        <!-- 内部使用网格grid -->
+        <!-- grid的两种使用方式，一种是定宽，一种是定栏 -->
+        <!-- 1.定宽：ten wide column，嵌套在grid下面，然后加另一个six wide column -->
+        <!-- 2.定栏：three  column grid,然后在grid下嵌套column,初始设置有几个就接着写几个column -->
+        <!-- 一般偶数个column的时候选择使用定宽的方式，奇数个column时使用定栏 -->
+        <!-- 另：在grid后加上container修饰，可以使得每个column之间更加收紧 -->
+        <div class="ui three column grid container">
+            <div class="column">
+                <!-- 给下面的div加一个订制样式card-view -->
+                <div class="ui basic inverted segment card-view" style="background: url('./images/img1.jpg');background-size: cover;background-repeat: no-repeat;background-position: 50% 50%;">
+                    <!-- <p class="descrip">Ut unde numquam non nisi</p>
+                    <i class="ui icon grey eye"></i>
+                    <span class="descrip">10K</span>
+                    <i class="ui icon grey checkmark"></i>
+                    <span class="descrip">10 people got it</span> -->
+                </div>
+            </div>
+            <div class="column">
+                <!-- 给下面的div加一个订制样式card-view -->
+                <div class="ui basic inverted segment card-view" style="background: url('./images/img2.jpg');background-size: cover;background-repeat: no-repeat;background-position: 50% 50%;">
+                    <!-- <p class="descrip">Ut unde numquam non nisi</p>
+                        <i class="ui icon grey eye"></i>
+                        <span class="descrip">10K</span>
+                        <i class="ui icon grey checkmark"></i>
+                        <span class="descrip">10 people got it</span> -->
+                </div>
+            </div>
+
+            <div class="column">
+                <!-- 给下面的div加一个订制样式card-view -->
+                <div class="ui basic inverted segment card-view" style="background: url('./images/img3.jpg');background-size: cover;background-repeat: no-repeat;background-position: 50% 50%;">
+                    <!-- <p class="descrip">Ut unde numquam non nisi</p>
+                            <i class="ui icon grey eye"></i>
+                            <span class="descrip">10K</span>
+                            <i class="ui icon grey checkmark"></i>
+                            <span class="descrip">10 people got it</span> -->
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
