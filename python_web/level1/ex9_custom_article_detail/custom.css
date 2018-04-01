@@ -1,0 +1,22 @@
+body {
+    background: url('./images/star_banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;  /* 设置背景固定，不会随着页面滚动 */
+    
+}
+
+.ui.segment.container.maincontent {
+    width: 700px;
+    margin-top: 33px;
+    margin-bottom: 20px;
+}
+
+.paragraph-content {
+    font-family: 'Raleway', sans-serif;
+    font-size:18px;
+}
+
+.ui.segment.container.padded.comments-container {
+    width: 700px;
+}
