@@ -1,0 +1,45 @@
+body {
+    background: url('./images/super_blur_back2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;  /* 设置背景固定，不会随着页面滚动 */
+
+}
+
+.ui.segment.container.grid {
+    border: 0px;
+
+    height: 400px;
+    width: 600px !important;  /* 由于未知原因导致宽度设置不生效，故强制 */
+
+    /* 绝对定位方式 */
+    position: absolute;
+    left: 50%;
+    top:40%;
+    transform: translate(-50%,-50%);
+}
+
+.ui.segment.container.grid > .five.wide.column
+{
+    
+    /* height: 400px; */
+    background: url('./images/red_regi.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 60% 40%;
+
+
+    margin-right: 20px;
+
+}
+
+.ui.button.circular.inverted.red {
+    margin-top: 20px;
+    position: relative;
+    left: 75%;
+}
+
+
+.ui.form {
+    margin-top: 60px;
+}
