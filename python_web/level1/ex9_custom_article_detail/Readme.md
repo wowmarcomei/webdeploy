@@ -68,3 +68,6 @@
         </form>
 ```
 
+
+
+![](https://github.com/wowmarcomei/workstation/blob/master/python_web/level1/ex9_custom_article_detail/ex9.png)
