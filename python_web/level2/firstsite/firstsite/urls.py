@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from firstapp.views import first_try #在app中views下新添加的函数
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^first_try/', first_try),
 ]
