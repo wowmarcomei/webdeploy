@@ -134,6 +134,28 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 
+合并数据库打印界面如下：
+
+```shell
+ meixuhong@MyMac  ~/Desktop/Django/firstsite  python3 manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying sessions.0001_initial... OK
+```
+
 最终生成文件如下：
 
 ```shell
@@ -187,6 +209,21 @@ class People(models.Model):
 ```
 
 代码中创建完数据表之后需要在终端中使用`manage.py`调用`makemigrations`参数，django将会根据写的代码**创建数据表**`People`, 使用`manage.py`调用`migrate`参数，django将会**合并数据库**。
+
+```shell
+meixuhong@MyMac  ~/Desktop/Django/firstsite  python3 manage.py makemigrations
+Migrations for 'firstapp':
+  firstapp/migrations/0001_initial.py:
+    - Create model People
+ meixuhong@MyMac  ~/Desktop/Django/firstsite  python3 manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, firstapp, sessions
+Running migrations:
+  Applying firstapp.0001_initial... OK
+ meixuhong@MyMac  ~/Desktop/Django/firstsite 
+```
+
+
 
 #### 5. V --> 从Views中获取Models数据
 
@@ -252,7 +289,7 @@ def first_try(request):
     # 使用Template类初始化，将字符串html_string变成模板
     t = Template(html_string)
     # 为了将数据库中的数据填充到模板，需要将数据变成上下文，使用Context类将数据表中的数据man变成上下文
-    # Context里接收的参数是字典类型数据，
+    # Context里接收的参数是字典类型数据：字典中的key与模板中的字段必须一致，作为填入对象。字典中的value必须是一个变量，此处为People类的一个实例化对象
     c = Context({'man':man, 'woman':woman })
     # 使用Template的render函数，将上下文c填入到模板t中
     web_page = t.render(c)
@@ -273,6 +310,8 @@ urlpatterns = [
     url(r'^first_try/', first_try), #添加views.py下的函数
 ]
 ```
+
+> 上面的url第一个参数是网址，可以随意填写，后面对应的是views.py下面定义的函数，返回结果是一个HttpResponse对象
 
 ok，可以正常访问网页了。
 
