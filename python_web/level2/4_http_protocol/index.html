@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/semantic.css" media="screen" title="no title">
+    <title>Test Http</title>
+</head>
+
+<body>
+    <div class="ui two column grid container stackable">
+
+        <div class="column">
+            <div class="ui green segment">
+                <form action="http://duckduckgo.com" method="get" class="ui form">
+                    <h2 class="ui header">Request GET</h2>
+                    <div class=" ui field">
+                        <label for="">Content</label>
+                        <!-- 布置一个文本框，名字为q,其值可以从输入框中获取 -->
+                        <input type="text" name='q' value="">
+                    </div>
+
+                    <div class="ui field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="ia" id="" value="images">
+                            <label for="">Search for images</label>
+                        </div>
+                    </div>
+
+                    <div class="ui field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="ia" id="" value="web">
+                            <label for="">Search for Web</label>
+                        </div>
+                    </div>
+
+                    <button class="ui green button" type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="ui blue segment">
+                <form action="http://duckduckgo.com" method="post" class="ui form">
+                    <h2 class="ui header">Request POST</h2>
+                    <div class="ui field">
+                        <label for="">Content</label>
+                        <!-- 布置一个文本框，名字为q,其值可以从输入框中获取 -->
+                        <input type="text" name='q'>
+                    </div>
+
+                    <div class="ui field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="ia" id="" value="images">
+                            <label for="">Search for images</label>
+                        </div>
+                    </div>
+
+                    <div class="ui field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="ia" id="" value="web">
+                            <label for="">Search for Web</label>
+                        </div>
+                    </div>
+
+                    <button class="ui blue button" type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
