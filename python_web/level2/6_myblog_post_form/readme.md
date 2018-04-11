@@ -110,10 +110,76 @@ def details(request):
     return render(request,'detail.html',context)
 ```
 
-
-
-
-
-
-
 ![](https://ws1.sinaimg.cn/large/006tNc79ly1fq7c2bxcd6j311g0nt0vm.jpg)
+
+
+
+### 4.自定义表单验证器
+
+```python
+# 继承forms类来创建表单
+from django import forms
+from django.core.exceptions import ValidationError
+
+# 自定义一个验证器,传递参数是评论本身,评论必须大于4个字节
+def words_validator(comment):
+    if len(comment) < 4:
+        raise ValidationError('Not enough words')
+
+# 自定义一个验证器,传递参数是评论本身,评论中不能包含某字符
+def chars_validator(comment):
+    if 'a' in comment:
+        raise ValidationError('not allowed to input that word')
+
+# 创建的CommentForm类被实例化后，一旦被template层引用，django将会自动被创建表单
+class CommentForm(forms.Form):
+    name = forms.CharField(max_length=50)
+    # 传递参数widget使得评论框变成大的输入框,传递参数error_messages为django自带验证器，参数validators为自定义验证器
+    comment = forms.CharField(
+        widget=forms.Textarea(),
+        error_messages={
+            'required': 'wow,such words'
+        },
+        validators = [words_validator,chars_validator]
+    )
+```
+
+> 注意验证器不仅可以用在表单form中，也同样可以用于models中。
+
+在Template中修改form逻辑。
+
+```html
+        <!-- 2.通过form提交评论comment到服务器 -->
+        <form class="ui error tiny form" action="" method="post">
+
+            <!-- {{ form }}，form.as_p可以将表单加载在p标签中，不加也可以 -->
+            <!-- {{ form.as_p }} -->
+
+            <!-- 如果出现错误，那么先显示一个装载了错误信息的div，然后是表单 -->
+            {% if form.errors %}
+                <!-- 装载错误信息的div -->
+                <div class="ui error message">
+                    {{ form.errors }}
+                </div>
+                <!-- 正常表单 -->
+                {% for field in form %}
+                <div class="{{ field.errors|yesno:'error, '}}  field"> <!-- 使用django的yesno过滤器，只对出错的field渲染错误提醒 -->
+                    {{field.label}} 
+                    {{field}}
+                </div>
+                {% endfor %} 
+            <!-- 如果没有出现错误，则一切正常，正常渲染表单 -->
+            {% else %} 
+                {% for field in form %}
+                <div class="field">
+                    {{field.label}} {{field}}
+                </div>
+                {% endfor %} 
+            {% endif %} 
+
+            {% csrf_token %}
+            <!-- 表单中，需要进行防止跨站攻击 -->
+            <button type="submit" class="ui blue button">Click</button>
+        </form>
+```
+
