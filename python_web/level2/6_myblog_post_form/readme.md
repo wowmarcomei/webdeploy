@@ -183,3 +183,4 @@ class CommentForm(forms.Form):
         </form>
 ```
 
+![](https://github.com/wowmarcomei/workstation/blob/master/python_web/level2/6_myblog_post_form/ex.png)
