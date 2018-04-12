@@ -1,0 +1,129 @@
+<!DOCTYPE html> {% load staticfiles %}
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/semantic.css' %}" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+
+
+    <style type="text/css">
+        .ui.segment.container {
+            width: 700px;
+        }
+
+        p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 18px;
+        }
+
+        body {
+            background:url("{% static 'images/star_banner.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ui image">
+        <img src="" alt="" />
+    </div>
+    <div class="ui  segment padded container">
+        <h1 class="ui header" style="font-family:'Oswald', sans-serif;font-size:40px">
+            {{ article.name }}
+        </h1>
+        <p>
+            {{ article.content }}
+        </p>
+    </div>
+
+    <!-- Comments&Form's here -->
+    <div class="ui segment container" style="width:700px;">
+        <h3 class="ui header" style="font-family:'Oswald', sans-serif;">Comments</h3>
+
+        <!-- 1.显示历史评论comment -->
+        <div class="ui comments">
+
+            <!-- 添加最优评论结构 -->
+            {% if best_comment %}
+            <div class="ui mini red left ribbon label">
+                    <i class="icon fire"></i>
+                    BEST
+            </div>
+            <div class="comment">
+                    <div class="avatar">
+                        <img src="http://semantic-ui.com/images/avatar/small/matt.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                        <a href="#" class="author"> {{ best_comment.name }} </a>
+                        <p class="text" style="font-family: 'Raleway', sans-serif;">
+                            {{best_comment.comment}}
+                        </p>
+                    </div>
+            </div>
+            <div class="ui divider"></div>
+                
+            {% endif %}
+
+            {% for comment in article.under_comments.all %}
+            <div class="comment">
+                <div class="avatar">
+                    <img src="http://semantic-ui.com/images/avatar/small/matt.jpg" alt="" />
+                </div>
+                <div class="content">
+                    <a href="#" class="author"> {{ comment.name }} </a>
+                    <p class="text" style="font-family: 'Raleway', sans-serif;">
+                        {{comment.comment}}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        <div class="ui divider"></div>
+
+        <!-- 2.通过form提交评论comment到服务器 -->
+        <!-- 给form添加一个action到新的地址，地址通过url标签来表示 -->
+        <!-- 结合urls.py中定义： url(r'^details/(?P<page_num>\d+)/comment$', post_form_view, name='comment')可知：  -->
+        <!-- 一旦在这个页面提交了表单，则表单提交到了details/article.id/comment这个页面下 -->
+        <form class="ui error tiny form" action="{% url 'comment' article.id %}" method="post">
+
+            <!-- {{ form }}，form.as_p可以将表单加载在p标签中，不加也可以 -->
+            <!-- {{ form.as_p }} -->
+
+            <!-- 如果出现错误，那么先显示一个装载了错误信息的div，然后是表单 -->
+            {% if form.errors %}
+                <!-- 装载错误信息的div -->
+                <div class="ui error message">
+                    {{ form.errors }}
+                </div>
+                <!-- 正常表单 -->
+                {% for field in form %}
+                <div class="{{ field.errors|yesno:'error, '}}  field"> <!-- 使用django的yesno过滤器，只对出错的field渲染错误提醒 -->
+                    {{field.label}} 
+                    {{field}}
+                </div>
+                {% endfor %} 
+            <!-- 如果没有出现错误，则一切正常，正常渲染表单 -->
+            {% else %} 
+                {% for field in form %}
+                <div class="field">
+                    {{field.label}} {{field}}
+                </div>
+                {% endfor %} 
+            {% endif %} 
+
+            {% csrf_token %}
+            <!-- 表单中，需要进行防止跨站攻击 -->
+            <button type="submit" class="ui blue button">Click</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
