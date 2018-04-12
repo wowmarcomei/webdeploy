@@ -18,7 +18,7 @@
 
    ```python
    abc/efg/detail
-   1231234detail
+   a1231234detail
    _87er&*detail
    ```
 
