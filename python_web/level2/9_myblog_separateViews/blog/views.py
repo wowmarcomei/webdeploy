@@ -7,16 +7,16 @@ from django.shortcuts import redirect
 # Create your views here.
 def home(request):
     # 调试查看request是什么参数，包括值，所有属性与方法，类型
-    print(request)
-    print("==="*30)
-    print(dir(request))
-    print("==="*30)
-    print(type(request))
-    print("==="*30)
-    print(request.GET)
-    print("==="*30)
+    # print(request)
+    # print("==="*30)
+    # print(dir(request))
+    # print("==="*30)
+    # print(type(request))
+    # print("==="*30)
+    # print(request.GET)
+    # print("==="*30)
     queryset = request.GET.get('tag') #通过GET方法获取参数tag的具体值，在url中输入?tag=test123,则此处获取的queryset即为test123
-    print(queryset)
+    # print(queryset)
     
 
     if queryset:   #如果不为空，即传递tag值，则加载分类页面
