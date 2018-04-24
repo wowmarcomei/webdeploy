@@ -235,3 +235,6 @@ urlpatterns = [
 ]
 ```
 
+![](https://github.com/wowmarcomei/workstation/blob/master/python_web/level2/11_register_and_login/ex1.png)
+
+![](https://github.com/wowmarcomei/workstation/blob/master/python_web/level2/11_register_and_login/ex2.png)
