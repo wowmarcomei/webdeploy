@@ -175,3 +175,63 @@ class UserProfile(models.Model):
 #### 7.完善登陆与注册逻辑
 
 前面使用的是自定义的form进行注册，其实Django有自带的功能强大的表单可供注册验证使用。
+
+```python
+#website/views.py
+
+# 使用Django自带的AuthenticationForm表单进行登陆
+def index_login(request):
+    # 定义模板字典
+    context = {}
+    if request.method == 'GET':
+        # 构造并渲染表单
+        form = AuthenticationForm
+
+    if request.method == 'POST':
+        # 获取表单数据
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            login(request,form.get_user())
+            return redirect(to='list')
+            
+    #GET方法时渲染的表单，在'register_login.html'中进行渲染 
+    context['form'] = form
+    return render(request,'register_login.html',context)
+
+# 使用Django自带的UserCreationForm表单进行注册
+def index_register(request):
+    # 定义模板字典
+    context = {}
+    if request.method == 'GET':
+        # 构造并渲染表单
+        form = UserCreationForm
+
+    if request.method == 'POST':
+        # 获取表单数据
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(to='login')
+            
+    #GET方法时渲染的表单，在'register_login.html'中进行渲染 
+    context['form'] = form
+    return render(request,'register_login.html',context)
+```
+
+```python
+#website/urls.py
+
+from website.views import listing, index_login,index_register
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^$', listing, name='list'),
+    url(r'^list/$', listing, name='list'),
+    url(r'^list/(?P<cate>[A-Za-z]+)$', listing, name='list'),
+    url(r'^login$', index_login, name='login'),
+    url(r'^register/$', index_register, name='register'),
+    # logout后面传入一个字典变量，指明了跳转页面是/register这个页面
+    url(r'^logout/$', logout, {'next_page': '/register'}, name='logout'),
+]
+```
+
