@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src="js/vue1.js"></script>
+        <link rel="stylesheet" href="css/semantic.css" media="screen" title="no title" charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+
+        <style type="text/css">
+            .ui.segment.container {
+                width:700px;
+            }
+            h1 {
+                font-family:'Oswald', sans-serif;font-size:40px!important;
+            }
+
+            p {
+                font-family: 'Raleway', sans-serif;
+                font-size:18px;
+            }
+
+            body {
+                background:url(images/star_banner.jpg);
+                background-size:cover;
+                background-repeat:no-repeat;
+                background-attachment:fixed
+            }
+
+        </style>
+    </head>
+    <body id="#app">
+
+        <div class="ui  segment padded container" >
+            <h1 class="ui header">
+                Lorem ipsum dolor sit amet, consectetur.
+
+            </h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+
+        <!-- Comments&Form's here -->
+        <div class="ui segment container" style="width:700px;">
+            <h3 class="ui header" style="font-family:'Oswald', sans-serif;">Comments</h3>
+            <div v-for="comment in comments" class="ui comments">
+                <div class="comment">
+                    <div class="avatar">
+                        <img src="images/matt.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                        <a href="#" class="author">John Doe</a>
+
+                        <p class="text" style="font-family: 'Raleway', sans-serif;">
+                            Great one!
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="ui divider"></div>
+
+            <form class="ui form" action="index.html" method="post">
+                <input type="text">
+            </form>
+        </div>
+
+        <script>
+            // 创建Vue实例来进行管理页面，类似于django中的template管理模板一样
+            var vm = new Vue({
+                // 使用el来定义管理区域，一般这个el选择这个页面的body
+                // 定义完了el后，Vue就可以管理整个body
+                el: "#app",
+                // 配合django使用时，一般是从django中取出数据，相当于在django
+                // 中视图中使用的context字典
+                
+                data: {
+
+                }
+            })
+        </script>
+
+    </body>
+</html>
