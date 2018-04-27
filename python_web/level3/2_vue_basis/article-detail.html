@@ -29,7 +29,7 @@
 
         </style>
     </head>
-    <body id="#app">
+    <body id="app">
 
         <div class="ui  segment padded container" >
             <h1 class="ui header">
@@ -50,39 +50,47 @@
                         <img src="images/matt.jpg" alt="" />
                     </div>
                     <div class="content">
-                        <a href="#" class="author">John Doe</a>
+                        <a href="#" class="author">{{comment.name}}</a>
 
                         <p class="text" style="font-family: 'Raleway', sans-serif;">
-                            Great one!
+                            {{comment.said}}
                         </p>
                     </div>
                 </div>
 
             </div>
             <div class="ui divider"></div>
-
+            <h3 class="ui header">还可以输入{{ 200-message.length }}字</h3>
             <form class="ui form" action="index.html" method="post">
-                <input type="text">
+                <input v-model="message" type="text">
             </form>
         </div>
 
-        <script>
-            // 创建Vue实例来进行管理页面，类似于django中的template管理模板一样
-            var vm = new Vue({
-                // 使用el(element)来定义管理区域，一般这个el选择这个页面的body
-                // 定义完了el后，Vue就可以管理整个body
-                el: "#app",
-                // 使用data管理数据，配合django使用时，一般是从django中取出数据，相当于在django
-                // 中从view往template中输送数据的context字典
-                // 类似于django中的：content['article']=article
-                data: {
-                    article:{
-                        title: "This is the title",
-                        content:"Hi, there"
-                    }
-                }
-            })
-        </script>
+<script>
+    // 创建Vue实例来进行管理页面，类似于django中的template管理模板一样
+    var vm = new Vue({
+        // 使用el(element)来定义管理区域，一般这个el选择这个页面的body
+        // 定义完了el后，Vue就可以管理整个body
+        el: "#app",
+        // 使用data管理数据，配合django使用时，一般是从django中取出数据，相当于在django
+        // 中从view往template中输送数据的context字典
+        // 类似于django中的：content['article']=article
+        data: {
+            // 定义一个article对象
+            article:{
+                title: "This is the title",
+                content:"Hi, there"
+            },
+            // 定义一个列表，列表中定义了多个对象
+            comments:[
+                {name:"John Doe",said:"Well done!"},
+                {name:"Marco",said:"Greate!"},
+                {name:"Tony",said:"Good Job!"},
+                {name:"John Snow",said:"Very Nice!"},
+            ]
+        }
+    })
+</script>
 
     </body>
 </html>
