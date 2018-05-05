@@ -1,8 +1,8 @@
-#Computed属性
+#Computed属性基本知识
 
 Computed属性与方法Methods类似，但是
 
-### [计算属性](https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7)
+## [计算属性](https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7)
 
 模板内的表达式非常便利，但是设计它们的初衷是用于简单运算的。在模板中放入太多的逻辑会让模板过重且难以维护。例如：
 
@@ -34,7 +34,7 @@ var vm = new Vue({
   computed: {
     // 计算属性的 getter
     reversedMessage: function () {
-      // `this` 指向 vm 实例
+      // this 指向 vm 实例
       return this.message.split('').reverse().join('')
     }
   }
@@ -116,3 +116,168 @@ computed: {
 ```
 
 现在再运行 `vm.fullName = 'John Doe'` 时，setter 会被调用，`vm.firstName` 和 `vm.lastName` 也会相应地被更新。
+
+
+
+## 实战computed属性
+
+### 基本computed使用
+
+`computed`与`methods`同级别使用，不同于`methods`的是`computed`需要返回值。
+
+```javascript
+<script>
+    var vm = new Vue({
+        el:"#app",
+        // context
+        data:{
+
+            modal:{
+                show:true,
+            },
+            // context["article"] = article
+            article:{
+                title:"This is a title",
+                content:"Hi there!",
+                fontSize:18
+            },
+            comments:[
+                // {name:"John Doe",said:"Great!",show:true},
+                // {name:"John Doe",said:"Great!",show:true},
+                // {name:"John Doe",said:"Great!",show:true},
+                // {name:"John Doe",said:"Great!",show:true},
+            ]
+        },
+        methods:{
+            modalSwitch:function () {
+                this.modal.show = !this.modal.show
+
+            },
+            getData:function () {
+                var self = this;
+                reqwest({
+                    url:"https://swapi.co/api/people/?format=json",
+                    type:"json",
+                    method:"get",
+                    success:function (resp) {
+                        self.comments = resp.results;
+                    }
+                })
+            }
+        },
+        computed:{
+            loadingOrNot: function(){
+                if (this.comments.length == 0){
+                    return ' loading'
+                }else{
+                    return ''
+                }
+            },
+        },
+        ready:function () {
+            this.getData()
+        }
+    })
+</script>
+```
+
+在模板html中加入属性`loadingOrNot`的字段，使用大括号即可引用，当评论没有加载完，其长度为0，则`{{ loadingOrNot }}`即为` loading`，评论加载完成时其长度非0则`{{ loadingOrNot }}`为空，将其加入对`div`的CSS修饰。
+
+```html
+        <!-- Comments&Form's here -->
+        <div class="ui segment {{loadingOrNot}} container" style="width:700px;">
+            <h3 class="ui header" style="font-family:'Oswald', sans-serif;">Comments</h3>
+            <div v-for="comment in comments" class="ui comments">
+                <div class="comment" >
+                    <div class="avatar">
+                        <img src="images/matt.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                        <a href="#" class="author">{{ comment.name }}</a>
+
+                        <p class="text" style="font-family: 'Raleway', sans-serif;">
+                            My height is {{ comment.height }} cm
+                        </p>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <div class="ui divider"></div>
+            <h3 class="ui header"> 你还可以输入 {{ 200 - message.length }} 字 </h3>
+
+            <form class="ui form" action="index.html" method="post">
+                <input v-model="message" type="text">
+            </form>
+        </div>
+```
+
+![](https://ws2.sinaimg.cn/large/006tKfTcgy1fr0fkzogimj30hf0dq3yu.jpg)
+
+![](https://ws4.sinaimg.cn/large/006tKfTcgy1fr0fl26gn7j30hi0hwq3a.jpg)
+
+### 利用Computed属性对页面数据二次加工
+
+> 类似于Django的过滤器，不对原始数据进行任何修改，仅仅对数据进行过滤选择
+
+参考[Mozilla Developer](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)中的过滤器实现方法：
+
+#####  例子：筛选排除掉所有的小值
+
+下例使用 `filter` 创建了一个新数组，该数组的元素由原数组中值大于 10 的元素组成。
+
+```
+function isBigEnough(element) {
+  return element >= 10;
+}
+var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
+// filtered is [12, 130, 44]
+```
+
+应用到本次实验中：
+
+```javascript
+computed:{
+    loadingOrNot: function(){
+        if (this.comments.length == 0){
+            return ' loading'
+        }else{
+            return ''
+        }
+    },
+    // 对页面数据进行二次加工：过滤掉身高小于100cm的用户
+    filteredList: function () {
+        // 参考 developer.mozilla中的过滤器
+        function useRuler(people) {
+            return people.height > 160
+        }
+        // 回调函数，回调的参数为this.comments
+        var newList = this.comments.filter(useRuler)
+        return newList
+    },
+},
+```
+
+修改html模板中变量为`filteredList`
+
+```html
+<div v-for="comment in filteredList" class="ui comments">
+<!-- <div v-for="comment in comments" class="ui comments"> -->
+    <div class="comment" >
+        <div class="avatar">
+            <img src="images/matt.jpg" alt="" />
+        </div>
+        <div class="content">
+            <a href="#" class="author">{{ comment.name }}</a>
+
+            <p class="text" style="font-family: 'Raleway', sans-serif;">
+                My height is {{ comment.height }} cm
+            </p>
+            
+        </div>
+    </div>
+
+</div>
+```
+
+![](https://ws2.sinaimg.cn/large/006tKfTcgy1fr0gefqc2uj30hi0h63ys.jpg)
