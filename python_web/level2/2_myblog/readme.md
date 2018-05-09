@@ -4,6 +4,7 @@
 - 在APP目录下新建static目录，里面放入css, images, theme等静态文件
 - 在全局setting.py目录下修改列表变量TEMPLATES
 
+
 ```python
 TEMPLATES = [
     {
