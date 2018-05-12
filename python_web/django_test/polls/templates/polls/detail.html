@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+        <h1>{{ question.question_text }}</h1>
+
+
+        {% if error_message %}
+          <p><strong>error_message</strong></p>
+        {% endif %}
+
+        <!-- 提交到vote对应的view上去，带了一个参数question.id -->
+        <form action="{% url 'polls:vote' question.id %}" method="POST">
+            <!-- Cross Site Request Forgeries -->
+             {% csrf_token %}
+             {% for choice in question.choice_set.all  %}
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+                <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+             {% endfor %}
+             <input type="submit" value="vote">
+        </form>
+
+
+        <ul>
+            <!-- Choice类使用ForeignKey关联到Question上，属于多对一模型 -->
+            <!-- one.multle_set.all可以查询one对应的所有multi的数据 -->
+            <!-- 当然也可以在Models中使用related_name定义 -->
+            {% for choice in question.choice_set.all %}
+                <li>{{ choice.choice_text }}</li>
+            {% endfor %}
+        </ul>
+    
+</body>
+</html>
