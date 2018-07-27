@@ -1,0 +1,43 @@
+<!DOCTYPE html> {% load staticfiles %}
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/semantic.css' %}" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+
+
+    <style type="text/css">
+        .ui.segment.container {
+            width: 700px;
+        }
+        .ui.header.centered.aligned{
+            position: relative;
+            margin: 50px;
+        }
+
+        p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 18px;
+        }
+
+        body {
+            /* background:url("{% static 'images/star_banner.jpg' %}"); */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed
+        }
+    </style>
+</head>
+
+<body>
+
+    {% for article in article_set  %}
+      <div class="ui header centered aligned">{{ article.title }}</div>
+    {% endfor %}
+    
+</body>
+
+</html>
