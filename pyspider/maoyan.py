@@ -1,6 +1,7 @@
 import requests
 import re
 import json
+from urllib import error
 
 def get_one_page(url):
     headers = {
@@ -8,43 +9,47 @@ def get_one_page(url):
     'Host': 'maoyan.com',
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
     }
-    response = requests.get(url,headers=headers)
-    if response.status_code == 200:
+    try:
+        response = requests.get(url,headers=headers)
         return response.text
-    return None
+    except error.HTTPError as err:
+        print(err.reason, err.code, err.headers, sep='\n')
+        return None
+    except urllib.error.URLError as err:
+        print(err.reason)
+        return None
 
 def parse_one_page(html):
-    reg = r'<dd>.*?board-index.*?">(.*?)</i>.*?data-src="(.*?)".*?movie-item-info.*?title="(.*?)".*?star">(.*?)</p>.*?releasetime">(.*?)</p>.*?nteger">(.*?)</i>.*?fraction">(.*?)</i>'
-    pattern = re.compile(reg,re.S)
-
-    items = re.findall(pattern, html)
-    print(items)
-    for item in items:
+    reg = r'<dd>.*?board-index.*?">(.*?)</i>.*?title="(.*?)".*?data-src="(.*?)".*?movie-item-info.*?star">(.*?)</p>.*?releasetime">(.*?)</p>.*?integer">(.*?)</i>.*?fraction">(.*?)</i>.*?</dd>'
+    results = re.findall(reg,html,re.S)
+    # print(results)
+    for item in results:
         yield {
             '排名': item[0],
-            '图片链接': item[1],
-            '标题': item[2].strip(),  #strip()函数会删除空白字符，包括\r,\t,\n,空格
-            '演员': item[3].strip()[3:] if len(item[3]) > 3 else '',
+            '电影': item[1],
+            '海报链接': item[2],
+            # 添加条件判断语句，增加程序的健壮性，只有当item[3]长度大于3时才从第三个开始获取
+            '演员': item[3].strip()[3:] if len(item[3])>3 else '',
+            # 添加条件判断语句，增加程序的健壮性，只有当item[4]长度大于5时才能获取上映时间
             '上映时间': item[4].strip()[5:15] if len(item[4]) > 5 else '',
-            '上映地点': item[4].strip()[16:] if len(item[4]) > 16 else '',
-            '评分': item[5].strip() + item[6].strip()
+            # 通过正则表达式获取括号()里的字符串，且添加条件判断语句只有匹配到了才获取其中的字符串，
+            '上映地点': re.findall(r'\((.*?)\)',item[4],re.S)[0] if len(re.findall(r'\((.*?)\)',item[4],re.S))>0 else '',
+            # 将原有的字符串变成数字,将评分前半段去掉点号，小数位除以10
+            '猫眼评分': int(item[5].strip('.'))+int(item[6])/10
         }
+
 def write_to_json(content):
     #content 参数就是一部电影的提取结果，是一个字典。
-    # with open('result.txt', 'a') as f:
-    #     print(type(json.dumps(content)))
-    #     f.write(json.dumps(content, ensure_ascii=False,).encode('utf-8'))
     with open('result.txt', 'a', encoding='utf-8') as f:
         f.write(json.dumps(content, ensure_ascii=False) + '\n')
 
 def main(offset):
-    url = 'http://www.maoyan.com/board/4?offset=' + str(offset)
+    url = 'http://maoyan.com/board/4?offset='+str(offset*10)
     html = get_one_page(url)
-    items = parse_one_page(html)
-    for item in items:
+    for item in parse_one_page(html):
         print(item)
         write_to_json(item)
 
 if __name__ == '__main__':
-    for i in range(10):
-        main(offset=i * 10)
+    for page in range(10):
+        main(page)
