@@ -30,8 +30,8 @@ class Index(object):
     #     print(soup)
 
 
-username = '18565687621'
-password = 'Iou19871011'
+username = 'xxxxxxxx'
+password = 'xxxxxxxx'
 
 login_url = 'http://passport.lianjia.com/cas/login?service=http%3A%2F%2Fsz.lianjia.com%2F'
 login = requests.session() #创建session进程会话，通过它，就可以共享cookie
